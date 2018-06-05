@@ -1,10 +1,10 @@
 # Tipos
 
-- [Atualização](#update)
+- [Update](#update)
 - [WebhookInfo](#webhookinfo)
 - [User](#user)
 - [Chat](#chat)
-- [Message](#message)
+- [Message (Mensagem)](#message)
 - [MessageEntity](#messageentity)
 - [PhotoSize](#photosize)
 - [Audio](#audio)
@@ -32,7 +32,7 @@
 - [Sticker](#sticker)
 - [StickerSet](#stickerset)
 - [MaskPosition](#maskposition)
-- [InlineQuery](#inlinequery)
+- [InlineQuery (Consulta Inline)](#inlinequery)
 - [InputTextMessageContent](#inputtextmessagecontent)
 - [InputLocationMessageContent](#inputlocationmessagecontent)
 - [InputVenueMessageContent](#inputvenuemessagecontent)
@@ -50,14 +50,14 @@
 - [Animation](#animation)
 - [GameHighScore](#gamehighscore)
 
-## Update
+## Atualização
 
 Esse objeto representa uma atualização por vir. Ao menos um dos parâmetros opcionais devem estar presentes em alguma atualização.
 
 | Campo                  | Tipo                          | Requerido         | Descrição                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | ---------------------- | ----------------------------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | update_id              | Interger (Número)             | true (Verdadeiro) | O identificador exclusivo da atualização. Atualização dos identificadores começam de um certo numero positivo e aumentam gradativamente. Este ID torna-se especialmente útil se você estiver usando Webhooks, já que isso te permite ignorar atualizações repetidas ou restaurar a sequência de atualização correta, eles devem chegar fora de ordem. Se não houver novas atualizações por pelos uma semana, o identificador da próxima atualização será escolhido aleatoriamente ao invés de sequencialmente. |
-| message                | Message (Mensagem)            | false (Falso)     | Nova mensagem recebida de qualquer tipo — texto, foto, sticker, etc.                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| message (Mensagem)     | Message                       | false (Falso)     | Nova mensagem recebida de qualquer tipo — texto, foto, sticker, etc.                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | edited_message         | Message (Mensagem)            | false (Falso)     | Nova versão de uma mensagem que é conhecida pelo bot e foi editada                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | channel_post           | Message (Mensagem)            | false (Falso)     | Nova postagem de canal recebida de qualquer tipo — texto, foto, sticker, etc.                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | edited_channel_post  | Message (Mensagem)            | false (Falso)     | Nova versão de uma postagem de canal que é conhecida pelo bot e foi editada                                                                                                                                                                                                                                                                                                                                                                                                                                    |
@@ -114,7 +114,7 @@ This object represents a chat.
 | sticker_set_name               | String (Sequência de caracteres) | false (Falso)     | For supergroups, name of group sticker set. Returned only in getChat.                                                                                                                                                                                                                               |
 | can_set_sticker_set            | Boolen (Boleano)                 | false (Falso)     | True, if the bot can change the group sticker set. Returned only in getChat.                                                                                                                                                                                                                        |
 
-## Message
+## Message (Mensagem)
 
 This object represents a message.
 
@@ -158,7 +158,7 @@ This object represents a message.
 | channel_chat_created    | True                             | false (Falso)     | Service message: the channel has been created. This field can‘t be received in a message coming through updates, because bot can’t be a member of a channel when it is created. It can only be found in reply_to_message if someone replies to a very first message in a channel.                                                             |
 | migrate_to_chat_id      | Interger (Número)                | false (Falso)     | The group has been migrated to a supergroup with the specified identifier. This number may be greater than 32 bits and some programming languages may have difficulty&#x2F;silent defects in interpreting it. But it is smaller than 52 bits, so a signed 64 bit integer or double-precision float type are safe for storing this identifier.   |
 | migrate_from_chat_id    | Interger (Número)                | false (Falso)     | The supergroup has been migrated from a group with the specified identifier. This number may be greater than 32 bits and some programming languages may have difficulty&#x2F;silent defects in interpreting it. But it is smaller than 52 bits, so a signed 64 bit integer or double-precision float type are safe for storing this identifier. |
-| pinned_message            | Message                          | false (Falso)     | Specified message was pinned. Note that the Message object in this field will not contain further reply_to_message fields even if it is itself a reply.                                                                                                                                                                                       |
+| pinned_message            | Message (Mensagem)               | false (Falso)     | Specified message was pinned. Note that the Message object in this field will not contain further reply_to_message fields even if it is itself a reply.                                                                                                                                                                                       |
 | invoice                   | Invoice                          | false (Falso)     | Message is an invoice for a payment, information about the invoice. More about payments »                                                                                                                                                                                                                                                       |
 | successful_payment        | SuccessfulPayment                | false (Falso)     | Message is a service message about a successful payment, information about the payment. More about payments »                                                                                                                                                                                                                                   |
 | connected_website         | String (Sequência de caracteres) | false (Falso)     | The domain name of the website on which the user has logged in. More about Telegram Login »                                                                                                                                                                                                                                                     |
@@ -477,7 +477,7 @@ This object describes the position on faces where a mask should be placed by def
 | y_shift | Float número                     | true (Verdadeiro) | Shift by Y-axis measured in heights of the mask scaled to the face size, from top to bottom. For example, 1.0 will place the mask just below the default mask position.               |
 | scale   | Float número                     | true (Verdadeiro) | Mask scaling coefficient. For example, 2.0 means double size.                                                                                                                         |
 
-## InlineQuery
+## InlineQuery (Consulta Inline)
 
 This object represents an incoming inline query. When the user sends an empty query, your bot could return some default or trending results.
 
