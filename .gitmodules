@@ -1,0 +1,3 @@
+[submodule "AutoTG"]
+	path = AutoTG
+	url = git@github.com:JuanPotato/AutoTG.git
