@@ -60,14 +60,14 @@
 
 Use this method to receive incoming updates using long polling (wiki). An Array of Update objects is returned.
 
-| Campo           | Tipo              | Requerido | Descrição                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| --------------- | ----------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| offset          | Interger (Número) | false     | Identifier of the first update to be returned. Must be greater by one than the highest among the identifiers of previously received updates. By default, updates starting with the earliest unconfirmed update are returned. An update is considered confirmed as soon as getUpdates is called with an offset higher than its update_id. The negative offset can be specified to retrieve updates starting from -offset update from the end of the updates queue. All previous updates will forgotten.                                 |
-| limit           | Interger (Número) | false     | Limits the number of updates to be retrieved. Values between 1—100 are accepted. Defaults to 100.                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| timeout         | Interger (Número) | false     | Timeout in seconds for long polling. Defaults to 0, i.e. usual short polling. Should be positive, short polling should be used for testing purposes only.                                                                                                                                                                                                                                                                                                                                                                              |
-| allowed_updates | Array de String   | false     | List the types of updates you want your bot to receive. For example, specify [“message”, “edited_channel_post”, “callback_query”] to only receive updates of these types. See Update for a complete list of available update types. Specify an empty list to receive all updates regardless of type (default). If not specified, the previous setting will be used.Please note that this parameter doesn't affect updates created before the call to the getUpdates, so unwanted updates may be received for a short period of time. |
+| Campo           | Tipo              | Requerido     | Descrição                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| --------------- | ----------------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| offset          | Interger (Número) | false (Falso) | Identifier of the first update to be returned. Must be greater by one than the highest among the identifiers of previously received updates. By default, updates starting with the earliest unconfirmed update are returned. An update is considered confirmed as soon as getUpdates is called with an offset higher than its update_id. The negative offset can be specified to retrieve updates starting from -offset update from the end of the updates queue. All previous updates will forgotten.                                 |
+| limit           | Interger (Número) | false (Falso) | Limits the number of updates to be retrieved. Values between 1—100 are accepted. Defaults to 100.                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| timeout         | Interger (Número) | false (Falso) | Timeout in seconds for long polling. Defaults to 0, i.e. usual short polling. Should be positive, short polling should be used for testing purposes only.                                                                                                                                                                                                                                                                                                                                                                              |
+| allowed_updates | Array de String   | false (Falso) | List the types of updates you want your bot to receive. For example, specify [“message”, “edited_channel_post”, “callback_query”] to only receive updates of these types. See Update for a complete list of available update types. Specify an empty list to receive all updates regardless of type (default). If not specified, the previous setting will be used.Please note that this parameter doesn't affect updates created before the call to the getUpdates, so unwanted updates may be received for a short period of time. |
 
-Example:
+Exemplo:
 
 ```javascript
 getUpdates({
@@ -85,11 +85,11 @@ Use this method to specify a url and receive incoming updates via an outgoing we
 | Campo           | Tipo                             | Requerido         | Descrição                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | --------------- | -------------------------------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | url             | String (Sequência de caracteres) | true (Verdadeiro) | HTTPS url to send updates to. Use an empty string to remove webhook integration                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| certificate     | InputFile                        | false             | Upload your public key certificate so that the root certificate in use can be checked. See our self-signed guide for details.                                                                                                                                                                                                                                                                                                                                                                                                          |
-| max_connections | Interger (Número)                | false             | Maximum allowed number of simultaneous HTTPS connections to the webhook for update delivery, 1-100. Defaults to 40. Use lower values to limit the load on your bot‘s server, and higher values to increase your bot’s throughput.                                                                                                                                                                                                                                                                                                      |
-| allowed_updates | Array de String                  | false             | List the types of updates you want your bot to receive. For example, specify [“message”, “edited_channel_post”, “callback_query”] to only receive updates of these types. See Update for a complete list of available update types. Specify an empty list to receive all updates regardless of type (default). If not specified, the previous setting will be used.Please note that this parameter doesn't affect updates created before the call to the setWebhook, so unwanted updates may be received for a short period of time. |
+| certificate     | InputFile                        | false (Falso)     | Upload your public key certificate so that the root certificate in use can be checked. See our self-signed guide for details.                                                                                                                                                                                                                                                                                                                                                                                                          |
+| max_connections | Interger (Número)                | false (Falso)     | Maximum allowed number of simultaneous HTTPS connections to the webhook for update delivery, 1-100. Defaults to 40. Use lower values to limit the load on your bot‘s server, and higher values to increase your bot’s throughput.                                                                                                                                                                                                                                                                                                      |
+| allowed_updates | Array de String                  | false (Falso)     | List the types of updates you want your bot to receive. For example, specify [“message”, “edited_channel_post”, “callback_query”] to only receive updates of these types. See Update for a complete list of available update types. Specify an empty list to receive all updates regardless of type (default). If not specified, the previous setting will be used.Please note that this parameter doesn't affect updates created before the call to the setWebhook, so unwanted updates may be received for a short period of time. |
 
-Example:
+Exemplo:
 
 ```javascript
 setWebhook({
@@ -102,19 +102,19 @@ setWebhook({
 
 ## sendMessage
 
-Use this method to send text messages. On success, the sent Message is returned.
+Use this method to send text messages. Em caso de sucesso, a mensagem enviada será retornada.
 
 | Campo                      | Tipo                                                                             | Requerido         | Descrição                                                                                                                                                                      |
 | -------------------------- | -------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | chat_id                    | Integer or String                                                                | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                                       |
 | text                       | String (Sequência de caracteres)                                                 | true (Verdadeiro) | Text of the message to be sent                                                                                                                                                 |
-| parse_mode                 | String (Sequência de caracteres)                                                 | false             | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in your bot's message.                                                  |
-| disable_web_page_preview | Boolean                                                                          | false             | Disables link previews for links in this message                                                                                                                               |
-| disable_notification       | Boolean                                                                          | false             | Sends the message silently. Users will receive a notification with no sound.                                                                                                   |
-| reply_to_message_id      | Interger (Número)                                                                | false             | If the message is a reply, ID of the original message                                                                                                                          |
-| reply_markup               | InlineKeyboardMarkup or ReplyKeyboardMarkup or ReplyKeyboardRemove or ForceReply | false             | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user. |
+| parse_mode                 | String (Sequência de caracteres)                                                 | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in your bot's message.                                                  |
+| disable_web_page_preview | Boolen (Boleano)                                                                 | false (Falso)     | Disables link previews for links in this message                                                                                                                               |
+| disable_notification       | Boolen (Boleano)                                                                 | false (Falso)     | Envia uma mensagem silenciosamente. Os usuários não receberão uma notificação em som.                                                                                          |
+| reply_to_message_id      | Interger (Número)                                                                | false (Falso)     | If the message is a reply, ID of the original message                                                                                                                          |
+| reply_markup               | InlineKeyboardMarkup or ReplyKeyboardMarkup or ReplyKeyboardRemove or ForceReply | false (Falso)     | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user. |
 
-Example:
+Exemplo:
 
 ```javascript
 sendMessage({
@@ -130,16 +130,16 @@ sendMessage({
 
 ## forwardMessage
 
-Use this method to forward messages of any kind. On success, the sent Message is returned.
+Use this method to forward messages of any kind. Em caso de sucesso, a mensagem enviada será retornada.
 
 | Campo                | Tipo              | Requerido         | Descrição                                                                                                               |
 | -------------------- | ----------------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | chat_id              | Integer or String | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                |
 | from_chat_id       | Integer or String | true (Verdadeiro) | Unique identifier for the chat where the original message was sent (or channel username in the format @channelusername) |
-| disable_notification | Boolean           | false             | Sends the message silently. Users will receive a notification with no sound.                                            |
+| disable_notification | Boolen (Boleano)  | false (Falso)     | Envia uma mensagem silenciosamente. Os usuários não receberão uma notificação em som.                                   |
 | message_id           | Interger (Número) | true (Verdadeiro) | Message identifier in the chat specified in from_chat_id                                                              |
 
-Example:
+Exemplo:
 
 ```javascript
 forwardMessage({
@@ -152,19 +152,19 @@ forwardMessage({
 
 ## sendPhoto
 
-Use this method to send photos. On success, the sent Message is returned.
+Use this method to send photos. Em caso de sucesso, a mensagem enviada será retornada.
 
 | Campo                 | Tipo                                                                             | Requerido         | Descrição                                                                                                                                                                                                                                                                 |
 | --------------------- | -------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | chat_id               | Integer or String                                                                | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                                                                                                                                  |
 | photo                 | InputFile or String                                                              | true (Verdadeiro) | Photo to send. Pass a file_id as String to send a photo that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a photo from the Internet, or upload a new photo using multipart&#x2F;form-data. More info on Sending Files » |
-| caption               | String (Sequência de caracteres)                                                 | false             | Photo caption (may also be used when resending photos by file_id), 0-200 characters                                                                                                                                                                                       |
-| parse_mode            | String (Sequência de caracteres)                                                 | false             | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption.                                                                                                                                              |
-| disable_notification  | Boolean                                                                          | false             | Sends the message silently. Users will receive a notification with no sound.                                                                                                                                                                                              |
-| reply_to_message_id | Interger (Número)                                                                | false             | If the message is a reply, ID of the original message                                                                                                                                                                                                                     |
-| reply_markup          | InlineKeyboardMarkup or ReplyKeyboardMarkup or ReplyKeyboardRemove or ForceReply | false             | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user.                                                                                            |
+| caption               | String (Sequência de caracteres)                                                 | false (Falso)     | Photo caption (may also be used when resending photos by file_id), 0-200 characters                                                                                                                                                                                       |
+| parse_mode            | String (Sequência de caracteres)                                                 | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption.                                                                                                                                              |
+| disable_notification  | Boolen (Boleano)                                                                 | false (Falso)     | Envia uma mensagem silenciosamente. Os usuários não receberão uma notificação em som.                                                                                                                                                                                     |
+| reply_to_message_id | Interger (Número)                                                                | false (Falso)     | If the message is a reply, ID of the original message                                                                                                                                                                                                                     |
+| reply_markup          | InlineKeyboardMarkup or ReplyKeyboardMarkup or ReplyKeyboardRemove or ForceReply | false (Falso)     | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user.                                                                                            |
 
-Example:
+Exemplo:
 
 ```javascript
 sendPhoto({
@@ -180,22 +180,22 @@ sendPhoto({
 
 ## sendAudio
 
-Use this method to send audio files, if you want Telegram clients to display them in the music player. Your audio must be in the .mp3 format. On success, the sent Message is returned. Bots can currently send audio files of up to 50 MB in size, this limit may be changed in the future.
+Use this method to send audio files, if you want Telegram clients to display them in the music player. Your audio must be in the .mp3 format. Em caso de sucesso, a mensagem enviada será retornada. Bots can currently send audio files of up to 50 MB in size, this limit may be changed in the future.
 
 | Campo                 | Tipo                                                                             | Requerido         | Descrição                                                                                                                                                                                                                                                                                |
 | --------------------- | -------------------------------------------------------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | chat_id               | Integer or String                                                                | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                                                                                                                                                 |
 | audio                 | InputFile or String                                                              | true (Verdadeiro) | Audio file to send. Pass a file_id as String to send an audio file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get an audio file from the Internet, or upload a new one using multipart&#x2F;form-data. More info on Sending Files » |
-| caption               | String (Sequência de caracteres)                                                 | false             | Audio caption, 0-200 characters                                                                                                                                                                                                                                                          |
-| parse_mode            | String (Sequência de caracteres)                                                 | false             | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption.                                                                                                                                                             |
-| duration              | Interger (Número)                                                                | false             | Duration of the audio in seconds                                                                                                                                                                                                                                                         |
-| performer             | String (Sequência de caracteres)                                                 | false             | Performer                                                                                                                                                                                                                                                                                |
-| title                 | String (Sequência de caracteres)                                                 | false             | Track name                                                                                                                                                                                                                                                                               |
-| disable_notification  | Boolean                                                                          | false             | Sends the message silently. Users will receive a notification with no sound.                                                                                                                                                                                                             |
-| reply_to_message_id | Interger (Número)                                                                | false             | If the message is a reply, ID of the original message                                                                                                                                                                                                                                    |
-| reply_markup          | InlineKeyboardMarkup or ReplyKeyboardMarkup or ReplyKeyboardRemove or ForceReply | false             | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user.                                                                                                           |
+| caption               | String (Sequência de caracteres)                                                 | false (Falso)     | Audio caption, 0-200 characters                                                                                                                                                                                                                                                          |
+| parse_mode            | String (Sequência de caracteres)                                                 | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption.                                                                                                                                                             |
+| duration              | Interger (Número)                                                                | false (Falso)     | Duration of the audio in seconds                                                                                                                                                                                                                                                         |
+| performer             | String (Sequência de caracteres)                                                 | false (Falso)     | Performer                                                                                                                                                                                                                                                                                |
+| title                 | String (Sequência de caracteres)                                                 | false (Falso)     | Track name                                                                                                                                                                                                                                                                               |
+| disable_notification  | Boolen (Boleano)                                                                 | false (Falso)     | Envia uma mensagem silenciosamente. Os usuários não receberão uma notificação em som.                                                                                                                                                                                                    |
+| reply_to_message_id | Interger (Número)                                                                | false (Falso)     | If the message is a reply, ID of the original message                                                                                                                                                                                                                                    |
+| reply_markup          | InlineKeyboardMarkup or ReplyKeyboardMarkup or ReplyKeyboardRemove or ForceReply | false (Falso)     | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user.                                                                                                           |
 
-Example:
+Exemplo:
 
 ```javascript
 sendAudio({
@@ -214,19 +214,19 @@ sendAudio({
 
 ## sendDocument
 
-Use this method to send general files. On success, the sent Message is returned. Bots can currently send files of any type of up to 50 MB in size, this limit may be changed in the future.
+Use this method to send general files. Em caso de sucesso, a mensagem enviada será retornada. Bots can currently send files of any type of up to 50 MB in size, this limit may be changed in the future.
 
 | Campo                 | Tipo                                                                             | Requerido         | Descrição                                                                                                                                                                                                                                                            |
 | --------------------- | -------------------------------------------------------------------------------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | chat_id               | Integer or String                                                                | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                                                                                                                             |
 | document              | InputFile or String                                                              | true (Verdadeiro) | File to send. Pass a file_id as String to send a file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart&#x2F;form-data. More info on Sending Files » |
-| caption               | String (Sequência de caracteres)                                                 | false             | Document caption (may also be used when resending documents by file_id), 0-200 characters                                                                                                                                                                            |
-| parse_mode            | String (Sequência de caracteres)                                                 | false             | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption.                                                                                                                                         |
-| disable_notification  | Boolean                                                                          | false             | Sends the message silently. Users will receive a notification with no sound.                                                                                                                                                                                         |
-| reply_to_message_id | Interger (Número)                                                                | false             | If the message is a reply, ID of the original message                                                                                                                                                                                                                |
-| reply_markup          | InlineKeyboardMarkup or ReplyKeyboardMarkup or ReplyKeyboardRemove or ForceReply | false             | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user.                                                                                       |
+| caption               | String (Sequência de caracteres)                                                 | false (Falso)     | Document caption (may also be used when resending documents by file_id), 0-200 characters                                                                                                                                                                            |
+| parse_mode            | String (Sequência de caracteres)                                                 | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption.                                                                                                                                         |
+| disable_notification  | Boolen (Boleano)                                                                 | false (Falso)     | Envia uma mensagem silenciosamente. Os usuários não receberão uma notificação em som.                                                                                                                                                                                |
+| reply_to_message_id | Interger (Número)                                                                | false (Falso)     | If the message is a reply, ID of the original message                                                                                                                                                                                                                |
+| reply_markup          | InlineKeyboardMarkup or ReplyKeyboardMarkup or ReplyKeyboardRemove or ForceReply | false (Falso)     | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user.                                                                                       |
 
-Example:
+Exemplo:
 
 ```javascript
 sendDocument({
@@ -242,23 +242,23 @@ sendDocument({
 
 ## sendVideo
 
-Use this method to send video files, Telegram clients support mp4 videos (other formats may be sent as Document). On success, the sent Message is returned. Bots can currently send video files of up to 50 MB in size, this limit may be changed in the future.
+Use this method to send video files, Telegram clients support mp4 videos (other formats may be sent as Document). Em caso de sucesso, a mensagem enviada será retornada. Bots can currently send video files of up to 50 MB in size, this limit may be changed in the future.
 
 | Campo                 | Tipo                                                                             | Requerido         | Descrição                                                                                                                                                                                                                                                                 |
 | --------------------- | -------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | chat_id               | Integer or String                                                                | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                                                                                                                                  |
 | video                 | InputFile or String                                                              | true (Verdadeiro) | Video to send. Pass a file_id as String to send a video that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a video from the Internet, or upload a new video using multipart&#x2F;form-data. More info on Sending Files » |
-| duration              | Interger (Número)                                                                | false             | Duration of sent video in seconds                                                                                                                                                                                                                                         |
-| width                 | Interger (Número)                                                                | false             | Video width                                                                                                                                                                                                                                                               |
-| height                | Interger (Número)                                                                | false             | Video height                                                                                                                                                                                                                                                              |
-| caption               | String (Sequência de caracteres)                                                 | false             | Video caption (may also be used when resending videos by file_id), 0-200 characters                                                                                                                                                                                       |
-| parse_mode            | String (Sequência de caracteres)                                                 | false             | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption.                                                                                                                                              |
-| supports_streaming    | Boolean                                                                          | false             | Pass True, if the uploaded video is suitable for streaming                                                                                                                                                                                                                |
-| disable_notification  | Boolean                                                                          | false             | Sends the message silently. Users will receive a notification with no sound.                                                                                                                                                                                              |
-| reply_to_message_id | Interger (Número)                                                                | false             | If the message is a reply, ID of the original message                                                                                                                                                                                                                     |
-| reply_markup          | InlineKeyboardMarkup or ReplyKeyboardMarkup or ReplyKeyboardRemove or ForceReply | false             | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user.                                                                                            |
+| duration              | Interger (Número)                                                                | false (Falso)     | Duration of sent video in seconds                                                                                                                                                                                                                                         |
+| width                 | Interger (Número)                                                                | false (Falso)     | Video width                                                                                                                                                                                                                                                               |
+| height                | Interger (Número)                                                                | false (Falso)     | Video height                                                                                                                                                                                                                                                              |
+| caption               | String (Sequência de caracteres)                                                 | false (Falso)     | Video caption (may also be used when resending videos by file_id), 0-200 characters                                                                                                                                                                                       |
+| parse_mode            | String (Sequência de caracteres)                                                 | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption.                                                                                                                                              |
+| supports_streaming    | Boolen (Boleano)                                                                 | false (Falso)     | Pass True, if the uploaded video is suitable for streaming                                                                                                                                                                                                                |
+| disable_notification  | Boolen (Boleano)                                                                 | false (Falso)     | Envia uma mensagem silenciosamente. Os usuários não receberão uma notificação em som.                                                                                                                                                                                     |
+| reply_to_message_id | Interger (Número)                                                                | false (Falso)     | If the message is a reply, ID of the original message                                                                                                                                                                                                                     |
+| reply_markup          | InlineKeyboardMarkup or ReplyKeyboardMarkup or ReplyKeyboardRemove or ForceReply | false (Falso)     | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user.                                                                                            |
 
-Example:
+Exemplo:
 
 ```javascript
 sendVideo({
@@ -278,20 +278,20 @@ sendVideo({
 
 ## sendVoice
 
-Use this method to send audio files, if you want Telegram clients to display the file as a playable voice message. For this to work, your audio must be in an .ogg file encoded with OPUS (other formats may be sent as Audio or Document). On success, the sent Message is returned. Bots can currently send voice messages of up to 50 MB in size, this limit may be changed in the future.
+Use this method to send audio files, if you want Telegram clients to display the file as a playable voice message. For this to work, your audio must be in an .ogg file encoded with OPUS (other formats may be sent as Audio or Document). Em caso de sucesso, a mensagem enviada será retornada. Bots can currently send voice messages of up to 50 MB in size, this limit may be changed in the future.
 
 | Campo                 | Tipo                                                                             | Requerido         | Descrição                                                                                                                                                                                                                                                                  |
 | --------------------- | -------------------------------------------------------------------------------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | chat_id               | Integer or String                                                                | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                                                                                                                                   |
 | voice                 | InputFile or String                                                              | true (Verdadeiro) | Audio file to send. Pass a file_id as String to send a file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart&#x2F;form-data. More info on Sending Files » |
-| caption               | String (Sequência de caracteres)                                                 | false             | Voice message caption, 0-200 characters                                                                                                                                                                                                                                    |
-| parse_mode            | String (Sequência de caracteres)                                                 | false             | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption.                                                                                                                                               |
-| duration              | Interger (Número)                                                                | false             | Duration of the voice message in seconds                                                                                                                                                                                                                                   |
-| disable_notification  | Boolean                                                                          | false             | Sends the message silently. Users will receive a notification with no sound.                                                                                                                                                                                               |
-| reply_to_message_id | Interger (Número)                                                                | false             | If the message is a reply, ID of the original message                                                                                                                                                                                                                      |
-| reply_markup          | InlineKeyboardMarkup or ReplyKeyboardMarkup or ReplyKeyboardRemove or ForceReply | false             | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user.                                                                                             |
+| caption               | String (Sequência de caracteres)                                                 | false (Falso)     | Voice message caption, 0-200 characters                                                                                                                                                                                                                                    |
+| parse_mode            | String (Sequência de caracteres)                                                 | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption.                                                                                                                                               |
+| duration              | Interger (Número)                                                                | false (Falso)     | Duration of the voice message in seconds                                                                                                                                                                                                                                   |
+| disable_notification  | Boolen (Boleano)                                                                 | false (Falso)     | Envia uma mensagem silenciosamente. Os usuários não receberão uma notificação em som.                                                                                                                                                                                      |
+| reply_to_message_id | Interger (Número)                                                                | false (Falso)     | If the message is a reply, ID of the original message                                                                                                                                                                                                                      |
+| reply_markup          | InlineKeyboardMarkup or ReplyKeyboardMarkup or ReplyKeyboardRemove or ForceReply | false (Falso)     | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user.                                                                                             |
 
-Example:
+Exemplo:
 
 ```javascript
 sendVoice({
@@ -308,19 +308,19 @@ sendVoice({
 
 ## sendVideoNote
 
-As of v.4.0, Telegram clients support rounded square mp4 videos of up to 1 minute long. Use this method to send video messages. On success, the sent Message is returned.
+As of v.4.0, Telegram clients support rounded square mp4 videos of up to 1 minute long. Use this method to send video messages. Em caso de sucesso, a mensagem enviada será retornada.
 
 | Campo                 | Tipo                                                                             | Requerido         | Descrição                                                                                                                                                                                                                                                     |
 | --------------------- | -------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | chat_id               | Integer or String                                                                | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                                                                                                                      |
 | video_note            | InputFile or String                                                              | true (Verdadeiro) | Video note to send. Pass a file_id as String to send a video note that exists on the Telegram servers (recommended) or upload a new video using multipart&#x2F;form-data. More info on Sending Files ». Sending video notes by a URL is currently unsupported |
-| duration              | Interger (Número)                                                                | false             | Duration of sent video in seconds                                                                                                                                                                                                                             |
-| length                | Interger (Número)                                                                | false             | Video width and height                                                                                                                                                                                                                                        |
-| disable_notification  | Boolean                                                                          | false             | Sends the message silently. Users will receive a notification with no sound.                                                                                                                                                                                  |
-| reply_to_message_id | Interger (Número)                                                                | false             | If the message is a reply, ID of the original message                                                                                                                                                                                                         |
-| reply_markup          | InlineKeyboardMarkup or ReplyKeyboardMarkup or ReplyKeyboardRemove or ForceReply | false             | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user.                                                                                |
+| duration              | Interger (Número)                                                                | false (Falso)     | Duration of sent video in seconds                                                                                                                                                                                                                             |
+| length                | Interger (Número)                                                                | false (Falso)     | Video width and height                                                                                                                                                                                                                                        |
+| disable_notification  | Boolen (Boleano)                                                                 | false (Falso)     | Envia uma mensagem silenciosamente. Os usuários não receberão uma notificação em som.                                                                                                                                                                         |
+| reply_to_message_id | Interger (Número)                                                                | false (Falso)     | If the message is a reply, ID of the original message                                                                                                                                                                                                         |
+| reply_markup          | InlineKeyboardMarkup or ReplyKeyboardMarkup or ReplyKeyboardRemove or ForceReply | false (Falso)     | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user.                                                                                |
 
-Example:
+Exemplo:
 
 ```javascript
 sendVideoNote({
@@ -342,10 +342,10 @@ Use this method to send a group of photos or videos as an album. On success, an 
 | --------------------- | ------------------- | ----------------- | -------------------------------------------------------------------------------------------------------- |
 | chat_id               | Integer or String   | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
 | media                 | Array of InputMedia | true (Verdadeiro) | A JSON-serialized array describing photos and videos to be sent, must include 2–10 items                 |
-| disable_notification  | Boolean             | false             | Sends the messages silently. Users will receive a notification with no sound.                            |
-| reply_to_message_id | Interger (Número)   | false             | If the messages are a reply, ID of the original message                                                  |
+| disable_notification  | Boolen (Boleano)    | false (Falso)     | Sends the messages silently. Os usuários não receberão uma notificação em som.                           |
+| reply_to_message_id | Interger (Número)   | false (Falso)     | If the messages are a reply, ID of the original message                                                  |
 
-Example:
+Exemplo:
 
 ```javascript
 sendMediaGroup({
@@ -358,19 +358,19 @@ sendMediaGroup({
 
 ## sendLocation
 
-Use this method to send point on the map. On success, the sent Message is returned.
+Use this method to send point on the map. Em caso de sucesso, a mensagem enviada será retornada.
 
 | Campo                 | Tipo                                                                             | Requerido         | Descrição                                                                                                                                                                      |
 | --------------------- | -------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | chat_id               | Integer or String                                                                | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                                       |
-| latitude              | Float number                                                                     | true (Verdadeiro) | Latitude of the location                                                                                                                                                       |
-| longitude             | Float number                                                                     | true (Verdadeiro) | Longitude of the location                                                                                                                                                      |
-| live_period           | Interger (Número)                                                                | false             | Period in seconds for which the location will be updated (see Live Locations, should be between 60 and 86400.                                                                  |
-| disable_notification  | Boolean                                                                          | false             | Sends the message silently. Users will receive a notification with no sound.                                                                                                   |
-| reply_to_message_id | Interger (Número)                                                                | false             | If the message is a reply, ID of the original message                                                                                                                          |
-| reply_markup          | InlineKeyboardMarkup or ReplyKeyboardMarkup or ReplyKeyboardRemove or ForceReply | false             | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user. |
+| latitude              | Float número                                                                     | true (Verdadeiro) | Latitude of the location                                                                                                                                                       |
+| longitude             | Float número                                                                     | true (Verdadeiro) | Longitude of the location                                                                                                                                                      |
+| live_period           | Interger (Número)                                                                | false (Falso)     | Period in seconds for which the location will be updated (see Live Locations, should be between 60 and 86400.                                                                  |
+| disable_notification  | Boolen (Boleano)                                                                 | false (Falso)     | Envia uma mensagem silenciosamente. Os usuários não receberão uma notificação em som.                                                                                          |
+| reply_to_message_id | Interger (Número)                                                                | false (Falso)     | If the message is a reply, ID of the original message                                                                                                                          |
+| reply_markup          | InlineKeyboardMarkup or ReplyKeyboardMarkup or ReplyKeyboardRemove or ForceReply | false (Falso)     | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user. |
 
-Example:
+Exemplo:
 
 ```javascript
 sendLocation({
@@ -390,14 +390,14 @@ Use this method to edit live location messages sent by the bot or via the bot (f
 
 | Campo               | Tipo                             | Requerido         | Descrição                                                                                                                                                  |
 | ------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| chat_id             | Integer or String                | false             | Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
-| message_id          | Interger (Número)                | false             | Required if inline_message_id is not specified. Identifier of the sent message                                                                           |
-| inline_message_id | String (Sequência de caracteres) | false             | Required if chat_id and message_id are not specified. Identifier of the inline message                                                                   |
-| latitude            | Float number                     | true (Verdadeiro) | Latitude of new location                                                                                                                                   |
-| longitude           | Float number                     | true (Verdadeiro) | Longitude of new location                                                                                                                                  |
-| reply_markup        | InlineKeyboardMarkup             | false             | A JSON-serialized object for a new inline keyboard.                                                                                                        |
+| chat_id             | Integer or String                | false (Falso)     | Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
+| message_id          | Interger (Número)                | false (Falso)     | Required if inline_message_id is not specified. Identifier of the sent message                                                                           |
+| inline_message_id | String (Sequência de caracteres) | false (Falso)     | Required if chat_id and message_id are not specified. Identifier of the inline message                                                                   |
+| latitude            | Float número                     | true (Verdadeiro) | Latitude of new location                                                                                                                                   |
+| longitude           | Float número                     | true (Verdadeiro) | Longitude of new location                                                                                                                                  |
+| reply_markup        | InlineKeyboardMarkup             | false (Falso)     | A JSON-serialized object for a new inline keyboard.                                                                                                        |
 
-Example:
+Exemplo:
 
 ```javascript
 editMessageLiveLocation({
@@ -416,9 +416,9 @@ Use this method to stop updating a live location message sent by the bot or via 
 
 | Campo               | Tipo                             | Requerido     | Descrição                                                                                                                                                  |
 | ------------------- | -------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| chat_id             | Integer or String                | false         | Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
-| message_id          | Interger (Número)                | false         | Required if inline_message_id is not specified. Identifier of the sent message                                                                           |
-| inline_message_id | String (Sequência de caracteres) | false         | Required if chat_id and message_id are not specified. Identifier of the inline message                                                                   |
+| chat_id             | Integer or String                | false (Falso) | Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
+| message_id          | Interger (Número)                | false (Falso) | Required if inline_message_id is not specified. Identifier of the sent message                                                                           |
+| inline_message_id | String (Sequência de caracteres) | false (Falso) | Required if chat_id and message_id are not specified. Identifier of the inline message                                                                   |
 | reply_markup        | InlineKeyboardMarkup             | false (Falso) | A JSON-serialized object for a new inline keyboard.                                                                                                        |
 
 Exemplo:
@@ -434,21 +434,21 @@ stopMessageLiveLocation({
 
 ## sendVenue
 
-Use this method to send information about a venue. On success, the sent Message is returned.
+Use this method to send information about a venue. Em caso de sucesso, a mensagem enviada será retornada.
 
 | Campo                 | Tipo                                                                             | Requerido         | Descrição                                                                                                                                                                      |
 | --------------------- | -------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | chat_id               | Integer or String                                                                | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                                       |
-| latitude              | Float number                                                                     | true (Verdadeiro) | Latitude of the venue                                                                                                                                                          |
-| longitude             | Float number                                                                     | true (Verdadeiro) | Longitude of the venue                                                                                                                                                         |
+| latitude              | Float número                                                                     | true (Verdadeiro) | Latitude of the venue                                                                                                                                                          |
+| longitude             | Float número                                                                     | true (Verdadeiro) | Longitude of the venue                                                                                                                                                         |
 | title                 | String (Sequência de caracteres)                                                 | true (Verdadeiro) | Name of the venue                                                                                                                                                              |
 | address               | String (Sequência de caracteres)                                                 | true (Verdadeiro) | Address of the venue                                                                                                                                                           |
-| foursquare_id         | String (Sequência de caracteres)                                                 | false             | Foursquare identifier of the venue                                                                                                                                             |
-| disable_notification  | Boolean                                                                          | false             | Sends the message silently. Users will receive a notification with no sound.                                                                                                   |
-| reply_to_message_id | Interger (Número)                                                                | false             | If the message is a reply, ID of the original message                                                                                                                          |
-| reply_markup          | InlineKeyboardMarkup or ReplyKeyboardMarkup or ReplyKeyboardRemove or ForceReply | false             | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user. |
+| foursquare_id         | String (Sequência de caracteres)                                                 | false (Falso)     | Foursquare identifier of the venue                                                                                                                                             |
+| disable_notification  | Boolen (Boleano)                                                                 | false (Falso)     | Envia uma mensagem silenciosamente. Os usuários não receberão uma notificação em som.                                                                                          |
+| reply_to_message_id | Interger (Número)                                                                | false (Falso)     | If the message is a reply, ID of the original message                                                                                                                          |
+| reply_markup          | InlineKeyboardMarkup or ReplyKeyboardMarkup or ReplyKeyboardRemove or ForceReply | false (Falso)     | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user. |
 
-Example:
+Exemplo:
 
 ```javascript
 sendVenue({
@@ -466,19 +466,19 @@ sendVenue({
 
 ## sendContact
 
-Use this method to send phone contacts. On success, the sent Message is returned.
+Use this method to send phone contacts. Em caso de sucesso, a mensagem enviada será retornada.
 
 | Campo                 | Tipo                                                                             | Requerido         | Descrição                                                                                                                                                                |
 | --------------------- | -------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | chat_id               | Integer or String                                                                | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                                 |
 | phone_number          | String (Sequência de caracteres)                                                 | true (Verdadeiro) | Contact's phone number                                                                                                                                                   |
-| first_name            | String (Sequência de caracteres)                                                 | true (Verdadeiro) | Contact's first name                                                                                                                                                     |
-| last_name             | String (Sequência de caracteres)                                                 | false             | Contact's last name                                                                                                                                                      |
-| disable_notification  | Boolean                                                                          | false             | Sends the message silently. Users will receive a notification with no sound.                                                                                             |
-| reply_to_message_id | Interger (Número)                                                                | false             | If the message is a reply, ID of the original message                                                                                                                    |
-| reply_markup          | InlineKeyboardMarkup or ReplyKeyboardMarkup or ReplyKeyboardRemove or ForceReply | false             | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove keyboard or to force a reply from the user. |
+| first_name            | String (Sequência de caracteres)                                                 | true (Verdadeiro) | Primeiro nome do contato                                                                                                                                                 |
+| last_name             | String (Sequência de caracteres)                                                 | false (Falso)     | Último nome do contato                                                                                                                                                   |
+| disable_notification  | Boolen (Boleano)                                                                 | false (Falso)     | Envia uma mensagem silenciosamente. Os usuários não receberão uma notificação em som.                                                                                    |
+| reply_to_message_id | Interger (Número)                                                                | false (Falso)     | If the message is a reply, ID of the original message                                                                                                                    |
+| reply_markup          | InlineKeyboardMarkup or ReplyKeyboardMarkup or ReplyKeyboardRemove or ForceReply | false (Falso)     | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove keyboard or to force a reply from the user. |
 
-Example:
+Exemplo:
 
 ```javascript
 sendContact({
@@ -499,10 +499,10 @@ Use this method to get a list of profile pictures for a user. Returns a UserProf
 | Campo   | Tipo              | Requerido         | Descrição                                                                                        |
 | ------- | ----------------- | ----------------- | ------------------------------------------------------------------------------------------------ |
 | user_id | Interger (Número) | true (Verdadeiro) | Unique identifier of the target user                                                             |
-| offset  | Interger (Número) | false             | Sequential number of the first photo to be returned. By default, all photos are returned.        |
-| limit   | Interger (Número) | false             | Limits the number of photos to be retrieved. Values between 1—100 are accepted. Defaults to 100. |
+| offset  | Interger (Número) | false (Falso)     | Sequential number of the first photo to be returned. By default, all photos are returned.        |
+| limit   | Interger (Número) | false (Falso)     | Limits the number of photos to be retrieved. Values between 1—100 are accepted. Defaults to 100. |
 
-Example:
+Exemplo:
 
 ```javascript
 getUserProfilePhotos({
@@ -520,7 +520,7 @@ Use this method to get basic info about a file and prepare it for downloading. F
 | ------- | -------------------------------- | ----------------- | --------------------------------- |
 | file_id | String (Sequência de caracteres) | true (Verdadeiro) | File identifier to get info about |
 
-Example:
+Exemplo:
 
 ```javascript
 getFile({
@@ -536,9 +536,9 @@ Use this method to kick a user from a group, a supergroup or a channel. In the c
 | ---------- | ----------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | chat_id    | Integer or String | true (Verdadeiro) | Unique identifier for the target group or username of the target supergroup or channel (in the format @channelusername)                                                         |
 | user_id    | Interger (Número) | true (Verdadeiro) | Unique identifier of the target user                                                                                                                                            |
-| until_date | Interger (Número) | false             | Date when the user will be unbanned, unix time. If user is banned for more than 366 days or less than 30 seconds from the current time they are considered to be banned forever |
+| until_date | Interger (Número) | false (Falso)     | Date when the user will be unbanned, unix time. If user is banned for more than 366 days or less than 30 seconds from the current time they are considered to be banned forever |
 
-Example:
+Exemplo:
 
 ```javascript
 kickChatMember({
@@ -557,7 +557,7 @@ Use this method to unban a previously kicked user in a supergroup or channel. Th
 | chat_id | Integer or String | true (Verdadeiro) | Unique identifier for the target group or username of the target supergroup or channel (in the format @username) |
 | user_id | Interger (Número) | true (Verdadeiro) | Unique identifier of the target user                                                                             |
 
-Example:
+Exemplo:
 
 ```javascript
 unbanChatMember({
@@ -574,13 +574,13 @@ Use this method to restrict a user in a supergroup. The bot must be an administr
 | ----------------------------- | ----------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | chat_id                       | Integer or String | true (Verdadeiro) | Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername)                                                                                          |
 | user_id                       | Interger (Número) | true (Verdadeiro) | Unique identifier of the target user                                                                                                                                                                    |
-| until_date                    | Interger (Número) | false             | Date when restrictions will be lifted for the user, unix time. If user is restricted for more than 366 days or less than 30 seconds from the current time, they are considered to be restricted forever |
-| can_send_messages           | Boolean           | false             | Pass True, if the user can send text messages, contacts, locations and venues                                                                                                                           |
-| can_send_media_messages     | Boolean           | false             | Pass True, if the user can send audios, documents, photos, videos, video notes and voice notes, implies can_send_messages                                                                             |
-| can_send_other_messages     | Boolean           | false             | Pass True, if the user can send animations, games, stickers and use inline bots, implies can_send_media_messages                                                                                      |
-| can_add_web_page_previews | Boolean           | false             | Pass True, if the user may add web page previews to their messages, implies can_send_media_messages                                                                                                   |
+| until_date                    | Interger (Número) | false (Falso)     | Date when restrictions will be lifted for the user, unix time. If user is restricted for more than 366 days or less than 30 seconds from the current time, they are considered to be restricted forever |
+| can_send_messages           | Boolen (Boleano)  | false (Falso)     | Pass True, if the user can send text messages, contacts, locations and venues                                                                                                                           |
+| can_send_media_messages     | Boolen (Boleano)  | false (Falso)     | Pass True, if the user can send audios, documents, photos, videos, video notes and voice notes, implies can_send_messages                                                                             |
+| can_send_other_messages     | Boolen (Boleano)  | false (Falso)     | Pass True, if the user can send animations, games, stickers and use inline bots, implies can_send_media_messages                                                                                      |
+| can_add_web_page_previews | Boolen (Boleano)  | false (Falso)     | Pass True, if the user may add web page previews to their messages, implies can_send_media_messages                                                                                                   |
 
-Example:
+Exemplo:
 
 ```javascript
 restrictChatMember({
@@ -602,16 +602,16 @@ Use this method to promote or demote a user in a supergroup or a channel. The bo
 | ---------------------- | ----------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | chat_id                | Integer or String | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                                                                                     |
 | user_id                | Interger (Número) | true (Verdadeiro) | Unique identifier of the target user                                                                                                                                                                                         |
-| can_change_info      | Boolean           | false             | Pass True, if the administrator can change chat title, photo and other settings                                                                                                                                              |
-| can_post_messages    | Boolean           | false             | Pass True, if the administrator can create channel posts, channels only                                                                                                                                                      |
-| can_edit_messages    | Boolean           | false             | Pass True, if the administrator can edit messages of other users and can pin messages, channels only                                                                                                                         |
-| can_delete_messages  | Boolean           | false             | Pass True, if the administrator can delete messages of other users                                                                                                                                                           |
-| can_invite_users     | Boolean           | false             | Pass True, if the administrator can invite new users to the chat                                                                                                                                                             |
-| can_restrict_members | Boolean           | false             | Pass True, if the administrator can restrict, ban or unban chat members                                                                                                                                                      |
-| can_pin_messages     | Boolean           | false             | Pass True, if the administrator can pin messages, supergroups only                                                                                                                                                           |
-| can_promote_members  | Boolean           | false             | Pass True, if the administrator can add new administrators with a subset of his own privileges or demote administrators that he has promoted, directly or indirectly (promoted by administrators that were appointed by him) |
+| can_change_info      | Boolen (Boleano)  | false (Falso)     | Pass True, if the administrator can change chat title, photo and other settings                                                                                                                                              |
+| can_post_messages    | Boolen (Boleano)  | false (Falso)     | Pass True, if the administrator can create channel posts, channels only                                                                                                                                                      |
+| can_edit_messages    | Boolen (Boleano)  | false (Falso)     | Pass True, if the administrator can edit messages of other users and can pin messages, channels only                                                                                                                         |
+| can_delete_messages  | Boolen (Boleano)  | false (Falso)     | Pass True, if the administrator can delete messages of other users                                                                                                                                                           |
+| can_invite_users     | Boolen (Boleano)  | false (Falso)     | Pass True, if the administrator can invite new users to the chat                                                                                                                                                             |
+| can_restrict_members | Boolen (Boleano)  | false (Falso)     | Pass True, if the administrator can restrict, ban or unban chat members                                                                                                                                                      |
+| can_pin_messages     | Boolen (Boleano)  | false (Falso)     | Pass True, if the administrator can pin messages, supergroups only                                                                                                                                                           |
+| can_promote_members  | Boolen (Boleano)  | false (Falso)     | Pass True, if the administrator can add new administrators with a subset of his own privileges or demote administrators that he has promoted, directly or indirectly (promoted by administrators that were appointed by him) |
 
-Example:
+Exemplo:
 
 ```javascript
 promoteChatMember({
@@ -636,7 +636,7 @@ Use this method to generate a new invite link for a chat; any previously generat
 | ------- | ----------------- | ----------------- | -------------------------------------------------------------------------------------------------------- |
 | chat_id | Integer or String | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
 
-Example:
+Exemplo:
 
 ```javascript
 exportChatInviteLink({
@@ -653,7 +653,7 @@ Use this method to set a new profile photo for the chat. Photos can't be changed
 | chat_id | Integer or String | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
 | photo   | InputFile         | true (Verdadeiro) | New chat photo, uploaded using multipart&#x2F;form-data                                                  |
 
-Example:
+Exemplo:
 
 ```javascript
 setChatPhoto({
@@ -670,7 +670,7 @@ Use this method to delete a chat photo. Photos can't be changed for private chat
 | ------- | ----------------- | ----------------- | -------------------------------------------------------------------------------------------------------- |
 | chat_id | Integer or String | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
 
-Example:
+Exemplo:
 
 ```javascript
 deleteChatPhoto({
@@ -687,7 +687,7 @@ Use this method to change the title of a chat. Titles can't be changed for priva
 | chat_id | Integer or String                | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
 | title   | String (Sequência de caracteres) | true (Verdadeiro) | New chat title, 1-255 characters                                                                         |
 
-Example:
+Exemplo:
 
 ```javascript
 setChatTitle({
@@ -703,9 +703,9 @@ Use this method to change the description of a supergroup or a channel. The bot 
 | Campo       | Tipo                             | Requerido         | Descrição                                                                                                |
 | ----------- | -------------------------------- | ----------------- | -------------------------------------------------------------------------------------------------------- |
 | chat_id     | Integer or String                | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
-| description | String (Sequência de caracteres) | false             | New chat description, 0-255 characters                                                                   |
+| description | String (Sequência de caracteres) | false (Falso)     | Nova descrição do chat, 0-255 caracteres                                                                 |
 
-Example:
+Exemplo:
 
 ```javascript
 setChatDescription({
@@ -721,10 +721,10 @@ Use this method to pin a message in a supergroup or a channel. The bot must be a
 | Campo                | Tipo              | Requerido         | Descrição                                                                                                                                                 |
 | -------------------- | ----------------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | chat_id              | Integer or String | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                  |
-| message_id           | Interger (Número) | true (Verdadeiro) | Identifier of a message to pin                                                                                                                            |
-| disable_notification | Boolean           | false             | Pass True, if it is not necessary to send a notification to all chat members about the new pinned message. Notifications are always disabled in channels. |
+| message_id           | Interger (Número) | true (Verdadeiro) | Identificador de uma mensagem fixada                                                                                                                      |
+| disable_notification | Boolen (Boleano)  | false (Falso)     | Pass True, if it is not necessary to send a notification to all chat members about the new pinned message. Notifications are always disabled in channels. |
 
-Example:
+Exemplo:
 
 ```javascript
 pinChatMessage({
@@ -742,7 +742,7 @@ Use this method to unpin a message in a supergroup or a channel. The bot must be
 | ------- | ----------------- | ----------------- | -------------------------------------------------------------------------------------------------------- |
 | chat_id | Integer or String | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
 
-Example:
+Exemplo:
 
 ```javascript
 unpinChatMessage({
@@ -758,7 +758,7 @@ Use this method for your bot to leave a group, supergroup or channel. Returns Tr
 | ------- | ----------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | chat_id | Integer or String | true (Verdadeiro) | Unique identifier for the target chat or username of the target supergroup or channel (in the format @channelusername) |
 
-Example:
+Exemplo:
 
 ```javascript
 leaveChat({
@@ -774,7 +774,7 @@ Use this method to get up to date information about the chat (current name of th
 | ------- | ----------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | chat_id | Integer or String | true (Verdadeiro) | Unique identifier for the target chat or username of the target supergroup or channel (in the format @channelusername) |
 
-Example:
+Exemplo:
 
 ```javascript
 getChat({
@@ -790,7 +790,7 @@ Use this method to get a list of administrators in a chat. On success, returns a
 | ------- | ----------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | chat_id | Integer or String | true (Verdadeiro) | Unique identifier for the target chat or username of the target supergroup or channel (in the format @channelusername) |
 
-Example:
+Exemplo:
 
 ```javascript
 getChatAdministrators({
@@ -806,7 +806,7 @@ Use this method to get the number of members in a chat. Returns Int on success.
 | ------- | ----------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | chat_id | Integer or String | true (Verdadeiro) | Unique identifier for the target chat or username of the target supergroup or channel (in the format @channelusername) |
 
-Example:
+Exemplo:
 
 ```javascript
 getChatMembersCount({
@@ -823,7 +823,7 @@ Use this method to get information about a member of a chat. Returns a ChatMembe
 | chat_id | Integer or String | true (Verdadeiro) | Unique identifier for the target chat or username of the target supergroup or channel (in the format @channelusername) |
 | user_id | Interger (Número) | true (Verdadeiro) | Unique identifier of the target user                                                                                   |
 
-Example:
+Exemplo:
 
 ```javascript
 getChatMember({
@@ -841,7 +841,7 @@ Use this method to set a new group sticker set for a supergroup. The bot must be
 | chat_id            | Integer or String                | true (Verdadeiro) | Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername) |
 | sticker_set_name | String (Sequência de caracteres) | true (Verdadeiro) | Name of the sticker set to be set as the group sticker set                                                     |
 
-Example:
+Exemplo:
 
 ```javascript
 setChatStickerSet({
@@ -858,7 +858,7 @@ Use this method to delete a group sticker set from a supergroup. The bot must be
 | ------- | ----------------- | ----------------- | -------------------------------------------------------------------------------------------------------------- |
 | chat_id | Integer or String | true (Verdadeiro) | Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername) |
 
-Example:
+Exemplo:
 
 ```javascript
 deleteChatStickerSet({
@@ -873,12 +873,12 @@ Use this method to send answers to callback queries sent from inline keyboards. 
 | Campo               | Tipo                             | Requerido         | Descrição                                                                                                                                                                                                                                                                                                                                            |
 | ------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | callback_query_id | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for the query to be answered                                                                                                                                                                                                                                                                                                       |
-| text                | String (Sequência de caracteres) | false             | Text of the notification. If not specified, nothing will be shown to the user, 0-200 characters                                                                                                                                                                                                                                                      |
-| show_alert          | Boolean                          | false             | If true, an alert will be shown by the client instead of a notification at the top of the chat screen. Defaults to false.                                                                                                                                                                                                                            |
-| url                 | String (Sequência de caracteres) | false             | URL that will be opened by the user's client. If you have created a Game and accepted the conditions via @Botfather, specify the URL that opens your game – note that this will only work if the query comes from a callback_game button.Otherwise, you may use links like t.me&#x2F;your_bot?start&#x3D;XXXX that open your bot with a parameter. |
-| cache_time          | Interger (Número)                | false             | The maximum amount of time in seconds that the result of the callback query may be cached client-side. Telegram apps will support caching starting in version 3.14. Defaults to 0.                                                                                                                                                                   |
+| text                | String (Sequência de caracteres) | false (Falso)     | Text of the notification. If not specified, nothing will be shown to the user, 0-200 characters                                                                                                                                                                                                                                                      |
+| show_alert          | Boolen (Boleano)                 | false (Falso)     | If true, an alert will be shown by the client instead of a notification at the top of the chat screen. Defaults to false.                                                                                                                                                                                                                            |
+| url                 | String (Sequência de caracteres) | false (Falso)     | URL that will be opened by the user's client. If you have created a Game and accepted the conditions via @Botfather, specify the URL that opens your game – note that this will only work if the query comes from a callback_game button.Otherwise, you may use links like t.me&#x2F;your_bot?start&#x3D;XXXX that open your bot with a parameter. |
+| cache_time          | Interger (Número)                | false (Falso)     | The maximum amount of time in seconds that the result of the callback query may be cached client-side. Telegram apps will support caching starting in version 3.14. Defaults to 0.                                                                                                                                                                   |
 
-Example:
+Exemplo:
 
 ```javascript
 answerCallbackQuery({
@@ -896,15 +896,15 @@ Use this method to edit text and game messages sent by the bot or via the bot (f
 
 | Campo                      | Tipo                             | Requerido         | Descrição                                                                                                                                                  |
 | -------------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| chat_id                    | Integer or String                | false             | Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
-| message_id                 | Interger (Número)                | false             | Required if inline_message_id is not specified. Identifier of the sent message                                                                           |
-| inline_message_id        | String (Sequência de caracteres) | false             | Required if chat_id and message_id are not specified. Identifier of the inline message                                                                   |
+| chat_id                    | Integer or String                | false (Falso)     | Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
+| message_id                 | Interger (Número)                | false (Falso)     | Required if inline_message_id is not specified. Identifier of the sent message                                                                           |
+| inline_message_id        | String (Sequência de caracteres) | false (Falso)     | Required if chat_id and message_id are not specified. Identifier of the inline message                                                                   |
 | text                       | String (Sequência de caracteres) | true (Verdadeiro) | New text of the message                                                                                                                                    |
-| parse_mode                 | String (Sequência de caracteres) | false             | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in your bot's message.                              |
-| disable_web_page_preview | Boolean                          | false             | Disables link previews for links in this message                                                                                                           |
-| reply_markup               | InlineKeyboardMarkup             | false             | A JSON-serialized object for an inline keyboard.                                                                                                           |
+| parse_mode                 | String (Sequência de caracteres) | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in your bot's message.                              |
+| disable_web_page_preview | Boolen (Boleano)                 | false (Falso)     | Disables link previews for links in this message                                                                                                           |
+| reply_markup               | InlineKeyboardMarkup             | false (Falso)     | A JSON-serialized object for an inline keyboard.                                                                                                           |
 
-Example:
+Exemplo:
 
 ```javascript
 editMessageText({
@@ -922,16 +922,16 @@ editMessageText({
 
 Use this method to edit captions of messages sent by the bot or via the bot (for inline bots). On success, if edited message is sent by the bot, the edited Message is returned, otherwise True is returned.
 
-| Campo               | Tipo                             | Requerido | Descrição                                                                                                                                                  |
-| ------------------- | -------------------------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| chat_id             | Integer or String                | false     | Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
-| message_id          | Interger (Número)                | false     | Required if inline_message_id is not specified. Identifier of the sent message                                                                           |
-| inline_message_id | String (Sequência de caracteres) | false     | Required if chat_id and message_id are not specified. Identifier of the inline message                                                                   |
-| caption             | String (Sequência de caracteres) | false     | New caption of the message                                                                                                                                 |
-| parse_mode          | String (Sequência de caracteres) | false     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption.                               |
-| reply_markup        | InlineKeyboardMarkup             | false     | A JSON-serialized object for an inline keyboard.                                                                                                           |
+| Campo               | Tipo                             | Requerido     | Descrição                                                                                                                                                  |
+| ------------------- | -------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| chat_id             | Integer or String                | false (Falso) | Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
+| message_id          | Interger (Número)                | false (Falso) | Required if inline_message_id is not specified. Identifier of the sent message                                                                           |
+| inline_message_id | String (Sequência de caracteres) | false (Falso) | Required if chat_id and message_id are not specified. Identifier of the inline message                                                                   |
+| caption             | String (Sequência de caracteres) | false (Falso) | New caption of the message                                                                                                                                 |
+| parse_mode          | String (Sequência de caracteres) | false (Falso) | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption.                               |
+| reply_markup        | InlineKeyboardMarkup             | false (Falso) | A JSON-serialized object for an inline keyboard.                                                                                                           |
 
-Example:
+Exemplo:
 
 ```javascript
 editMessageCaption({
@@ -948,14 +948,14 @@ editMessageCaption({
 
 Use this method to edit only the reply markup of messages sent by the bot or via the bot (for inline bots). On success, if edited message is sent by the bot, the edited Message is returned, otherwise True is returned.
 
-| Campo               | Tipo                             | Requerido | Descrição                                                                                                                                                  |
-| ------------------- | -------------------------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| chat_id             | Integer or String                | false     | Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
-| message_id          | Interger (Número)                | false     | Required if inline_message_id is not specified. Identifier of the sent message                                                                           |
-| inline_message_id | String (Sequência de caracteres) | false     | Required if chat_id and message_id are not specified. Identifier of the inline message                                                                   |
-| reply_markup        | InlineKeyboardMarkup             | false     | A JSON-serialized object for an inline keyboard.                                                                                                           |
+| Campo               | Tipo                             | Requerido     | Descrição                                                                                                                                                  |
+| ------------------- | -------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| chat_id             | Integer or String                | false (Falso) | Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
+| message_id          | Interger (Número)                | false (Falso) | Required if inline_message_id is not specified. Identifier of the sent message                                                                           |
+| inline_message_id | String (Sequência de caracteres) | false (Falso) | Required if chat_id and message_id are not specified. Identifier of the inline message                                                                   |
+| reply_markup        | InlineKeyboardMarkup             | false (Falso) | A JSON-serialized object for an inline keyboard.                                                                                                           |
 
-Example:
+Exemplo:
 
 ```javascript
 editMessageReplyMarkup({
@@ -975,7 +975,7 @@ Use this method to delete a message, including service messages, with the follow
 | chat_id    | Integer or String | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
 | message_id | Interger (Número) | true (Verdadeiro) | Identifier of the message to delete                                                                      |
 
-Example:
+Exemplo:
 
 ```javascript
 deleteMessage({
@@ -986,17 +986,17 @@ deleteMessage({
 
 ## sendSticker
 
-Use this method to send .webp stickers. On success, the sent Message is returned.
+Use this method to send .webp stickers. Em caso de sucesso, a mensagem enviada será retornada.
 
 | Campo                 | Tipo                                                                             | Requerido         | Descrição                                                                                                                                                                                                                                                                     |
 | --------------------- | -------------------------------------------------------------------------------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | chat_id               | Integer or String                                                                | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                                                                                                                                      |
 | sticker               | InputFile or String                                                              | true (Verdadeiro) | Sticker to send. Pass a file_id as String to send a file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a .webp file from the Internet, or upload a new one using multipart&#x2F;form-data. More info on Sending Files » |
-| disable_notification  | Boolean                                                                          | false             | Sends the message silently. Users will receive a notification with no sound.                                                                                                                                                                                                  |
-| reply_to_message_id | Interger (Número)                                                                | false             | If the message is a reply, ID of the original message                                                                                                                                                                                                                         |
-| reply_markup          | InlineKeyboardMarkup or ReplyKeyboardMarkup or ReplyKeyboardRemove or ForceReply | false             | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user.                                                                                                |
+| disable_notification  | Boolen (Boleano)                                                                 | false (Falso)     | Envia uma mensagem silenciosamente. Os usuários não receberão uma notificação em som.                                                                                                                                                                                         |
+| reply_to_message_id | Interger (Número)                                                                | false (Falso)     | If the message is a reply, ID of the original message                                                                                                                                                                                                                         |
+| reply_markup          | InlineKeyboardMarkup or ReplyKeyboardMarkup or ReplyKeyboardRemove or ForceReply | false (Falso)     | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user.                                                                                                |
 
-Example:
+Exemplo:
 
 ```javascript
 sendSticker({
@@ -1016,7 +1016,7 @@ Use this method to get a sticker set. On success, a StickerSet object is returne
 | ----- | -------------------------------- | ----------------- | ----------------------- |
 | name  | String (Sequência de caracteres) | true (Verdadeiro) | Name of the sticker set |
 
-Example:
+Exemplo:
 
 ```javascript
 getStickerSet({
@@ -1033,7 +1033,7 @@ Use this method to upload a .png file with a sticker for later use in createNewS
 | user_id     | Interger (Número) | true (Verdadeiro) | User identifier of sticker file owner                                                                                                                                             |
 | png_sticker | InputFile         | true (Verdadeiro) | Png image with the sticker, must be up to 512 kilobytes in size, dimensions must not exceed 512px, and either width or height must be exactly 512px. More info on Sending Files » |
 
-Example:
+Exemplo:
 
 ```javascript
 uploadStickerFile({
@@ -1053,10 +1053,10 @@ Use this method to create new sticker set owned by a user. The bot will be able 
 | title          | String (Sequência de caracteres) | true (Verdadeiro) | Sticker set title, 1-64 characters                                                                                                                                                                                                                                                                                                                                                                      |
 | png_sticker    | InputFile or String              | true (Verdadeiro) | Png image with the sticker, must be up to 512 kilobytes in size, dimensions must not exceed 512px, and either width or height must be exactly 512px. Pass a file_id as a String to send a file that already exists on the Telegram servers, pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart&#x2F;form-data. More info on Sending Files » |
 | emojis         | String (Sequência de caracteres) | true (Verdadeiro) | One or more emoji corresponding to the sticker                                                                                                                                                                                                                                                                                                                                                          |
-| contains_masks | Boolean                          | false             | Pass True, if a set of mask stickers should be created                                                                                                                                                                                                                                                                                                                                                  |
-| mask_position  | MaskPosition                     | false             | A JSON-serialized object for position where the mask should be placed on faces                                                                                                                                                                                                                                                                                                                          |
+| contains_masks | Boolen (Boleano)                 | false (Falso)     | Pass True, if a set of mask stickers should be created                                                                                                                                                                                                                                                                                                                                                  |
+| mask_position  | MaskPosition                     | false (Falso)     | A JSON-serialized object for position where the mask should be placed on faces                                                                                                                                                                                                                                                                                                                          |
 
-Example:
+Exemplo:
 
 ```javascript
 createNewStickerSet({
@@ -1080,9 +1080,9 @@ Use this method to add a new sticker to a set created by the bot. Returns True o
 | name          | String (Sequência de caracteres) | true (Verdadeiro) | Sticker set name                                                                                                                                                                                                                                                                                                                                                                                        |
 | png_sticker   | InputFile or String              | true (Verdadeiro) | Png image with the sticker, must be up to 512 kilobytes in size, dimensions must not exceed 512px, and either width or height must be exactly 512px. Pass a file_id as a String to send a file that already exists on the Telegram servers, pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart&#x2F;form-data. More info on Sending Files » |
 | emojis        | String (Sequência de caracteres) | true (Verdadeiro) | One or more emoji corresponding to the sticker                                                                                                                                                                                                                                                                                                                                                          |
-| mask_position | MaskPosition                     | false             | A JSON-serialized object for position where the mask should be placed on faces                                                                                                                                                                                                                                                                                                                          |
+| mask_position | MaskPosition                     | false (Falso)     | A JSON-serialized object for position where the mask should be placed on faces                                                                                                                                                                                                                                                                                                                          |
 
-Example:
+Exemplo:
 
 ```javascript
 addStickerToSet({
@@ -1103,7 +1103,7 @@ Use this method to move a sticker in a set created by the bot to a specific posi
 | sticker  | String (Sequência de caracteres) | true (Verdadeiro) | File identifier of the sticker              |
 | position | Interger (Número)                | true (Verdadeiro) | New sticker position in the set, zero-based |
 
-Example:
+Exemplo:
 
 ```javascript
 setStickerPositionInSet({
@@ -1120,7 +1120,7 @@ Use this method to delete a sticker from a set created by the bot. Returns True 
 | ------- | -------------------------------- | ----------------- | ------------------------------ |
 | sticker | String (Sequência de caracteres) | true (Verdadeiro) | File identifier of the sticker |
 
-Example:
+Exemplo:
 
 ```javascript
 deleteStickerFromSet({
@@ -1136,13 +1136,13 @@ Use this method to send answers to an inline query. On success, True is returned
 | --------------------- | -------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | inline_query_id     | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for the answered query                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | results               | Array of InlineQueryResult       | true (Verdadeiro) | A JSON-serialized array of results for the inline query                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| cache_time            | Interger (Número)                | false             | The maximum amount of time in seconds that the result of the inline query may be cached on the server. Defaults to 300.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| is_personal           | Boolean                          | false             | Pass True, if results may be cached on the server side only for the user that sent the query. By default, results may be returned to any user who sends the same query                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| next_offset           | String (Sequência de caracteres) | false             | Pass the offset that a client should send in the next query with the same text to receive more results. Pass an empty string if there are no more results or if you don‘t support pagination. Offset length can’t exceed 64 bytes.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| switch_pm_text      | String (Sequência de caracteres) | false             | If passed, clients will display a button with specified text that switches the user to a private chat with the bot and sends the bot a start message with the parameter switch_pm_parameter                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| switch_pm_parameter | String (Sequência de caracteres) | false             | Deep-linking parameter for the &#x2F;start message sent to the bot when user presses the switch button. 1-64 characters, only A-Z, a-z, 0-9, _ and - are allowed.Example: An inline bot that sends YouTube videos can ask the user to connect the bot to their YouTube account to adapt search results accordingly. To do this, it displays a ‘Connect your YouTube account’ button above the results, or even before showing any. The user presses the button, switches to a private chat with the bot and, in doing so, passes a start parameter that instructs the bot to return an oauth link. Once done, the bot can offer a switch_inline button so that the user can easily return to the chat where they wanted to use the bot's inline capabilities. |
+| cache_time            | Interger (Número)                | false (Falso)     | The maximum amount of time in seconds that the result of the inline query may be cached on the server. Defaults to 300.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| is_personal           | Boolen (Boleano)                 | false (Falso)     | Pass True, if results may be cached on the server side only for the user that sent the query. By default, results may be returned to any user who sends the same query                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| next_offset           | String (Sequência de caracteres) | false (Falso)     | Pass the offset that a client should send in the next query with the same text to receive more results. Pass an empty string if there are no more results or if you don‘t support pagination. Offset length can’t exceed 64 bytes.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| switch_pm_text      | String (Sequência de caracteres) | false (Falso)     | If passed, clients will display a button with specified text that switches the user to a private chat with the bot and sends the bot a start message with the parameter switch_pm_parameter                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| switch_pm_parameter | String (Sequência de caracteres) | false (Falso)     | Deep-linking parameter for the &#x2F;start message sent to the bot when user presses the switch button. 1-64 characters, only A-Z, a-z, 0-9, _ and - are allowed.Example: An inline bot that sends YouTube videos can ask the user to connect the bot to their YouTube account to adapt search results accordingly. To do this, it displays a ‘Connect your YouTube account’ button above the results, or even before showing any. The user presses the button, switches to a private chat with the bot and, in doing so, passes a start parameter that instructs the bot to return an oauth link. Once done, the bot can offer a switch_inline button so that the user can easily return to the chat where they wanted to use the bot's inline capabilities. |
 
-Example:
+Exemplo:
 
 ```javascript
 answerInlineQuery({
@@ -1158,7 +1158,7 @@ answerInlineQuery({
 
 ## sendInvoice
 
-Use this method to send invoices. On success, the sent Message is returned.
+Use this method to send invoices. Em caso de sucesso, a mensagem enviada será retornada.
 
 | Campo                             | Tipo                             | Requerido         | Descrição                                                                                                                                                                  |
 | --------------------------------- | -------------------------------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1170,23 +1170,23 @@ Use this method to send invoices. On success, the sent Message is returned.
 | start_parameter                   | String (Sequência de caracteres) | true (Verdadeiro) | Unique deep-linking parameter that can be used to generate this invoice when used as a start parameter                                                                     |
 | currency                          | String (Sequência de caracteres) | true (Verdadeiro) | Three-letter ISO 4217 currency code, see more on currencies                                                                                                                |
 | prices                            | Array of LabeledPrice            | true (Verdadeiro) | Price breakdown, a list of components (e.g. product price, tax, discount, delivery cost, delivery tax, bonus, etc.)                                                        |
-| provider_data                     | String (Sequência de caracteres) | false             | JSON-encoded data about the invoice, which will be shared with the payment provider. A detailed description of required fields should be provided by the payment provider. |
-| photo_url                         | String (Sequência de caracteres) | false             | URL of the product photo for the invoice. Can be a photo of the goods or a marketing image for a service. People like it better when they see what they are paying for.    |
-| photo_size                        | Interger (Número)                | false             | Photo size                                                                                                                                                                 |
-| photo_width                       | Interger (Número)                | false             | Photo width                                                                                                                                                                |
-| photo_height                      | Interger (Número)                | false             | Photo height                                                                                                                                                               |
-| need_name                         | Boolean                          | false             | Pass True, if you require the user's full name to complete the order                                                                                                       |
-| need_phone_number               | Boolean                          | false             | Pass True, if you require the user's phone number to complete the order                                                                                                    |
-| need_email                        | Boolean                          | false             | Pass True, if you require the user's email address to complete the order                                                                                                   |
-| need_shipping_address           | Boolean                          | false             | Pass True, if you require the user's shipping address to complete the order                                                                                                |
-| send_phone_number_to_provider | Boolean                          | false             | Pass True, if user's phone number should be sent to provider                                                                                                               |
-| send_email_to_provider          | Boolean                          | false             | Pass True, if user's email address should be sent to provider                                                                                                              |
-| is_flexible                       | Boolean                          | false             | Pass True, if the final price depends on the shipping method                                                                                                               |
-| disable_notification              | Boolean                          | false             | Sends the message silently. Users will receive a notification with no sound.                                                                                               |
-| reply_to_message_id             | Interger (Número)                | false             | If the message is a reply, ID of the original message                                                                                                                      |
-| reply_markup                      | InlineKeyboardMarkup             | false             | A JSON-serialized object for an inline keyboard. If empty, one 'Pay total price' button will be shown. If not empty, the first button must be a Pay button.                |
+| provider_data                     | String (Sequência de caracteres) | false (Falso)     | JSON-encoded data about the invoice, which will be shared with the payment provider. A detailed description of required fields should be provided by the payment provider. |
+| photo_url                         | String (Sequência de caracteres) | false (Falso)     | URL of the product photo for the invoice. Can be a photo of the goods or a marketing image for a service. People like it better when they see what they are paying for.    |
+| photo_size                        | Interger (Número)                | false (Falso)     | Photo size                                                                                                                                                                 |
+| photo_width                       | Interger (Número)                | false (Falso)     | Photo width                                                                                                                                                                |
+| photo_height                      | Interger (Número)                | false (Falso)     | Photo height                                                                                                                                                               |
+| need_name                         | Boolen (Boleano)                 | false (Falso)     | Pass True, if you require the user's full name to complete the order                                                                                                       |
+| need_phone_number               | Boolen (Boleano)                 | false (Falso)     | Pass True, if you require the user's phone number to complete the order                                                                                                    |
+| need_email                        | Boolen (Boleano)                 | false (Falso)     | Pass True, if you require the user's email address to complete the order                                                                                                   |
+| need_shipping_address           | Boolen (Boleano)                 | false (Falso)     | Pass True, if you require the user's shipping address to complete the order                                                                                                |
+| send_phone_number_to_provider | Boolen (Boleano)                 | false (Falso)     | Pass True, if user's phone number should be sent to provider                                                                                                               |
+| send_email_to_provider          | Boolen (Boleano)                 | false (Falso)     | Pass True, if user's email address should be sent to provider                                                                                                              |
+| is_flexible                       | Boolen (Boleano)                 | false (Falso)     | Pass True, if the final price depends on the shipping method                                                                                                               |
+| disable_notification              | Boolen (Boleano)                 | false (Falso)     | Envia uma mensagem silenciosamente. Os usuários não receberão uma notificação em som.                                                                                      |
+| reply_to_message_id             | Interger (Número)                | false (Falso)     | If the message is a reply, ID of the original message                                                                                                                      |
+| reply_markup                      | InlineKeyboardMarkup             | false (Falso)     | A JSON-serialized object for an inline keyboard. If empty, one 'Pay total price' button will be shown. If not empty, the first button must be a Pay button.                |
 
-Example:
+Exemplo:
 
 ```javascript
 sendInvoice({
@@ -1223,11 +1223,11 @@ If you sent an invoice requesting a shipping address and the parameter is_flexib
 | Campo               | Tipo                             | Requerido         | Descrição                                                                                                                                                                                                                               |
 | ------------------- | -------------------------------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | shipping_query_id | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for the query to be answered                                                                                                                                                                                          |
-| ok                  | Boolean                          | true (Verdadeiro) | Specify True if delivery to the specified address is possible and False if there are any problems (for example, if delivery to the specified address is not possible)                                                                   |
-| shipping_options    | Array of ShippingOption          | false             | Required if ok is True. A JSON-serialized array of available shipping options.                                                                                                                                                          |
-| error_message       | String (Sequência de caracteres) | false             | Required if ok is False. Error message in human readable form that explains why it is impossible to complete the order (e.g. "Sorry, delivery to your desired address is unavailable'). Telegram will display this message to the user. |
+| ok                  | Boolen (Boleano)                 | true (Verdadeiro) | Specify True if delivery to the specified address is possible and False if there are any problems (for example, if delivery to the specified address is not possible)                                                                   |
+| shipping_options    | Array of ShippingOption          | false (Falso)     | Required if ok is True. A JSON-serialized array of available shipping options.                                                                                                                                                          |
+| error_message       | String (Sequência de caracteres) | false (Falso)     | Required if ok is False. Error message in human readable form that explains why it is impossible to complete the order (e.g. "Sorry, delivery to your desired address is unavailable'). Telegram will display this message to the user. |
 
-Example:
+Exemplo:
 
 ```javascript
 answerShippingQuery({
@@ -1245,10 +1245,10 @@ Once the user has confirmed their payment and shipping details, the Bot API send
 | Campo                   | Tipo                             | Requerido         | Descrição                                                                                                                                                                                                                                                                                                                                                      |
 | ----------------------- | -------------------------------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | pre_checkout_query_id | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for the query to be answered                                                                                                                                                                                                                                                                                                                 |
-| ok                      | Boolean                          | true (Verdadeiro) | Specify True if everything is alright (goods are available, etc.) and the bot is ready to proceed with the order. Use False if there are any problems.                                                                                                                                                                                                         |
-| error_message           | String (Sequência de caracteres) | false             | Required if ok is False. Error message in human readable form that explains the reason for failure to proceed with the checkout (e.g. "Sorry, somebody just bought the last of our amazing black T-shirts while you were busy filling out your payment details. Please choose a different color or garment!"). Telegram will display this message to the user. |
+| ok                      | Boolen (Boleano)                 | true (Verdadeiro) | Specify True if everything is alright (goods are available, etc.) and the bot is ready to proceed with the order. Use False if there are any problems.                                                                                                                                                                                                         |
+| error_message           | String (Sequência de caracteres) | false (Falso)     | Required if ok is False. Error message in human readable form that explains the reason for failure to proceed with the checkout (e.g. "Sorry, somebody just bought the last of our amazing black T-shirts while you were busy filling out your payment details. Please choose a different color or garment!"). Telegram will display this message to the user. |
 
-Example:
+Exemplo:
 
 ```javascript
 answerPreCheckoutQuery({
@@ -1260,17 +1260,17 @@ answerPreCheckoutQuery({
 
 ## sendGame
 
-Use this method to send a game. On success, the sent Message is returned.
+Use este método para enviar um jogo. Em caso de sucesso, a mensagem enviada será retornada.
 
 | Campo                 | Tipo                             | Requerido         | Descrição                                                                                                                                                   |
 | --------------------- | -------------------------------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | chat_id               | Interger (Número)                | true (Verdadeiro) | Unique identifier for the target chat                                                                                                                       |
 | game_short_name     | String (Sequência de caracteres) | true (Verdadeiro) | Short name of the game, serves as the unique identifier for the game. Set up your games via Botfather.                                                      |
-| disable_notification  | Boolean                          | false             | Sends the message silently. Users will receive a notification with no sound.                                                                                |
-| reply_to_message_id | Interger (Número)                | false             | If the message is a reply, ID of the original message                                                                                                       |
-| reply_markup          | InlineKeyboardMarkup             | false             | A JSON-serialized object for an inline keyboard. If empty, one ‘Play game_title’ button will be shown. If not empty, the first button must launch the game. |
+| disable_notification  | Boolen (Boleano)                 | false (Falso)     | Envia uma mensagem silenciosamente. Os usuários não receberão uma notificação em som.                                                                       |
+| reply_to_message_id | Interger (Número)                | false (Falso)     | If the message is a reply, ID of the original message                                                                                                       |
+| reply_markup          | InlineKeyboardMarkup             | false (Falso)     | A JSON-serialized object for an inline keyboard. If empty, one ‘Play game_title’ button will be shown. If not empty, the first button must launch the game. |
 
-Example:
+Exemplo:
 
 ```javascript
 sendGame({
@@ -1290,13 +1290,13 @@ Use this method to set the score of the specified user in a game. On success, if
 | ---------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------- |
 | user_id                | Interger (Número)                | true (Verdadeiro) | User identifier                                                                                                  |
 | score                  | Interger (Número)                | true (Verdadeiro) | New score, must be non-negative                                                                                  |
-| force                  | Boolean                          | false             | Pass True, if the high score is allowed to decrease. This can be useful when fixing mistakes or banning cheaters |
-| disable_edit_message | Boolean                          | false             | Pass True, if the game message should not be automatically edited to include the current scoreboard              |
-| chat_id                | Interger (Número)                | false             | Required if inline_message_id is not specified. Unique identifier for the target chat                          |
-| message_id             | Interger (Número)                | false             | Required if inline_message_id is not specified. Identifier of the sent message                                 |
-| inline_message_id    | String (Sequência de caracteres) | false             | Required if chat_id and message_id are not specified. Identifier of the inline message                         |
+| force                  | Boolen (Boleano)                 | false (Falso)     | Pass True, if the high score is allowed to decrease. This can be useful when fixing mistakes or banning cheaters |
+| disable_edit_message | Boolen (Boleano)                 | false (Falso)     | Pass True, if the game message should not be automatically edited to include the current scoreboard              |
+| chat_id                | Interger (Número)                | false (Falso)     | Required if inline_message_id is not specified. Unique identifier for the target chat                          |
+| message_id             | Interger (Número)                | false (Falso)     | Required if inline_message_id is not specified. Identifier of the sent message                                 |
+| inline_message_id    | String (Sequência de caracteres) | false (Falso)     | Required if chat_id and message_id are not specified. Identifier of the inline message                         |
 
-Example:
+Exemplo:
 
 ```javascript
 setGameScore({
@@ -1317,11 +1317,11 @@ Use this method to get data for high score tables. Will return the score of the 
 | Campo               | Tipo                             | Requerido         | Descrição                                                                                |
 | ------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------- |
 | user_id             | Interger (Número)                | true (Verdadeiro) | Target user id                                                                           |
-| chat_id             | Interger (Número)                | false             | Required if inline_message_id is not specified. Unique identifier for the target chat  |
-| message_id          | Interger (Número)                | false             | Required if inline_message_id is not specified. Identifier of the sent message         |
-| inline_message_id | String (Sequência de caracteres) | false             | Required if chat_id and message_id are not specified. Identifier of the inline message |
+| chat_id             | Interger (Número)                | false (Falso)     | Required if inline_message_id is not specified. Unique identifier for the target chat  |
+| message_id          | Interger (Número)                | false (Falso)     | Required if inline_message_id is not specified. Identifier of the sent message         |
+| inline_message_id | String (Sequência de caracteres) | false (Falso)     | Required if chat_id and message_id are not specified. Identifier of the inline message |
 
-Example:
+Exemplo:
 
 ```javascript
 getGameHighScores({
