@@ -1,5 +1,5 @@
 {
-  "name": "DesenvolvimentoDeBots-i18n",
+  "name": "desenvolvimento-de-bots-i18n",
   "version": "1.0.0",
   "description": "Tradução da documentação do Telegram Bot API para PT-BR",
   "main": "index.js",
