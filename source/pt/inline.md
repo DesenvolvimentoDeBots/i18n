@@ -1,25 +1,25 @@
 # Inline Query
 
-- [InlineQueryResultArticle](#InlineQueryResultArticle)
-- [InlineQueryResultPhoto](#InlineQueryResultPhoto)
-- [InlineQueryResultGif](#InlineQueryResultGif)
-- [InlineQueryResultMpeg4Gif](#InlineQueryResultMpeg4Gif)
-- [InlineQueryResultVideo](#InlineQueryResultVideo)
-- [InlineQueryResultAudio](#InlineQueryResultAudio)
-- [InlineQueryResultVoice](#InlineQueryResultVoice)
-- [InlineQueryResultDocument](#InlineQueryResultDocument)
-- [InlineQueryResultLocation](#InlineQueryResultLocation)
-- [InlineQueryResultVenue](#InlineQueryResultVenue)
-- [InlineQueryResultContact](#InlineQueryResultContact)
-- [InlineQueryResultGame](#InlineQueryResultGame)
-- [InlineQueryResultCachedPhoto](#InlineQueryResultCachedPhoto)
-- [InlineQueryResultCachedGif](#InlineQueryResultCachedGif)
-- [InlineQueryResultCachedMpeg4Gif](#InlineQueryResultCachedMpeg4Gif)
-- [InlineQueryResultCachedSticker](#InlineQueryResultCachedSticker)
-- [InlineQueryResultCachedDocument](#InlineQueryResultCachedDocument)
-- [InlineQueryResultCachedVideo](#InlineQueryResultCachedVideo)
-- [InlineQueryResultCachedVoice](#InlineQueryResultCachedVoice)
-- [InlineQueryResultCachedAudio](#InlineQueryResultCachedAudio)
+- [InlineQueryResultArticle](#inlinequeryresultarticle)
+- [InlineQueryResultPhoto](#inlinequeryresultphoto)
+- [InlineQueryResultGif](#inlinequeryresultgif)
+- [InlineQueryResultMpeg4Gif](#inlinequeryresultmpeg4gif)
+- [InlineQueryResultVideo](#inlinequeryresultvideo)
+- [InlineQueryResultAudio](#inlinequeryresultaudio)
+- [InlineQueryResultVoice](#inlinequeryresultvoice)
+- [InlineQueryResultDocument](#inlinequeryresultdocument)
+- [InlineQueryResultLocation](#inlinequeryresultlocation)
+- [InlineQueryResultVenue](#inlinequeryresultvenue)
+- [InlineQueryResultContact](#inlinequeryresultcontact)
+- [InlineQueryResultGame](#inlinequeryresultgame)
+- [InlineQueryResultCachedPhoto](#inlinequeryresultcachedphoto)
+- [InlineQueryResultCachedGif](#inlinequeryresultcachedgif)
+- [InlineQueryResultCachedMpeg4Gif](#inlinequeryresultcachedmpeg4gif)
+- [InlineQueryResultCachedSticker](#inlinequeryresultcachedsticker)
+- [InlineQueryResultCachedDocument](#inlinequeryresultcacheddocument)
+- [InlineQueryResultCachedVideo](#inlinequeryresultcachedvideo)
+- [InlineQueryResultCachedVoice](#inlinequeryresultcachedvoice)
+- [InlineQueryResultCachedAudio](#inlinequeryresultcachedaudio)
 
 ## InlineQueryResultArticle
 
@@ -135,7 +135,7 @@ Example:
 
 ## InlineQueryResultMpeg4Gif
 
-Represents a link to a video animation (H.264/MPEG-4 AVC video without sound). By default, this animated MPEG-4 file will be sent by the user with optional caption. Alternatively, you can use input_message_content to send a message with the specified content instead of the animation.
+Represents a link to a video animation (H.264&#x2F;MPEG-4 AVC video without sound). By default, this animated MPEG-4 file will be sent by the user with optional caption. Alternatively, you can use input_message_content to send a message with the specified content instead of the animation.
 
 | Field                   | Type                 | Required | Desc                                                                                                                         |
 | ----------------------- | -------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------- |
@@ -180,7 +180,7 @@ Represents a link to a page containing an embedded video player or a video file.
 | type                    | String               | true     | Type of the result, must be video                                                                                                                                          |
 | id                      | String               | true     | Unique identifier for this result, 1-64 bytes                                                                                                                              |
 | video_url               | String               | true     | A valid URL for the embedded video player or video file                                                                                                                    |
-| mime_type               | String               | true     | Mime type of the content of video url, “text/html” or “video/mp4”                                                                                                          |
+| mime_type               | String               | true     | Mime type of the content of video url, “text&#x2F;html” or “video&#x2F;mp4”                                                                                                |
 | thumb_url               | String               | true     | URL of the thumbnail (jpeg only) for the video                                                                                                                             |
 | title                   | String               | true     | Title for the result                                                                                                                                                       |
 | caption                 | String               | false    | Caption of the video to be sent, 0-200 characters                                                                                                                          |
@@ -291,7 +291,7 @@ Represents a link to a file. By default, this file will be sent by the user with
 | caption                 | String               | false    | Caption of the document to be sent, 0-200 characters                                                                         |
 | parse_mode              | String               | false    | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
 | document_url            | String               | true     | A valid URL for the file                                                                                                     |
-| mime_type               | String               | true     | Mime type of the content of the file, either “application/pdf” or “application/zip”                                          |
+| mime_type               | String               | true     | Mime type of the content of the file, either “application&#x2F;pdf” or “application&#x2F;zip”                                |
 | description             | String               | false    | Short description of the result                                                                                              |
 | reply_markup            | InlineKeyboardMarkup | false    | Inline keyboard attached to the message                                                                                      |
 | input_message_content | InputMessageContent  | false    | Content of the message to be sent instead of the file                                                                        |
@@ -513,7 +513,7 @@ Example:
 
 ## InlineQueryResultCachedMpeg4Gif
 
-Represents a link to a video animation (H.264/MPEG-4 AVC video without sound) stored on the Telegram servers. By default, this animated MPEG-4 file will be sent by the user with an optional caption. Alternatively, you can use input_message_content to send a message with the specified content instead of the animation.
+Represents a link to a video animation (H.264&#x2F;MPEG-4 AVC video without sound) stored on the Telegram servers. By default, this animated MPEG-4 file will be sent by the user with an optional caption. Alternatively, you can use input_message_content to send a message with the specified content instead of the animation.
 
 | Field                   | Type                 | Required | Desc                                                                                                                         |
 | ----------------------- | -------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------- |
