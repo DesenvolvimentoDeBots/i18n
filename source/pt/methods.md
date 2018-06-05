@@ -414,18 +414,18 @@ editMessageLiveLocation({
 
 Use this method to stop updating a live location message sent by the bot or via the bot (for inline bots) before live_period expires. On success, if the message was sent by the bot, the sent Message is returned, otherwise True is returned.
 
-| Campo               | Tipo                             | Requerido | Descrição                                                                                                                                                  |
-| ------------------- | -------------------------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| chat_id             | Integer or String                | false     | Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
-| message_id          | Interger (Número)                | false     | Required if inline_message_id is not specified. Identifier of the sent message                                                                           |
-| inline_message_id | String (Sequência de caracteres) | false     | Required if chat_id and message_id are not specified. Identifier of the inline message                                                                   |
-| reply_markup        | InlineKeyboardMarkup             | false     | A JSON-serialized object for a new inline keyboard.                                                                                                        |
+| Campo               | Tipo                             | Requerido     | Descrição                                                                                                                                                  |
+| ------------------- | -------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| chat_id             | Integer or String                | false         | Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
+| message_id          | Interger (Número)                | false         | Required if inline_message_id is not specified. Identifier of the sent message                                                                           |
+| inline_message_id | String (Sequência de caracteres) | false         | Required if chat_id and message_id are not specified. Identifier of the inline message                                                                   |
+| reply_markup        | InlineKeyboardMarkup             | false (Falso) | A JSON-serialized object for a new inline keyboard.                                                                                                        |
 
-Example:
+Exemplo:
 
 ```javascript
 stopMessageLiveLocation({
-    chat_id = Integer or String,
+    chat_id = Integer ou String,
     message_id = Integer,
     inline_message_id = String,
     reply_markup = InlineKeyboardMarkup,
