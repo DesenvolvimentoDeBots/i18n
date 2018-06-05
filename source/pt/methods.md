@@ -106,7 +106,7 @@ Use this method to send text messages. Em caso de sucesso, a mensagem enviada se
 
 | Campo                      | Tipo                                                                             | Requerido         | Descrição                                                                                                                                                                      |
 | -------------------------- | -------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| chat_id                    | Integer or String                                                                | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                                       |
+| chat_id                    | Interger (Número) ou String (Sequência de caracteres)                            | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                                       |
 | text                       | String (Sequência de caracteres)                                                 | true (Verdadeiro) | Text of the message to be sent                                                                                                                                                 |
 | parse_mode                 | String (Sequência de caracteres)                                                 | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in your bot's message.                                                  |
 | disable_web_page_preview | Boolen (Boleano)                                                                 | false (Falso)     | Disables link previews for links in this message                                                                                                                               |
@@ -132,12 +132,12 @@ sendMessage({
 
 Use this method to forward messages of any kind. Em caso de sucesso, a mensagem enviada será retornada.
 
-| Campo                | Tipo              | Requerido         | Descrição                                                                                                               |
-| -------------------- | ----------------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| chat_id              | Integer or String | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                |
-| from_chat_id       | Integer or String | true (Verdadeiro) | Unique identifier for the chat where the original message was sent (or channel username in the format @channelusername) |
-| disable_notification | Boolen (Boleano)  | false (Falso)     | Envia uma mensagem silenciosamente. Os usuários não receberão uma notificação em som.                                   |
-| message_id           | Interger (Número) | true (Verdadeiro) | Message identifier in the chat specified in from_chat_id                                                              |
+| Campo                | Tipo                                                  | Requerido         | Descrição                                                                                                               |
+| -------------------- | ----------------------------------------------------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| chat_id              | Interger (Número) ou String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                |
+| from_chat_id       | Interger (Número) ou String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for the chat where the original message was sent (or channel username in the format @channelusername) |
+| disable_notification | Boolen (Boleano)                                      | false (Falso)     | Envia uma mensagem silenciosamente. Os usuários não receberão uma notificação em som.                                   |
+| message_id           | Interger (Número)                                     | true (Verdadeiro) | Message identifier in the chat specified in from_chat_id                                                              |
 
 Exemplo:
 
@@ -156,8 +156,8 @@ Use this method to send photos. Em caso de sucesso, a mensagem enviada será ret
 
 | Campo                 | Tipo                                                                             | Requerido         | Descrição                                                                                                                                                                                                                                                                 |
 | --------------------- | -------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| chat_id               | Integer or String                                                                | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                                                                                                                                  |
-| photo                 | InputFile or String                                                              | true (Verdadeiro) | Photo to send. Pass a file_id as String to send a photo that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a photo from the Internet, or upload a new photo using multipart&#x2F;form-data. More info on Sending Files » |
+| chat_id               | Interger (Número) ou String (Sequência de caracteres)                            | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                                                                                                                                  |
+| photo                 | InputFile ou String (Sequência de caracteres)                                    | true (Verdadeiro) | Photo to send. Pass a file_id as String to send a photo that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a photo from the Internet, or upload a new photo using multipart&#x2F;form-data. More info on Sending Files » |
 | caption               | String (Sequência de caracteres)                                                 | false (Falso)     | Photo caption (may also be used when resending photos by file_id), 0-200 characters                                                                                                                                                                                       |
 | parse_mode            | String (Sequência de caracteres)                                                 | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption.                                                                                                                                              |
 | disable_notification  | Boolen (Boleano)                                                                 | false (Falso)     | Envia uma mensagem silenciosamente. Os usuários não receberão uma notificação em som.                                                                                                                                                                                     |
@@ -184,8 +184,8 @@ Use this method to send audio files, if you want Telegram clients to display the
 
 | Campo                 | Tipo                                                                             | Requerido         | Descrição                                                                                                                                                                                                                                                                                |
 | --------------------- | -------------------------------------------------------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| chat_id               | Integer or String                                                                | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                                                                                                                                                 |
-| audio                 | InputFile or String                                                              | true (Verdadeiro) | Audio file to send. Pass a file_id as String to send an audio file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get an audio file from the Internet, or upload a new one using multipart&#x2F;form-data. More info on Sending Files » |
+| chat_id               | Interger (Número) ou String (Sequência de caracteres)                            | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                                                                                                                                                 |
+| audio                 | InputFile ou String (Sequência de caracteres)                                    | true (Verdadeiro) | Audio file to send. Pass a file_id as String to send an audio file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get an audio file from the Internet, or upload a new one using multipart&#x2F;form-data. More info on Sending Files » |
 | caption               | String (Sequência de caracteres)                                                 | false (Falso)     | Audio caption, 0-200 characters                                                                                                                                                                                                                                                          |
 | parse_mode            | String (Sequência de caracteres)                                                 | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption.                                                                                                                                                             |
 | duration              | Interger (Número)                                                                | false (Falso)     | Duration of the audio in seconds                                                                                                                                                                                                                                                         |
@@ -218,8 +218,8 @@ Use this method to send general files. Em caso de sucesso, a mensagem enviada se
 
 | Campo                 | Tipo                                                                             | Requerido         | Descrição                                                                                                                                                                                                                                                            |
 | --------------------- | -------------------------------------------------------------------------------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| chat_id               | Integer or String                                                                | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                                                                                                                             |
-| document              | InputFile or String                                                              | true (Verdadeiro) | File to send. Pass a file_id as String to send a file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart&#x2F;form-data. More info on Sending Files » |
+| chat_id               | Interger (Número) ou String (Sequência de caracteres)                            | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                                                                                                                             |
+| document              | InputFile ou String (Sequência de caracteres)                                    | true (Verdadeiro) | File to send. Pass a file_id as String to send a file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart&#x2F;form-data. More info on Sending Files » |
 | caption               | String (Sequência de caracteres)                                                 | false (Falso)     | Document caption (may also be used when resending documents by file_id), 0-200 characters                                                                                                                                                                            |
 | parse_mode            | String (Sequência de caracteres)                                                 | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption.                                                                                                                                         |
 | disable_notification  | Boolen (Boleano)                                                                 | false (Falso)     | Envia uma mensagem silenciosamente. Os usuários não receberão uma notificação em som.                                                                                                                                                                                |
@@ -282,8 +282,8 @@ Use this method to send audio files, if you want Telegram clients to display the
 
 | Campo                 | Tipo                                                                             | Requerido         | Descrição                                                                                                                                                                                                                                                                  |
 | --------------------- | -------------------------------------------------------------------------------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| chat_id               | Integer or String                                                                | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                                                                                                                                   |
-| voice                 | InputFile or String                                                              | true (Verdadeiro) | Audio file to send. Pass a file_id as String to send a file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart&#x2F;form-data. More info on Sending Files » |
+| chat_id               | Interger (Número) ou String (Sequência de caracteres)                            | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                                                                                                                                   |
+| voice                 | InputFile ou String (Sequência de caracteres)                                    | true (Verdadeiro) | Audio file to send. Pass a file_id as String to send a file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart&#x2F;form-data. More info on Sending Files » |
 | caption               | String (Sequência de caracteres)                                                 | false (Falso)     | Voice message caption, 0-200 characters                                                                                                                                                                                                                                    |
 | parse_mode            | String (Sequência de caracteres)                                                 | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption.                                                                                                                                               |
 | duration              | Interger (Número)                                                                | false (Falso)     | Duration of the voice message in seconds                                                                                                                                                                                                                                   |
@@ -312,8 +312,8 @@ As of v.4.0, Telegram clients support rounded square mp4 videos of up to 1 minut
 
 | Campo                 | Tipo                                                                             | Requerido         | Descrição                                                                                                                                                                                                                                                     |
 | --------------------- | -------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| chat_id               | Integer or String                                                                | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                                                                                                                      |
-| video_note            | InputFile or String                                                              | true (Verdadeiro) | Video note to send. Pass a file_id as String to send a video note that exists on the Telegram servers (recommended) or upload a new video using multipart&#x2F;form-data. More info on Sending Files ». Sending video notes by a URL is currently unsupported |
+| chat_id               | Interger (Número) ou String (Sequência de caracteres)                            | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                                                                                                                      |
+| video_note            | InputFile ou String (Sequência de caracteres)                                    | true (Verdadeiro) | Video note to send. Pass a file_id as String to send a video note that exists on the Telegram servers (recommended) or upload a new video using multipart&#x2F;form-data. More info on Sending Files ». Sending video notes by a URL is currently unsupported |
 | duration              | Interger (Número)                                                                | false (Falso)     | Duration of sent video in seconds                                                                                                                                                                                                                             |
 | length                | Interger (Número)                                                                | false (Falso)     | Video width and height                                                                                                                                                                                                                                        |
 | disable_notification  | Boolen (Boleano)                                                                 | false (Falso)     | Envia uma mensagem silenciosamente. Os usuários não receberão uma notificação em som.                                                                                                                                                                         |
@@ -338,12 +338,12 @@ sendVideoNote({
 
 Use this method to send a group of photos or videos as an album. On success, an array of the sent Messages is returned.
 
-| Campo                 | Tipo                | Requerido         | Descrição                                                                                                |
-| --------------------- | ------------------- | ----------------- | -------------------------------------------------------------------------------------------------------- |
-| chat_id               | Integer or String   | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
-| media                 | Array of InputMedia | true (Verdadeiro) | A JSON-serialized array describing photos and videos to be sent, must include 2–10 items                 |
-| disable_notification  | Boolen (Boleano)    | false (Falso)     | Sends the messages silently. Os usuários não receberão uma notificação em som.                           |
-| reply_to_message_id | Interger (Número)   | false (Falso)     | If the messages are a reply, ID of the original message                                                  |
+| Campo                 | Tipo                                                  | Requerido         | Descrição                                                                                                |
+| --------------------- | ----------------------------------------------------- | ----------------- | -------------------------------------------------------------------------------------------------------- |
+| chat_id               | Interger (Número) ou String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
+| media                 | Array of InputMedia                                   | true (Verdadeiro) | A JSON-serialized array describing photos and videos to be sent, must include 2–10 items                 |
+| disable_notification  | Boolen (Boleano)                                      | false (Falso)     | Sends the messages silently. Os usuários não receberão uma notificação em som.                           |
+| reply_to_message_id | Interger (Número)                                     | false (Falso)     | If the messages are a reply, ID of the original message                                                  |
 
 Exemplo:
 
@@ -362,7 +362,7 @@ Use this method to send point on the map. Em caso de sucesso, a mensagem enviada
 
 | Campo                 | Tipo                                                                             | Requerido         | Descrição                                                                                                                                                                      |
 | --------------------- | -------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| chat_id               | Integer or String                                                                | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                                       |
+| chat_id               | Interger (Número) ou String (Sequência de caracteres)                            | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                                       |
 | latitude              | Float número                                                                     | true (Verdadeiro) | Latitude of the location                                                                                                                                                       |
 | longitude             | Float número                                                                     | true (Verdadeiro) | Longitude of the location                                                                                                                                                      |
 | live_period           | Interger (Número)                                                                | false (Falso)     | Period in seconds for which the location will be updated (see Live Locations, should be between 60 and 86400.                                                                  |
@@ -388,14 +388,14 @@ sendLocation({
 
 Use this method to edit live location messages sent by the bot or via the bot (for inline bots). A location can be edited until its live_period expires or editing is explicitly disabled by a call to stopMessageLiveLocation. On success, if the edited message was sent by the bot, the edited Message is returned, otherwise True is returned.
 
-| Campo               | Tipo                             | Requerido         | Descrição                                                                                                                                                  |
-| ------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| chat_id             | Integer or String                | false (Falso)     | Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
-| message_id          | Interger (Número)                | false (Falso)     | Required if inline_message_id is not specified. Identifier of the sent message                                                                           |
-| inline_message_id | String (Sequência de caracteres) | false (Falso)     | Required if chat_id and message_id are not specified. Identifier of the inline message                                                                   |
-| latitude            | Float número                     | true (Verdadeiro) | Latitude of new location                                                                                                                                   |
-| longitude           | Float número                     | true (Verdadeiro) | Longitude of new location                                                                                                                                  |
-| reply_markup        | InlineKeyboardMarkup             | false (Falso)     | A JSON-serialized object for a new inline keyboard.                                                                                                        |
+| Campo               | Tipo                                                  | Requerido         | Descrição                                                                                                                                                  |
+| ------------------- | ----------------------------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| chat_id             | Interger (Número) ou String (Sequência de caracteres) | false (Falso)     | Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
+| message_id          | Interger (Número)                                     | false (Falso)     | Required if inline_message_id is not specified. Identifier of the sent message                                                                           |
+| inline_message_id | String (Sequência de caracteres)                      | false (Falso)     | Required if chat_id and message_id are not specified. Identifier of the inline message                                                                   |
+| latitude            | Float número                                          | true (Verdadeiro) | Latitude of new location                                                                                                                                   |
+| longitude           | Float número                                          | true (Verdadeiro) | Longitude of new location                                                                                                                                  |
+| reply_markup        | InlineKeyboardMarkup                                  | false (Falso)     | A JSON-serialized object for a new inline keyboard.                                                                                                        |
 
 Exemplo:
 
@@ -414,12 +414,12 @@ editMessageLiveLocation({
 
 Use this method to stop updating a live location message sent by the bot or via the bot (for inline bots) before live_period expires. On success, if the message was sent by the bot, the sent Message is returned, otherwise True is returned.
 
-| Campo               | Tipo                             | Requerido     | Descrição                                                                                                                                                  |
-| ------------------- | -------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| chat_id             | Integer or String                | false (Falso) | Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
-| message_id          | Interger (Número)                | false (Falso) | Required if inline_message_id is not specified. Identifier of the sent message                                                                           |
-| inline_message_id | String (Sequência de caracteres) | false (Falso) | Required if chat_id and message_id are not specified. Identifier of the inline message                                                                   |
-| reply_markup        | InlineKeyboardMarkup             | false (Falso) | A JSON-serialized object for a new inline keyboard.                                                                                                        |
+| Campo               | Tipo                                                  | Requerido     | Descrição                                                                                                                                                  |
+| ------------------- | ----------------------------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| chat_id             | Interger (Número) ou String (Sequência de caracteres) | false (Falso) | Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
+| message_id          | Interger (Número)                                     | false (Falso) | Required if inline_message_id is not specified. Identifier of the sent message                                                                           |
+| inline_message_id | String (Sequência de caracteres)                      | false (Falso) | Required if chat_id and message_id are not specified. Identifier of the inline message                                                                   |
+| reply_markup        | InlineKeyboardMarkup                                  | false (Falso) | A JSON-serialized object for a new inline keyboard.                                                                                                        |
 
 Exemplo:
 
@@ -438,7 +438,7 @@ Use this method to send information about a venue. Em caso de sucesso, a mensage
 
 | Campo                 | Tipo                                                                             | Requerido         | Descrição                                                                                                                                                                      |
 | --------------------- | -------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| chat_id               | Integer or String                                                                | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                                       |
+| chat_id               | Interger (Número) ou String (Sequência de caracteres)                            | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                                       |
 | latitude              | Float número                                                                     | true (Verdadeiro) | Latitude of the venue                                                                                                                                                          |
 | longitude             | Float número                                                                     | true (Verdadeiro) | Longitude of the venue                                                                                                                                                         |
 | title                 | String (Sequência de caracteres)                                                 | true (Verdadeiro) | Name of the venue                                                                                                                                                              |
@@ -470,7 +470,7 @@ Use this method to send phone contacts. Em caso de sucesso, a mensagem enviada s
 
 | Campo                 | Tipo                                                                             | Requerido         | Descrição                                                                                                                                                                |
 | --------------------- | -------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| chat_id               | Integer or String                                                                | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                                 |
+| chat_id               | Interger (Número) ou String (Sequência de caracteres)                            | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                                 |
 | phone_number          | String (Sequência de caracteres)                                                 | true (Verdadeiro) | Contact's phone number                                                                                                                                                   |
 | first_name            | String (Sequência de caracteres)                                                 | true (Verdadeiro) | Primeiro nome do contato                                                                                                                                                 |
 | last_name             | String (Sequência de caracteres)                                                 | false (Falso)     | Último nome do contato                                                                                                                                                   |
@@ -532,11 +532,11 @@ getFile({
 
 Use this method to kick a user from a group, a supergroup or a channel. In the case of supergroups and channels, the user will not be able to return to the group on their own using invite links, etc., unless unbanned first. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns True on success.
 
-| Campo      | Tipo              | Requerido         | Descrição                                                                                                                                                                       |
-| ---------- | ----------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| chat_id    | Integer or String | true (Verdadeiro) | Unique identifier for the target group or username of the target supergroup or channel (in the format @channelusername)                                                         |
-| user_id    | Interger (Número) | true (Verdadeiro) | Unique identifier of the target user                                                                                                                                            |
-| until_date | Interger (Número) | false (Falso)     | Date when the user will be unbanned, unix time. If user is banned for more than 366 days or less than 30 seconds from the current time they are considered to be banned forever |
+| Campo      | Tipo                                                  | Requerido         | Descrição                                                                                                                                                                       |
+| ---------- | ----------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| chat_id    | Interger (Número) ou String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for the target group or username of the target supergroup or channel (in the format @channelusername)                                                         |
+| user_id    | Interger (Número)                                     | true (Verdadeiro) | Unique identifier of the target user                                                                                                                                            |
+| until_date | Interger (Número)                                     | false (Falso)     | Date when the user will be unbanned, unix time. If user is banned for more than 366 days or less than 30 seconds from the current time they are considered to be banned forever |
 
 Exemplo:
 
@@ -552,10 +552,10 @@ kickChatMember({
 
 Use this method to unban a previously kicked user in a supergroup or channel. The user will not return to the group or channel automatically, but will be able to join via link, etc. The bot must be an administrator for this to work. Returns True on success.
 
-| Campo   | Tipo              | Requerido         | Descrição                                                                                                        |
-| ------- | ----------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------- |
-| chat_id | Integer or String | true (Verdadeiro) | Unique identifier for the target group or username of the target supergroup or channel (in the format @username) |
-| user_id | Interger (Número) | true (Verdadeiro) | Unique identifier of the target user                                                                             |
+| Campo   | Tipo                                                  | Requerido         | Descrição                                                                                                        |
+| ------- | ----------------------------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------- |
+| chat_id | Interger (Número) ou String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for the target group or username of the target supergroup or channel (in the format @username) |
+| user_id | Interger (Número)                                     | true (Verdadeiro) | Unique identifier of the target user                                                                             |
 
 Exemplo:
 
@@ -570,15 +570,15 @@ unbanChatMember({
 
 Use this method to restrict a user in a supergroup. The bot must be an administrator in the supergroup for this to work and must have the appropriate admin rights. Pass True for all boolean parameters to lift restrictions from a user. Returns True on success.
 
-| Campo                         | Tipo              | Requerido         | Descrição                                                                                                                                                                                               |
-| ----------------------------- | ----------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| chat_id                       | Integer or String | true (Verdadeiro) | Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername)                                                                                          |
-| user_id                       | Interger (Número) | true (Verdadeiro) | Unique identifier of the target user                                                                                                                                                                    |
-| until_date                    | Interger (Número) | false (Falso)     | Date when restrictions will be lifted for the user, unix time. If user is restricted for more than 366 days or less than 30 seconds from the current time, they are considered to be restricted forever |
-| can_send_messages           | Boolen (Boleano)  | false (Falso)     | Pass True, if the user can send text messages, contacts, locations and venues                                                                                                                           |
-| can_send_media_messages     | Boolen (Boleano)  | false (Falso)     | Pass True, if the user can send audios, documents, photos, videos, video notes and voice notes, implies can_send_messages                                                                             |
-| can_send_other_messages     | Boolen (Boleano)  | false (Falso)     | Pass True, if the user can send animations, games, stickers and use inline bots, implies can_send_media_messages                                                                                      |
-| can_add_web_page_previews | Boolen (Boleano)  | false (Falso)     | Pass True, if the user may add web page previews to their messages, implies can_send_media_messages                                                                                                   |
+| Campo                         | Tipo                                                  | Requerido         | Descrição                                                                                                                                                                                               |
+| ----------------------------- | ----------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| chat_id                       | Interger (Número) ou String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername)                                                                                          |
+| user_id                       | Interger (Número)                                     | true (Verdadeiro) | Unique identifier of the target user                                                                                                                                                                    |
+| until_date                    | Interger (Número)                                     | false (Falso)     | Date when restrictions will be lifted for the user, unix time. If user is restricted for more than 366 days or less than 30 seconds from the current time, they are considered to be restricted forever |
+| can_send_messages           | Boolen (Boleano)                                      | false (Falso)     | Pass True, if the user can send text messages, contacts, locations and venues                                                                                                                           |
+| can_send_media_messages     | Boolen (Boleano)                                      | false (Falso)     | Pass True, if the user can send audios, documents, photos, videos, video notes and voice notes, implies can_send_messages                                                                             |
+| can_send_other_messages     | Boolen (Boleano)                                      | false (Falso)     | Pass True, if the user can send animations, games, stickers and use inline bots, implies can_send_media_messages                                                                                      |
+| can_add_web_page_previews | Boolen (Boleano)                                      | false (Falso)     | Pass True, if the user may add web page previews to their messages, implies can_send_media_messages                                                                                                   |
 
 Exemplo:
 
@@ -598,18 +598,18 @@ restrictChatMember({
 
 Use this method to promote or demote a user in a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Pass False for all boolean parameters to demote a user. Returns True on success.
 
-| Campo                  | Tipo              | Requerido         | Descrição                                                                                                                                                                                                                    |
-| ---------------------- | ----------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| chat_id                | Integer or String | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                                                                                     |
-| user_id                | Interger (Número) | true (Verdadeiro) | Unique identifier of the target user                                                                                                                                                                                         |
-| can_change_info      | Boolen (Boleano)  | false (Falso)     | Pass True, if the administrator can change chat title, photo and other settings                                                                                                                                              |
-| can_post_messages    | Boolen (Boleano)  | false (Falso)     | Pass True, if the administrator can create channel posts, channels only                                                                                                                                                      |
-| can_edit_messages    | Boolen (Boleano)  | false (Falso)     | Pass True, if the administrator can edit messages of other users and can pin messages, channels only                                                                                                                         |
-| can_delete_messages  | Boolen (Boleano)  | false (Falso)     | Pass True, if the administrator can delete messages of other users                                                                                                                                                           |
-| can_invite_users     | Boolen (Boleano)  | false (Falso)     | Pass True, if the administrator can invite new users to the chat                                                                                                                                                             |
-| can_restrict_members | Boolen (Boleano)  | false (Falso)     | Pass True, if the administrator can restrict, ban or unban chat members                                                                                                                                                      |
-| can_pin_messages     | Boolen (Boleano)  | false (Falso)     | Pass True, if the administrator can pin messages, supergroups only                                                                                                                                                           |
-| can_promote_members  | Boolen (Boleano)  | false (Falso)     | Pass True, if the administrator can add new administrators with a subset of his own privileges or demote administrators that he has promoted, directly or indirectly (promoted by administrators that were appointed by him) |
+| Campo                  | Tipo                                                  | Requerido         | Descrição                                                                                                                                                                                                                    |
+| ---------------------- | ----------------------------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| chat_id                | Interger (Número) ou String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                                                                                     |
+| user_id                | Interger (Número)                                     | true (Verdadeiro) | Unique identifier of the target user                                                                                                                                                                                         |
+| can_change_info      | Boolen (Boleano)                                      | false (Falso)     | Pass True, if the administrator can change chat title, photo and other settings                                                                                                                                              |
+| can_post_messages    | Boolen (Boleano)                                      | false (Falso)     | Pass True, if the administrator can create channel posts, channels only                                                                                                                                                      |
+| can_edit_messages    | Boolen (Boleano)                                      | false (Falso)     | Pass True, if the administrator can edit messages of other users and can pin messages, channels only                                                                                                                         |
+| can_delete_messages  | Boolen (Boleano)                                      | false (Falso)     | Pass True, if the administrator can delete messages of other users                                                                                                                                                           |
+| can_invite_users     | Boolen (Boleano)                                      | false (Falso)     | Pass True, if the administrator can invite new users to the chat                                                                                                                                                             |
+| can_restrict_members | Boolen (Boleano)                                      | false (Falso)     | Pass True, if the administrator can restrict, ban or unban chat members                                                                                                                                                      |
+| can_pin_messages     | Boolen (Boleano)                                      | false (Falso)     | Pass True, if the administrator can pin messages, supergroups only                                                                                                                                                           |
+| can_promote_members  | Boolen (Boleano)                                      | false (Falso)     | Pass True, if the administrator can add new administrators with a subset of his own privileges or demote administrators that he has promoted, directly or indirectly (promoted by administrators that were appointed by him) |
 
 Exemplo:
 
@@ -632,9 +632,9 @@ promoteChatMember({
 
 Use this method to generate a new invite link for a chat; any previously generated link is revoked. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns the new invite link as String on success.
 
-| Campo   | Tipo              | Requerido         | Descrição                                                                                                |
-| ------- | ----------------- | ----------------- | -------------------------------------------------------------------------------------------------------- |
-| chat_id | Integer or String | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
+| Campo   | Tipo                                                  | Requerido         | Descrição                                                                                                |
+| ------- | ----------------------------------------------------- | ----------------- | -------------------------------------------------------------------------------------------------------- |
+| chat_id | Interger (Número) ou String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
 
 Exemplo:
 
@@ -648,10 +648,10 @@ exportChatInviteLink({
 
 Use this method to set a new profile photo for the chat. Photos can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns True on success.
 
-| Campo   | Tipo              | Requerido         | Descrição                                                                                                |
-| ------- | ----------------- | ----------------- | -------------------------------------------------------------------------------------------------------- |
-| chat_id | Integer or String | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
-| photo   | InputFile         | true (Verdadeiro) | New chat photo, uploaded using multipart&#x2F;form-data                                                  |
+| Campo   | Tipo                                                  | Requerido         | Descrição                                                                                                |
+| ------- | ----------------------------------------------------- | ----------------- | -------------------------------------------------------------------------------------------------------- |
+| chat_id | Interger (Número) ou String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
+| photo   | InputFile                                             | true (Verdadeiro) | New chat photo, uploaded using multipart&#x2F;form-data                                                  |
 
 Exemplo:
 
@@ -666,9 +666,9 @@ setChatPhoto({
 
 Use this method to delete a chat photo. Photos can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns True on success.
 
-| Campo   | Tipo              | Requerido         | Descrição                                                                                                |
-| ------- | ----------------- | ----------------- | -------------------------------------------------------------------------------------------------------- |
-| chat_id | Integer or String | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
+| Campo   | Tipo                                                  | Requerido         | Descrição                                                                                                |
+| ------- | ----------------------------------------------------- | ----------------- | -------------------------------------------------------------------------------------------------------- |
+| chat_id | Interger (Número) ou String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
 
 Exemplo:
 
@@ -682,10 +682,10 @@ deleteChatPhoto({
 
 Use this method to change the title of a chat. Titles can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns True on success.
 
-| Campo   | Tipo                             | Requerido         | Descrição                                                                                                |
-| ------- | -------------------------------- | ----------------- | -------------------------------------------------------------------------------------------------------- |
-| chat_id | Integer or String                | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
-| title   | String (Sequência de caracteres) | true (Verdadeiro) | New chat title, 1-255 characters                                                                         |
+| Campo   | Tipo                                                  | Requerido         | Descrição                                                                                                |
+| ------- | ----------------------------------------------------- | ----------------- | -------------------------------------------------------------------------------------------------------- |
+| chat_id | Interger (Número) ou String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
+| title   | String (Sequência de caracteres)                      | true (Verdadeiro) | New chat title, 1-255 characters                                                                         |
 
 Exemplo:
 
@@ -700,10 +700,10 @@ setChatTitle({
 
 Use this method to change the description of a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns True on success.
 
-| Campo       | Tipo                             | Requerido         | Descrição                                                                                                |
-| ----------- | -------------------------------- | ----------------- | -------------------------------------------------------------------------------------------------------- |
-| chat_id     | Integer or String                | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
-| description | String (Sequência de caracteres) | false (Falso)     | Nova descrição do chat, 0-255 caracteres                                                                 |
+| Campo       | Tipo                                                  | Requerido         | Descrição                                                                                                |
+| ----------- | ----------------------------------------------------- | ----------------- | -------------------------------------------------------------------------------------------------------- |
+| chat_id     | Interger (Número) ou String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
+| description | String (Sequência de caracteres)                      | false (Falso)     | Nova descrição do chat, 0-255 caracteres                                                                 |
 
 Exemplo:
 
@@ -718,11 +718,11 @@ setChatDescription({
 
 Use this method to pin a message in a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the ‘can_pin_messages’ admin right in the supergroup or ‘can_edit_messages’ admin right in the channel. Returns True on success.
 
-| Campo                | Tipo              | Requerido         | Descrição                                                                                                                                                 |
-| -------------------- | ----------------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| chat_id              | Integer or String | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                  |
-| message_id           | Interger (Número) | true (Verdadeiro) | Identificador de uma mensagem fixada                                                                                                                      |
-| disable_notification | Boolen (Boleano)  | false (Falso)     | Pass True, if it is not necessary to send a notification to all chat members about the new pinned message. Notifications are always disabled in channels. |
+| Campo                | Tipo                                                  | Requerido         | Descrição                                                                                                                                                 |
+| -------------------- | ----------------------------------------------------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| chat_id              | Interger (Número) ou String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                  |
+| message_id           | Interger (Número)                                     | true (Verdadeiro) | Identificador de uma mensagem fixada                                                                                                                      |
+| disable_notification | Boolen (Boleano)                                      | false (Falso)     | Pass True, if it is not necessary to send a notification to all chat members about the new pinned message. Notifications are always disabled in channels. |
 
 Exemplo:
 
@@ -738,9 +738,9 @@ pinChatMessage({
 
 Use this method to unpin a message in a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the ‘can_pin_messages’ admin right in the supergroup or ‘can_edit_messages’ admin right in the channel. Returns True on success.
 
-| Campo   | Tipo              | Requerido         | Descrição                                                                                                |
-| ------- | ----------------- | ----------------- | -------------------------------------------------------------------------------------------------------- |
-| chat_id | Integer or String | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
+| Campo   | Tipo                                                  | Requerido         | Descrição                                                                                                |
+| ------- | ----------------------------------------------------- | ----------------- | -------------------------------------------------------------------------------------------------------- |
+| chat_id | Interger (Número) ou String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
 
 Exemplo:
 
@@ -754,9 +754,9 @@ unpinChatMessage({
 
 Use this method for your bot to leave a group, supergroup or channel. Returns True on success.
 
-| Campo   | Tipo              | Requerido         | Descrição                                                                                                              |
-| ------- | ----------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| chat_id | Integer or String | true (Verdadeiro) | Unique identifier for the target chat or username of the target supergroup or channel (in the format @channelusername) |
+| Campo   | Tipo                                                  | Requerido         | Descrição                                                                                                              |
+| ------- | ----------------------------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| chat_id | Interger (Número) ou String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for the target chat or username of the target supergroup or channel (in the format @channelusername) |
 
 Exemplo:
 
@@ -770,9 +770,9 @@ leaveChat({
 
 Use this method to get up to date information about the chat (current name of the user for one-on-one conversations, current username of a user, group or channel, etc.). Returns a Chat object on success.
 
-| Campo   | Tipo              | Requerido         | Descrição                                                                                                              |
-| ------- | ----------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| chat_id | Integer or String | true (Verdadeiro) | Unique identifier for the target chat or username of the target supergroup or channel (in the format @channelusername) |
+| Campo   | Tipo                                                  | Requerido         | Descrição                                                                                                              |
+| ------- | ----------------------------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| chat_id | Interger (Número) ou String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for the target chat or username of the target supergroup or channel (in the format @channelusername) |
 
 Exemplo:
 
@@ -786,9 +786,9 @@ getChat({
 
 Use this method to get a list of administrators in a chat. On success, returns an Array of ChatMember objects that contains information about all chat administrators except other bots. If the chat is a group or a supergroup and no administrators were appointed, only the creator will be returned.
 
-| Campo   | Tipo              | Requerido         | Descrição                                                                                                              |
-| ------- | ----------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| chat_id | Integer or String | true (Verdadeiro) | Unique identifier for the target chat or username of the target supergroup or channel (in the format @channelusername) |
+| Campo   | Tipo                                                  | Requerido         | Descrição                                                                                                              |
+| ------- | ----------------------------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| chat_id | Interger (Número) ou String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for the target chat or username of the target supergroup or channel (in the format @channelusername) |
 
 Exemplo:
 
@@ -802,9 +802,9 @@ getChatAdministrators({
 
 Use this method to get the number of members in a chat. Returns Int on success.
 
-| Campo   | Tipo              | Requerido         | Descrição                                                                                                              |
-| ------- | ----------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| chat_id | Integer or String | true (Verdadeiro) | Unique identifier for the target chat or username of the target supergroup or channel (in the format @channelusername) |
+| Campo   | Tipo                                                  | Requerido         | Descrição                                                                                                              |
+| ------- | ----------------------------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| chat_id | Interger (Número) ou String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for the target chat or username of the target supergroup or channel (in the format @channelusername) |
 
 Exemplo:
 
@@ -818,10 +818,10 @@ getChatMembersCount({
 
 Use this method to get information about a member of a chat. Returns a ChatMember object on success.
 
-| Campo   | Tipo              | Requerido         | Descrição                                                                                                              |
-| ------- | ----------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| chat_id | Integer or String | true (Verdadeiro) | Unique identifier for the target chat or username of the target supergroup or channel (in the format @channelusername) |
-| user_id | Interger (Número) | true (Verdadeiro) | Unique identifier of the target user                                                                                   |
+| Campo   | Tipo                                                  | Requerido         | Descrição                                                                                                              |
+| ------- | ----------------------------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| chat_id | Interger (Número) ou String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for the target chat or username of the target supergroup or channel (in the format @channelusername) |
+| user_id | Interger (Número)                                     | true (Verdadeiro) | Unique identifier of the target user                                                                                   |
 
 Exemplo:
 
@@ -836,10 +836,10 @@ getChatMember({
 
 Use this method to set a new group sticker set for a supergroup. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Use the field can_set_sticker_set optionally returned in getChat requests to check if the bot can use this method. Returns True on success.
 
-| Campo              | Tipo                             | Requerido         | Descrição                                                                                                      |
-| ------------------ | -------------------------------- | ----------------- | -------------------------------------------------------------------------------------------------------------- |
-| chat_id            | Integer or String                | true (Verdadeiro) | Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername) |
-| sticker_set_name | String (Sequência de caracteres) | true (Verdadeiro) | Name of the sticker set to be set as the group sticker set                                                     |
+| Campo              | Tipo                                                  | Requerido         | Descrição                                                                                                      |
+| ------------------ | ----------------------------------------------------- | ----------------- | -------------------------------------------------------------------------------------------------------------- |
+| chat_id            | Interger (Número) ou String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername) |
+| sticker_set_name | String (Sequência de caracteres)                      | true (Verdadeiro) | Name of the sticker set to be set as the group sticker set                                                     |
 
 Exemplo:
 
@@ -854,9 +854,9 @@ setChatStickerSet({
 
 Use this method to delete a group sticker set from a supergroup. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Use the field can_set_sticker_set optionally returned in getChat requests to check if the bot can use this method. Returns True on success.
 
-| Campo   | Tipo              | Requerido         | Descrição                                                                                                      |
-| ------- | ----------------- | ----------------- | -------------------------------------------------------------------------------------------------------------- |
-| chat_id | Integer or String | true (Verdadeiro) | Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername) |
+| Campo   | Tipo                                                  | Requerido         | Descrição                                                                                                      |
+| ------- | ----------------------------------------------------- | ----------------- | -------------------------------------------------------------------------------------------------------------- |
+| chat_id | Interger (Número) ou String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername) |
 
 Exemplo:
 
@@ -894,15 +894,15 @@ answerCallbackQuery({
 
 Use this method to edit text and game messages sent by the bot or via the bot (for inline bots). On success, if edited message is sent by the bot, the edited Message is returned, otherwise True is returned.
 
-| Campo                      | Tipo                             | Requerido         | Descrição                                                                                                                                                  |
-| -------------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| chat_id                    | Integer or String                | false (Falso)     | Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
-| message_id                 | Interger (Número)                | false (Falso)     | Required if inline_message_id is not specified. Identifier of the sent message                                                                           |
-| inline_message_id        | String (Sequência de caracteres) | false (Falso)     | Required if chat_id and message_id are not specified. Identifier of the inline message                                                                   |
-| text                       | String (Sequência de caracteres) | true (Verdadeiro) | New text of the message                                                                                                                                    |
-| parse_mode                 | String (Sequência de caracteres) | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in your bot's message.                              |
-| disable_web_page_preview | Boolen (Boleano)                 | false (Falso)     | Disables link previews for links in this message                                                                                                           |
-| reply_markup               | InlineKeyboardMarkup             | false (Falso)     | A JSON-serialized object for an inline keyboard.                                                                                                           |
+| Campo                      | Tipo                                                  | Requerido         | Descrição                                                                                                                                                  |
+| -------------------------- | ----------------------------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| chat_id                    | Interger (Número) ou String (Sequência de caracteres) | false (Falso)     | Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
+| message_id                 | Interger (Número)                                     | false (Falso)     | Required if inline_message_id is not specified. Identifier of the sent message                                                                           |
+| inline_message_id        | String (Sequência de caracteres)                      | false (Falso)     | Required if chat_id and message_id are not specified. Identifier of the inline message                                                                   |
+| text                       | String (Sequência de caracteres)                      | true (Verdadeiro) | New text of the message                                                                                                                                    |
+| parse_mode                 | String (Sequência de caracteres)                      | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in your bot's message.                              |
+| disable_web_page_preview | Boolen (Boleano)                                      | false (Falso)     | Disables link previews for links in this message                                                                                                           |
+| reply_markup               | InlineKeyboardMarkup                                  | false (Falso)     | A JSON-serialized object for an inline keyboard.                                                                                                           |
 
 Exemplo:
 
@@ -922,14 +922,14 @@ editMessageText({
 
 Use this method to edit captions of messages sent by the bot or via the bot (for inline bots). On success, if edited message is sent by the bot, the edited Message is returned, otherwise True is returned.
 
-| Campo               | Tipo                             | Requerido     | Descrição                                                                                                                                                  |
-| ------------------- | -------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| chat_id             | Integer or String                | false (Falso) | Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
-| message_id          | Interger (Número)                | false (Falso) | Required if inline_message_id is not specified. Identifier of the sent message                                                                           |
-| inline_message_id | String (Sequência de caracteres) | false (Falso) | Required if chat_id and message_id are not specified. Identifier of the inline message                                                                   |
-| caption             | String (Sequência de caracteres) | false (Falso) | New caption of the message                                                                                                                                 |
-| parse_mode          | String (Sequência de caracteres) | false (Falso) | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption.                               |
-| reply_markup        | InlineKeyboardMarkup             | false (Falso) | A JSON-serialized object for an inline keyboard.                                                                                                           |
+| Campo               | Tipo                                                  | Requerido     | Descrição                                                                                                                                                  |
+| ------------------- | ----------------------------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| chat_id             | Interger (Número) ou String (Sequência de caracteres) | false (Falso) | Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
+| message_id          | Interger (Número)                                     | false (Falso) | Required if inline_message_id is not specified. Identifier of the sent message                                                                           |
+| inline_message_id | String (Sequência de caracteres)                      | false (Falso) | Required if chat_id and message_id are not specified. Identifier of the inline message                                                                   |
+| caption             | String (Sequência de caracteres)                      | false (Falso) | New caption of the message                                                                                                                                 |
+| parse_mode          | String (Sequência de caracteres)                      | false (Falso) | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption.                               |
+| reply_markup        | InlineKeyboardMarkup                                  | false (Falso) | A JSON-serialized object for an inline keyboard.                                                                                                           |
 
 Exemplo:
 
@@ -948,12 +948,12 @@ editMessageCaption({
 
 Use this method to edit only the reply markup of messages sent by the bot or via the bot (for inline bots). On success, if edited message is sent by the bot, the edited Message is returned, otherwise True is returned.
 
-| Campo               | Tipo                             | Requerido     | Descrição                                                                                                                                                  |
-| ------------------- | -------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| chat_id             | Integer or String                | false (Falso) | Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
-| message_id          | Interger (Número)                | false (Falso) | Required if inline_message_id is not specified. Identifier of the sent message                                                                           |
-| inline_message_id | String (Sequência de caracteres) | false (Falso) | Required if chat_id and message_id are not specified. Identifier of the inline message                                                                   |
-| reply_markup        | InlineKeyboardMarkup             | false (Falso) | A JSON-serialized object for an inline keyboard.                                                                                                           |
+| Campo               | Tipo                                                  | Requerido     | Descrição                                                                                                                                                  |
+| ------------------- | ----------------------------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| chat_id             | Interger (Número) ou String (Sequência de caracteres) | false (Falso) | Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
+| message_id          | Interger (Número)                                     | false (Falso) | Required if inline_message_id is not specified. Identifier of the sent message                                                                           |
+| inline_message_id | String (Sequência de caracteres)                      | false (Falso) | Required if chat_id and message_id are not specified. Identifier of the inline message                                                                   |
+| reply_markup        | InlineKeyboardMarkup                                  | false (Falso) | A JSON-serialized object for an inline keyboard.                                                                                                           |
 
 Exemplo:
 
@@ -970,10 +970,10 @@ editMessageReplyMarkup({
 
 Use this method to delete a message, including service messages, with the following limitations:- A message can only be deleted if it was sent less than 48 hours ago.- Bots can delete outgoing messages in groups and supergroups.- Bots granted can_post_messages permissions can delete outgoing messages in channels.- If the bot is an administrator of a group, it can delete any message there.- If the bot has can_delete_messages permission in a supergroup or a channel, it can delete any message there.Returns True on success.
 
-| Campo      | Tipo              | Requerido         | Descrição                                                                                                |
-| ---------- | ----------------- | ----------------- | -------------------------------------------------------------------------------------------------------- |
-| chat_id    | Integer or String | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
-| message_id | Interger (Número) | true (Verdadeiro) | Identifier of the message to delete                                                                      |
+| Campo      | Tipo                                                  | Requerido         | Descrição                                                                                                |
+| ---------- | ----------------------------------------------------- | ----------------- | -------------------------------------------------------------------------------------------------------- |
+| chat_id    | Interger (Número) ou String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
+| message_id | Interger (Número)                                     | true (Verdadeiro) | Identifier of the message to delete                                                                      |
 
 Exemplo:
 
@@ -990,8 +990,8 @@ Use this method to send .webp stickers. Em caso de sucesso, a mensagem enviada s
 
 | Campo                 | Tipo                                                                             | Requerido         | Descrição                                                                                                                                                                                                                                                                     |
 | --------------------- | -------------------------------------------------------------------------------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| chat_id               | Integer or String                                                                | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                                                                                                                                      |
-| sticker               | InputFile or String                                                              | true (Verdadeiro) | Sticker to send. Pass a file_id as String to send a file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a .webp file from the Internet, or upload a new one using multipart&#x2F;form-data. More info on Sending Files » |
+| chat_id               | Interger (Número) ou String (Sequência de caracteres)                            | true (Verdadeiro) | Unique identifier for the target chat or username of the target channel (in the format @channelusername)                                                                                                                                                                      |
+| sticker               | InputFile ou String (Sequência de caracteres)                                    | true (Verdadeiro) | Sticker to send. Pass a file_id as String to send a file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a .webp file from the Internet, or upload a new one using multipart&#x2F;form-data. More info on Sending Files » |
 | disable_notification  | Boolen (Boleano)                                                                 | false (Falso)     | Envia uma mensagem silenciosamente. Os usuários não receberão uma notificação em som.                                                                                                                                                                                         |
 | reply_to_message_id | Interger (Número)                                                                | false (Falso)     | If the message is a reply, ID of the original message                                                                                                                                                                                                                         |
 | reply_markup          | InlineKeyboardMarkup or ReplyKeyboardMarkup or ReplyKeyboardRemove or ForceReply | false (Falso)     | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user.                                                                                                |
@@ -1046,15 +1046,15 @@ uploadStickerFile({
 
 Use this method to create new sticker set owned by a user. The bot will be able to edit the created sticker set. Returns True on success.
 
-| Campo          | Tipo                             | Requerido         | Descrição                                                                                                                                                                                                                                                                                                                                                                                               |
-| -------------- | -------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| user_id        | Interger (Número)                | true (Verdadeiro) | User identifier of created sticker set owner                                                                                                                                                                                                                                                                                                                                                            |
-| name           | String (Sequência de caracteres) | true (Verdadeiro) | Short name of sticker set, to be used in t.me&#x2F;addstickers&#x2F; URLs (e.g., animals). Can contain only english letters, digits and underscores. Must begin with a letter, can't contain consecutive underscores and must end in “*by*&lt;bot username&gt;”. &lt;bot_username&gt; is case insensitive. 1-64 characters.                                                     |
-| title          | String (Sequência de caracteres) | true (Verdadeiro) | Sticker set title, 1-64 characters                                                                                                                                                                                                                                                                                                                                                                      |
-| png_sticker    | InputFile or String              | true (Verdadeiro) | Png image with the sticker, must be up to 512 kilobytes in size, dimensions must not exceed 512px, and either width or height must be exactly 512px. Pass a file_id as a String to send a file that already exists on the Telegram servers, pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart&#x2F;form-data. More info on Sending Files » |
-| emojis         | String (Sequência de caracteres) | true (Verdadeiro) | One or more emoji corresponding to the sticker                                                                                                                                                                                                                                                                                                                                                          |
-| contains_masks | Boolen (Boleano)                 | false (Falso)     | Pass True, if a set of mask stickers should be created                                                                                                                                                                                                                                                                                                                                                  |
-| mask_position  | MaskPosition                     | false (Falso)     | A JSON-serialized object for position where the mask should be placed on faces                                                                                                                                                                                                                                                                                                                          |
+| Campo          | Tipo                                          | Requerido         | Descrição                                                                                                                                                                                                                                                                                                                                                                                               |
+| -------------- | --------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| user_id        | Interger (Número)                             | true (Verdadeiro) | User identifier of created sticker set owner                                                                                                                                                                                                                                                                                                                                                            |
+| name           | String (Sequência de caracteres)              | true (Verdadeiro) | Short name of sticker set, to be used in t.me&#x2F;addstickers&#x2F; URLs (e.g., animals). Can contain only english letters, digits and underscores. Must begin with a letter, can't contain consecutive underscores and must end in “*by*&lt;bot username&gt;”. &lt;bot_username&gt; is case insensitive. 1-64 characters.                                                     |
+| title          | String (Sequência de caracteres)              | true (Verdadeiro) | Sticker set title, 1-64 characters                                                                                                                                                                                                                                                                                                                                                                      |
+| png_sticker    | InputFile ou String (Sequência de caracteres) | true (Verdadeiro) | Png image with the sticker, must be up to 512 kilobytes in size, dimensions must not exceed 512px, and either width or height must be exactly 512px. Pass a file_id as a String to send a file that already exists on the Telegram servers, pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart&#x2F;form-data. More info on Sending Files » |
+| emojis         | String (Sequência de caracteres)              | true (Verdadeiro) | One or more emoji corresponding to the sticker                                                                                                                                                                                                                                                                                                                                                          |
+| contains_masks | Boolen (Boleano)                              | false (Falso)     | Pass True, if a set of mask stickers should be created                                                                                                                                                                                                                                                                                                                                                  |
+| mask_position  | MaskPosition                                  | false (Falso)     | A JSON-serialized object for position where the mask should be placed on faces                                                                                                                                                                                                                                                                                                                          |
 
 Exemplo:
 
@@ -1074,13 +1074,13 @@ createNewStickerSet({
 
 Use this method to add a new sticker to a set created by the bot. Returns True on success.
 
-| Campo         | Tipo                             | Requerido         | Descrição                                                                                                                                                                                                                                                                                                                                                                                               |
-| ------------- | -------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| user_id       | Interger (Número)                | true (Verdadeiro) | User identifier of sticker set owner                                                                                                                                                                                                                                                                                                                                                                    |
-| name          | String (Sequência de caracteres) | true (Verdadeiro) | Sticker set name                                                                                                                                                                                                                                                                                                                                                                                        |
-| png_sticker   | InputFile or String              | true (Verdadeiro) | Png image with the sticker, must be up to 512 kilobytes in size, dimensions must not exceed 512px, and either width or height must be exactly 512px. Pass a file_id as a String to send a file that already exists on the Telegram servers, pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart&#x2F;form-data. More info on Sending Files » |
-| emojis        | String (Sequência de caracteres) | true (Verdadeiro) | One or more emoji corresponding to the sticker                                                                                                                                                                                                                                                                                                                                                          |
-| mask_position | MaskPosition                     | false (Falso)     | A JSON-serialized object for position where the mask should be placed on faces                                                                                                                                                                                                                                                                                                                          |
+| Campo         | Tipo                                          | Requerido         | Descrição                                                                                                                                                                                                                                                                                                                                                                                               |
+| ------------- | --------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| user_id       | Interger (Número)                             | true (Verdadeiro) | User identifier of sticker set owner                                                                                                                                                                                                                                                                                                                                                                    |
+| name          | String (Sequência de caracteres)              | true (Verdadeiro) | Sticker set name                                                                                                                                                                                                                                                                                                                                                                                        |
+| png_sticker   | InputFile ou String (Sequência de caracteres) | true (Verdadeiro) | Png image with the sticker, must be up to 512 kilobytes in size, dimensions must not exceed 512px, and either width or height must be exactly 512px. Pass a file_id as a String to send a file that already exists on the Telegram servers, pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart&#x2F;form-data. More info on Sending Files » |
+| emojis        | String (Sequência de caracteres)              | true (Verdadeiro) | One or more emoji corresponding to the sticker                                                                                                                                                                                                                                                                                                                                                          |
+| mask_position | MaskPosition                                  | false (Falso)     | A JSON-serialized object for position where the mask should be placed on faces                                                                                                                                                                                                                                                                                                                          |
 
 Exemplo:
 
