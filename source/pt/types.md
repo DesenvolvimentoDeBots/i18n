@@ -1,4 +1,4 @@
-# Types
+# Tipos
 
 - [Update](#update)
 - [WebhookInfo](#webhookinfo)
