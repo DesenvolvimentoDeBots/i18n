@@ -31,15 +31,15 @@ Represents a link to an article or web page.
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for this result, 1-64 Bytes                   |
 | title                   | String (Sequência de caracteres) | true (Verdadeiro) | Title of the result                                             |
 | input_message_content | InputMessageContent              | true (Verdadeiro) | Content of the message to be sent                               |
-| reply_markup            | InlineKeyboardMarkup             | false             | Inline keyboard attached to the message                         |
-| url                     | String (Sequência de caracteres) | false             | URL of the result                                               |
-| hide_url                | Boolean                          | false             | Pass True, if you don't want the URL to be shown in the message |
-| description             | String (Sequência de caracteres) | false             | Short description of the result                                 |
-| thumb_url               | String (Sequência de caracteres) | false             | Url of the thumbnail for the result                             |
-| thumb_width             | Interger (Número)                | false             | Thumbnail width                                                 |
-| thumb_height            | Interger (Número)                | false             | Thumbnail height                                                |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message                         |
+| url                     | String (Sequência de caracteres) | false (Falso)     | URL of the result                                               |
+| hide_url                | Boolen (Boleano)                 | false (Falso)     | Pass True, if you don't want the URL to be shown in the message |
+| description             | String (Sequência de caracteres) | false (Falso)     | Short description of the result                                 |
+| thumb_url               | String (Sequência de caracteres) | false (Falso)     | Url of the thumbnail for the result                             |
+| thumb_width             | Interger (Número)                | false (Falso)     | Thumbnail width                                                 |
+| thumb_height            | Interger (Número)                | false (Falso)     | Thumbnail height                                                |
 
-Example:
+Exemplo:
 
 ```javascript
 [{
@@ -67,16 +67,16 @@ Represents a link to a photo. By default, this photo will be sent by the user wi
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for this result, 1-64 bytes                                                                                |
 | photo_url               | String (Sequência de caracteres) | true (Verdadeiro) | A valid URL of the photo. Photo must be in jpeg format. Photo size must not exceed 5MB                                       |
 | thumb_url               | String (Sequência de caracteres) | true (Verdadeiro) | URL of the thumbnail for the photo                                                                                           |
-| photo_width             | Interger (Número)                | false             | Width of the photo                                                                                                           |
-| photo_height            | Interger (Número)                | false             | Height of the photo                                                                                                          |
-| title                   | String (Sequência de caracteres) | false             | Title for the result                                                                                                         |
-| description             | String (Sequência de caracteres) | false             | Short description of the result                                                                                              |
-| caption                 | String (Sequência de caracteres) | false             | Caption of the photo to be sent, 0-200 characters                                                                            |
-| parse_mode              | String (Sequência de caracteres) | false             | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
-| reply_markup            | InlineKeyboardMarkup             | false             | Inline keyboard attached to the message                                                                                      |
-| input_message_content | InputMessageContent              | false             | Content of the message to be sent instead of the photo                                                                       |
+| photo_width             | Interger (Número)                | false (Falso)     | Width of the photo                                                                                                           |
+| photo_height            | Interger (Número)                | false (Falso)     | Height of the photo                                                                                                          |
+| title                   | String (Sequência de caracteres) | false (Falso)     | Title for the result                                                                                                         |
+| description             | String (Sequência de caracteres) | false (Falso)     | Short description of the result                                                                                              |
+| caption                 | String (Sequência de caracteres) | false (Falso)     | Caption of the photo to be sent, 0-200 characters                                                                            |
+| parse_mode              | String (Sequência de caracteres) | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message                                                                                      |
+| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the photo                                                                       |
 
-Example:
+Exemplo:
 
 ```javascript
 [{
@@ -104,17 +104,17 @@ Represents a link to an animated GIF file. By default, this animated GIF file wi
 | tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be gif                                                                                              |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for this result, 1-64 bytes                                                                                |
 | gif_url                 | String (Sequência de caracteres) | true (Verdadeiro) | A valid URL for the GIF file. File size must not exceed 1MB                                                                  |
-| gif_width               | Interger (Número)                | false             | Width of the GIF                                                                                                             |
-| gif_height              | Interger (Número)                | false             | Height of the GIF                                                                                                            |
-| gif_duration            | Interger (Número)                | false             | Duration of the GIF                                                                                                          |
+| gif_width               | Interger (Número)                | false (Falso)     | Width of the GIF                                                                                                             |
+| gif_height              | Interger (Número)                | false (Falso)     | Height of the GIF                                                                                                            |
+| gif_duration            | Interger (Número)                | false (Falso)     | Duration of the GIF                                                                                                          |
 | thumb_url               | String (Sequência de caracteres) | true (Verdadeiro) | URL of the static thumbnail for the result (jpeg or gif)                                                                     |
-| title                   | String (Sequência de caracteres) | false             | Title for the result                                                                                                         |
-| caption                 | String (Sequência de caracteres) | false             | Caption of the GIF file to be sent, 0-200 characters                                                                         |
-| parse_mode              | String (Sequência de caracteres) | false             | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
-| reply_markup            | InlineKeyboardMarkup             | false             | Inline keyboard attached to the message                                                                                      |
-| input_message_content | InputMessageContent              | false             | Content of the message to be sent instead of the GIF animation                                                               |
+| title                   | String (Sequência de caracteres) | false (Falso)     | Title for the result                                                                                                         |
+| caption                 | String (Sequência de caracteres) | false (Falso)     | Caption of the GIF file to be sent, 0-200 characters                                                                         |
+| parse_mode              | String (Sequência de caracteres) | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message                                                                                      |
+| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the GIF animation                                                               |
 
-Example:
+Exemplo:
 
 ```javascript
 [{
@@ -142,17 +142,17 @@ Represents a link to a video animation (H.264&#x2F;MPEG-4 AVC video without soun
 | tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be mpeg4_gif                                                                                        |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for this result, 1-64 bytes                                                                                |
 | mpeg4_url               | String (Sequência de caracteres) | true (Verdadeiro) | A valid URL for the MP4 file. File size must not exceed 1MB                                                                  |
-| mpeg4_width             | Interger (Número)                | false             | Video width                                                                                                                  |
-| mpeg4_height            | Interger (Número)                | false             | Video height                                                                                                                 |
-| mpeg4_duration          | Interger (Número)                | false             | Video duration                                                                                                               |
+| mpeg4_width             | Interger (Número)                | false (Falso)     | Video width                                                                                                                  |
+| mpeg4_height            | Interger (Número)                | false (Falso)     | Video height                                                                                                                 |
+| mpeg4_duration          | Interger (Número)                | false (Falso)     | Video duration                                                                                                               |
 | thumb_url               | String (Sequência de caracteres) | true (Verdadeiro) | URL of the static thumbnail (jpeg or gif) for the result                                                                     |
-| title                   | String (Sequência de caracteres) | false             | Title for the result                                                                                                         |
-| caption                 | String (Sequência de caracteres) | false             | Caption of the MPEG-4 file to be sent, 0-200 characters                                                                      |
-| parse_mode              | String (Sequência de caracteres) | false             | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
-| reply_markup            | InlineKeyboardMarkup             | false             | Inline keyboard attached to the message                                                                                      |
-| input_message_content | InputMessageContent              | false             | Content of the message to be sent instead of the video animation                                                             |
+| title                   | String (Sequência de caracteres) | false (Falso)     | Title for the result                                                                                                         |
+| caption                 | String (Sequência de caracteres) | false (Falso)     | Caption of the MPEG-4 file to be sent, 0-200 characters                                                                      |
+| parse_mode              | String (Sequência de caracteres) | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message                                                                                      |
+| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the video animation                                                             |
 
-Example:
+Exemplo:
 
 ```javascript
 [{
@@ -183,16 +183,16 @@ Represents a link to a page containing an embedded video player or a video file.
 | mime_type               | String (Sequência de caracteres) | true (Verdadeiro) | Mime type of the content of video url, “text&#x2F;html” or “video&#x2F;mp4”                                                                                                |
 | thumb_url               | String (Sequência de caracteres) | true (Verdadeiro) | URL of the thumbnail (jpeg only) for the video                                                                                                                             |
 | title                   | String (Sequência de caracteres) | true (Verdadeiro) | Title for the result                                                                                                                                                       |
-| caption                 | String (Sequência de caracteres) | false             | Caption of the video to be sent, 0-200 characters                                                                                                                          |
-| parse_mode              | String (Sequência de caracteres) | false             | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption.                                               |
-| video_width             | Interger (Número)                | false             | Video width                                                                                                                                                                |
-| video_height            | Interger (Número)                | false             | Video height                                                                                                                                                               |
-| video_duration          | Interger (Número)                | false             | Video duration in seconds                                                                                                                                                  |
-| description             | String (Sequência de caracteres) | false             | Short description of the result                                                                                                                                            |
-| reply_markup            | InlineKeyboardMarkup             | false             | Inline keyboard attached to the message                                                                                                                                    |
-| input_message_content | InputMessageContent              | false             | Content of the message to be sent instead of the video. This field is required if InlineQueryResultVideo is used to send an HTML-page as a result (e.g., a YouTube video). |
+| caption                 | String (Sequência de caracteres) | false (Falso)     | Caption of the video to be sent, 0-200 characters                                                                                                                          |
+| parse_mode              | String (Sequência de caracteres) | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption.                                               |
+| video_width             | Interger (Número)                | false (Falso)     | Video width                                                                                                                                                                |
+| video_height            | Interger (Número)                | false (Falso)     | Video height                                                                                                                                                               |
+| video_duration          | Interger (Número)                | false (Falso)     | Video duration in seconds                                                                                                                                                  |
+| description             | String (Sequência de caracteres) | false (Falso)     | Short description of the result                                                                                                                                            |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message                                                                                                                                    |
+| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the video. This field is required if InlineQueryResultVideo is used to send an HTML-page as a result (e.g., a YouTube video). |
 
-Example:
+Exemplo:
 
 ```javascript
 [{
@@ -223,14 +223,14 @@ Represents a link to an mp3 audio file. By default, this audio file will be sent
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for this result, 1-64 bytes                                                                                |
 | audio_url               | String (Sequência de caracteres) | true (Verdadeiro) | A valid URL for the audio file                                                                                               |
 | title                   | String (Sequência de caracteres) | true (Verdadeiro) | Title                                                                                                                        |
-| caption                 | String (Sequência de caracteres) | false             | Caption, 0-200 characters                                                                                                    |
-| parse_mode              | String (Sequência de caracteres) | false             | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
-| performer               | String (Sequência de caracteres) | false             | Performer                                                                                                                    |
-| audio_duration          | Interger (Número)                | false             | Audio duration in seconds                                                                                                    |
-| reply_markup            | InlineKeyboardMarkup             | false             | Inline keyboard attached to the message                                                                                      |
-| input_message_content | InputMessageContent              | false             | Content of the message to be sent instead of the audio                                                                       |
+| caption                 | String (Sequência de caracteres) | false (Falso)     | Caption, 0-200 characters                                                                                                    |
+| parse_mode              | String (Sequência de caracteres) | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
+| performer               | String (Sequência de caracteres) | false (Falso)     | Performer                                                                                                                    |
+| audio_duration          | Interger (Número)                | false (Falso)     | Audio duration in seconds                                                                                                    |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message                                                                                      |
+| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the audio                                                                       |
 
-Example:
+Exemplo:
 
 ```javascript
 [{
@@ -257,13 +257,13 @@ Represents a link to a voice recording in an .ogg container encoded with OPUS. B
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for this result, 1-64 bytes                                                                                |
 | voice_url               | String (Sequência de caracteres) | true (Verdadeiro) | A valid URL for the voice recording                                                                                          |
 | title                   | String (Sequência de caracteres) | true (Verdadeiro) | Recording title                                                                                                              |
-| caption                 | String (Sequência de caracteres) | false             | Caption, 0-200 characters                                                                                                    |
-| parse_mode              | String (Sequência de caracteres) | false             | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
-| voice_duration          | Interger (Número)                | false             | Recording duration in seconds                                                                                                |
-| reply_markup            | InlineKeyboardMarkup             | false             | Inline keyboard attached to the message                                                                                      |
-| input_message_content | InputMessageContent              | false             | Content of the message to be sent instead of the voice recording                                                             |
+| caption                 | String (Sequência de caracteres) | false (Falso)     | Caption, 0-200 characters                                                                                                    |
+| parse_mode              | String (Sequência de caracteres) | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
+| voice_duration          | Interger (Número)                | false (Falso)     | Recording duration in seconds                                                                                                |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message                                                                                      |
+| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the voice recording                                                             |
 
-Example:
+Exemplo:
 
 ```javascript
 [{
@@ -288,18 +288,18 @@ Represents a link to a file. By default, this file will be sent by the user with
 | tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be document                                                                                         |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for this result, 1-64 bytes                                                                                |
 | title                   | String (Sequência de caracteres) | true (Verdadeiro) | Title for the result                                                                                                         |
-| caption                 | String (Sequência de caracteres) | false             | Caption of the document to be sent, 0-200 characters                                                                         |
-| parse_mode              | String (Sequência de caracteres) | false             | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
+| caption                 | String (Sequência de caracteres) | false (Falso)     | Caption of the document to be sent, 0-200 characters                                                                         |
+| parse_mode              | String (Sequência de caracteres) | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
 | document_url            | String (Sequência de caracteres) | true (Verdadeiro) | A valid URL for the file                                                                                                     |
 | mime_type               | String (Sequência de caracteres) | true (Verdadeiro) | Mime type of the content of the file, either “application&#x2F;pdf” or “application&#x2F;zip”                                |
-| description             | String (Sequência de caracteres) | false             | Short description of the result                                                                                              |
-| reply_markup            | InlineKeyboardMarkup             | false             | Inline keyboard attached to the message                                                                                      |
-| input_message_content | InputMessageContent              | false             | Content of the message to be sent instead of the file                                                                        |
-| thumb_url               | String (Sequência de caracteres) | false             | URL of the thumbnail (jpeg only) for the file                                                                                |
-| thumb_width             | Interger (Número)                | false             | Thumbnail width                                                                                                              |
-| thumb_height            | Interger (Número)                | false             | Thumbnail height                                                                                                             |
+| description             | String (Sequência de caracteres) | false (Falso)     | Short description of the result                                                                                              |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message                                                                                      |
+| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the file                                                                        |
+| thumb_url               | String (Sequência de caracteres) | false (Falso)     | URL of the thumbnail (jpeg only) for the file                                                                                |
+| thumb_width             | Interger (Número)                | false (Falso)     | Thumbnail width                                                                                                              |
+| thumb_height            | Interger (Número)                | false (Falso)     | Thumbnail height                                                                                                             |
 
-Example:
+Exemplo:
 
 ```javascript
 [{
@@ -327,17 +327,17 @@ Represents a location on a map. By default, the location will be sent by the use
 | ----------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------- |
 | tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be location                                                     |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for this result, 1-64 Bytes                                            |
-| latitude                | Float number                     | true (Verdadeiro) | Location latitude in degrees                                                             |
-| longitude               | Float number                     | true (Verdadeiro) | Location longitude in degrees                                                            |
+| latitude                | Float número                     | true (Verdadeiro) | Location latitude in degrees                                                             |
+| longitude               | Float número                     | true (Verdadeiro) | Location longitude in degrees                                                            |
 | title                   | String (Sequência de caracteres) | true (Verdadeiro) | Location title                                                                           |
-| live_period             | Interger (Número)                | false             | Period in seconds for which the location can be updated, should be between 60 and 86400. |
-| reply_markup            | InlineKeyboardMarkup             | false             | Inline keyboard attached to the message                                                  |
-| input_message_content | InputMessageContent              | false             | Content of the message to be sent instead of the location                                |
-| thumb_url               | String (Sequência de caracteres) | false             | Url of the thumbnail for the result                                                      |
-| thumb_width             | Interger (Número)                | false             | Thumbnail width                                                                          |
-| thumb_height            | Interger (Número)                | false             | Thumbnail height                                                                         |
+| live_period             | Interger (Número)                | false (Falso)     | Period in seconds for which the location can be updated, should be between 60 and 86400. |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message                                                  |
+| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the location                                |
+| thumb_url               | String (Sequência de caracteres) | false (Falso)     | Url of the thumbnail for the result                                                      |
+| thumb_width             | Interger (Número)                | false (Falso)     | Thumbnail width                                                                          |
+| thumb_height            | Interger (Número)                | false (Falso)     | Thumbnail height                                                                         |
 
-Example:
+Exemplo:
 
 ```javascript
 [{
@@ -367,14 +367,14 @@ Represents a venue. By default, the venue will be sent by the user. Alternativel
 | longitude               | Float                            | true (Verdadeiro) | Longitude of the venue location in degrees             |
 | title                   | String (Sequência de caracteres) | true (Verdadeiro) | Title of the venue                                     |
 | address                 | String (Sequência de caracteres) | true (Verdadeiro) | Address of the venue                                   |
-| foursquare_id           | String (Sequência de caracteres) | false             | Foursquare identifier of the venue if known            |
-| reply_markup            | InlineKeyboardMarkup             | false             | Inline keyboard attached to the message                |
-| input_message_content | InputMessageContent              | false             | Content of the message to be sent instead of the venue |
-| thumb_url               | String (Sequência de caracteres) | false             | Url of the thumbnail for the result                    |
-| thumb_width             | Interger (Número)                | false             | Thumbnail width                                        |
-| thumb_height            | Interger (Número)                | false             | Thumbnail height                                       |
+| foursquare_id           | String (Sequência de caracteres) | false (Falso)     | Foursquare identifier of the venue if known            |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message                |
+| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the venue |
+| thumb_url               | String (Sequência de caracteres) | false (Falso)     | Url of the thumbnail for the result                    |
+| thumb_width             | Interger (Número)                | false (Falso)     | Thumbnail width                                        |
+| thumb_height            | Interger (Número)                | false (Falso)     | Thumbnail height                                       |
 
-Example:
+Exemplo:
 
 ```javascript
 [{
@@ -402,15 +402,15 @@ Represents a contact with a phone number. By default, this contact will be sent 
 | tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be contact                      |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for this result, 1-64 Bytes            |
 | phone_number            | String (Sequência de caracteres) | true (Verdadeiro) | Contact's phone number                                   |
-| first_name              | String (Sequência de caracteres) | true (Verdadeiro) | Contact's first name                                     |
-| last_name               | String (Sequência de caracteres) | false             | Contact's last name                                      |
-| reply_markup            | InlineKeyboardMarkup             | false             | Inline keyboard attached to the message                  |
-| input_message_content | InputMessageContent              | false             | Content of the message to be sent instead of the contact |
-| thumb_url               | String (Sequência de caracteres) | false             | Url of the thumbnail for the result                      |
-| thumb_width             | Interger (Número)                | false             | Thumbnail width                                          |
-| thumb_height            | Interger (Número)                | false             | Thumbnail height                                         |
+| first_name              | String (Sequência de caracteres) | true (Verdadeiro) | Primeiro nome do contato                                 |
+| last_name               | String (Sequência de caracteres) | false (Falso)     | Último nome do contato                                   |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message                  |
+| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the contact |
+| thumb_url               | String (Sequência de caracteres) | false (Falso)     | Url of the thumbnail for the result                      |
+| thumb_width             | Interger (Número)                | false (Falso)     | Thumbnail width                                          |
+| thumb_height            | Interger (Número)                | false (Falso)     | Thumbnail height                                         |
 
-Example:
+Exemplo:
 
 ```javascript
 [{
@@ -436,9 +436,9 @@ Represents a Game.
 | tipo              | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be game              |
 | id                | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for this result, 1-64 bytes |
 | game_short_name | String (Sequência de caracteres) | true (Verdadeiro) | Short name of the game                        |
-| reply_markup      | InlineKeyboardMarkup             | false             | Inline keyboard attached to the message       |
+| reply_markup      | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message       |
 
-Example:
+Exemplo:
 
 ```javascript
 [{
@@ -458,14 +458,14 @@ Represents a link to a photo stored on the Telegram servers. By default, this ph
 | tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be photo                                                                                            |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for this result, 1-64 bytes                                                                                |
 | photo_file_id         | String (Sequência de caracteres) | true (Verdadeiro) | A valid file identifier of the photo                                                                                         |
-| title                   | String (Sequência de caracteres) | false             | Title for the result                                                                                                         |
-| description             | String (Sequência de caracteres) | false             | Short description of the result                                                                                              |
-| caption                 | String (Sequência de caracteres) | false             | Caption of the photo to be sent, 0-200 characters                                                                            |
-| parse_mode              | String (Sequência de caracteres) | false             | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
-| reply_markup            | InlineKeyboardMarkup             | false             | Inline keyboard attached to the message                                                                                      |
-| input_message_content | InputMessageContent              | false             | Content of the message to be sent instead of the photo                                                                       |
+| title                   | String (Sequência de caracteres) | false (Falso)     | Title for the result                                                                                                         |
+| description             | String (Sequência de caracteres) | false (Falso)     | Short description of the result                                                                                              |
+| caption                 | String (Sequência de caracteres) | false (Falso)     | Caption of the photo to be sent, 0-200 characters                                                                            |
+| parse_mode              | String (Sequência de caracteres) | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message                                                                                      |
+| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the photo                                                                       |
 
-Example:
+Exemplo:
 
 ```javascript
 [{
@@ -490,13 +490,13 @@ Represents a link to an animated GIF file stored on the Telegram servers. By def
 | tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be gif                                                                                              |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for this result, 1-64 bytes                                                                                |
 | gif_file_id           | String (Sequência de caracteres) | true (Verdadeiro) | A valid file identifier for the GIF file                                                                                     |
-| title                   | String (Sequência de caracteres) | false             | Title for the result                                                                                                         |
-| caption                 | String (Sequência de caracteres) | false             | Caption of the GIF file to be sent, 0-200 characters                                                                         |
-| parse_mode              | String (Sequência de caracteres) | false             | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
-| reply_markup            | InlineKeyboardMarkup             | false             | Inline keyboard attached to the message                                                                                      |
-| input_message_content | InputMessageContent              | false             | Content of the message to be sent instead of the GIF animation                                                               |
+| title                   | String (Sequência de caracteres) | false (Falso)     | Title for the result                                                                                                         |
+| caption                 | String (Sequência de caracteres) | false (Falso)     | Caption of the GIF file to be sent, 0-200 characters                                                                         |
+| parse_mode              | String (Sequência de caracteres) | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message                                                                                      |
+| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the GIF animation                                                               |
 
-Example:
+Exemplo:
 
 ```javascript
 [{
@@ -520,13 +520,13 @@ Represents a link to a video animation (H.264&#x2F;MPEG-4 AVC video without soun
 | tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be mpeg4_gif                                                                                        |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for this result, 1-64 bytes                                                                                |
 | mpeg4_file_id         | String (Sequência de caracteres) | true (Verdadeiro) | A valid file identifier for the MP4 file                                                                                     |
-| title                   | String (Sequência de caracteres) | false             | Title for the result                                                                                                         |
-| caption                 | String (Sequência de caracteres) | false             | Caption of the MPEG-4 file to be sent, 0-200 characters                                                                      |
-| parse_mode              | String (Sequência de caracteres) | false             | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
-| reply_markup            | InlineKeyboardMarkup             | false             | Inline keyboard attached to the message                                                                                      |
-| input_message_content | InputMessageContent              | false             | Content of the message to be sent instead of the video animation                                                             |
+| title                   | String (Sequência de caracteres) | false (Falso)     | Title for the result                                                                                                         |
+| caption                 | String (Sequência de caracteres) | false (Falso)     | Caption of the MPEG-4 file to be sent, 0-200 characters                                                                      |
+| parse_mode              | String (Sequência de caracteres) | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message                                                                                      |
+| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the video animation                                                             |
 
-Example:
+Exemplo:
 
 ```javascript
 [{
@@ -550,10 +550,10 @@ Represents a link to a sticker stored on the Telegram servers. By default, this 
 | tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be sticker                      |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for this result, 1-64 bytes            |
 | sticker_file_id       | String (Sequência de caracteres) | true (Verdadeiro) | A valid file identifier of the sticker                   |
-| reply_markup            | InlineKeyboardMarkup             | false             | Inline keyboard attached to the message                  |
-| input_message_content | InputMessageContent              | false             | Content of the message to be sent instead of the sticker |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message                  |
+| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the sticker |
 
-Example:
+Exemplo:
 
 ```javascript
 [{
@@ -575,13 +575,13 @@ Represents a link to a file stored on the Telegram servers. By default, this fil
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for this result, 1-64 bytes                                                                                |
 | title                   | String (Sequência de caracteres) | true (Verdadeiro) | Title for the result                                                                                                         |
 | document_file_id      | String (Sequência de caracteres) | true (Verdadeiro) | A valid file identifier for the file                                                                                         |
-| description             | String (Sequência de caracteres) | false             | Short description of the result                                                                                              |
-| caption                 | String (Sequência de caracteres) | false             | Caption of the document to be sent, 0-200 characters                                                                         |
-| parse_mode              | String (Sequência de caracteres) | false             | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
-| reply_markup            | InlineKeyboardMarkup             | false             | Inline keyboard attached to the message                                                                                      |
-| input_message_content | InputMessageContent              | false             | Content of the message to be sent instead of the file                                                                        |
+| description             | String (Sequência de caracteres) | false (Falso)     | Short description of the result                                                                                              |
+| caption                 | String (Sequência de caracteres) | false (Falso)     | Caption of the document to be sent, 0-200 characters                                                                         |
+| parse_mode              | String (Sequência de caracteres) | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message                                                                                      |
+| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the file                                                                        |
 
-Example:
+Exemplo:
 
 ```javascript
 [{
@@ -607,13 +607,13 @@ Represents a link to a video file stored on the Telegram servers. By default, th
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for this result, 1-64 bytes                                                                                |
 | video_file_id         | String (Sequência de caracteres) | true (Verdadeiro) | A valid file identifier for the video file                                                                                   |
 | title                   | String (Sequência de caracteres) | true (Verdadeiro) | Title for the result                                                                                                         |
-| description             | String (Sequência de caracteres) | false             | Short description of the result                                                                                              |
-| caption                 | String (Sequência de caracteres) | false             | Caption of the video to be sent, 0-200 characters                                                                            |
-| parse_mode              | String (Sequência de caracteres) | false             | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
-| reply_markup            | InlineKeyboardMarkup             | false             | Inline keyboard attached to the message                                                                                      |
-| input_message_content | InputMessageContent              | false             | Content of the message to be sent instead of the video                                                                       |
+| description             | String (Sequência de caracteres) | false (Falso)     | Short description of the result                                                                                              |
+| caption                 | String (Sequência de caracteres) | false (Falso)     | Caption of the video to be sent, 0-200 characters                                                                            |
+| parse_mode              | String (Sequência de caracteres) | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message                                                                                      |
+| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the video                                                                       |
 
-Example:
+Exemplo:
 
 ```javascript
 [{
@@ -639,12 +639,12 @@ Represents a link to a voice message stored on the Telegram servers. By default,
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for this result, 1-64 bytes                                                                                |
 | voice_file_id         | String (Sequência de caracteres) | true (Verdadeiro) | A valid file identifier for the voice message                                                                                |
 | title                   | String (Sequência de caracteres) | true (Verdadeiro) | Voice message title                                                                                                          |
-| caption                 | String (Sequência de caracteres) | false             | Caption, 0-200 characters                                                                                                    |
-| parse_mode              | String (Sequência de caracteres) | false             | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
-| reply_markup            | InlineKeyboardMarkup             | false             | Inline keyboard attached to the message                                                                                      |
-| input_message_content | InputMessageContent              | false             | Content of the message to be sent instead of the voice message                                                               |
+| caption                 | String (Sequência de caracteres) | false (Falso)     | Caption, 0-200 characters                                                                                                    |
+| parse_mode              | String (Sequência de caracteres) | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message                                                                                      |
+| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the voice message                                                               |
 
-Example:
+Exemplo:
 
 ```javascript
 [{
@@ -668,12 +668,12 @@ Represents a link to an mp3 audio file stored on the Telegram servers. By defaul
 | tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be audio                                                                                            |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for this result, 1-64 bytes                                                                                |
 | audio_file_id         | String (Sequência de caracteres) | true (Verdadeiro) | A valid file identifier for the audio file                                                                                   |
-| caption                 | String (Sequência de caracteres) | false             | Caption, 0-200 characters                                                                                                    |
-| parse_mode              | String (Sequência de caracteres) | false             | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
-| reply_markup            | InlineKeyboardMarkup             | false             | Inline keyboard attached to the message                                                                                      |
-| input_message_content | InputMessageContent              | false             | Content of the message to be sent instead of the audio                                                                       |
+| caption                 | String (Sequência de caracteres) | false (Falso)     | Caption, 0-200 characters                                                                                                    |
+| parse_mode              | String (Sequência de caracteres) | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message                                                                                      |
+| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the audio                                                                       |
 
-Example:
+Exemplo:
 
 ```javascript
 [{
