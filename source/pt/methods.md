@@ -1316,7 +1316,7 @@ Use this method to get data for high score tables. Will return the score of the 
 
 | Campo               | Tipo                             | Requerido         | Descrição                                                                                |
 | ------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------- |
-| user_id             | Interger (Número)                | true (Verdadeiro) | Target user id                                                                           |
+| user_id             | Interger (Número)                | true (Verdadeiro) | Usuário do destino, seu user_id                                                          |
 | chat_id             | Interger (Número)                | false (Falso)     | Required if inline_message_id is not specified. Unique identifier for the target chat  |
 | message_id          | Interger (Número)                | false (Falso)     | Required if inline_message_id is not specified. Identifier of the sent message         |
 | inline_message_id | String (Sequência de caracteres) | false (Falso)     | Required if chat_id and message_id are not specified. Identifier of the inline message |
