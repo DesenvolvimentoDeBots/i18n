@@ -152,7 +152,7 @@ forwardMessage({
 
 ## sendPhoto
 
-Use this method to send photos. Em caso de sucesso, a mensagem enviada será retornada.
+Use este método para enviar fotos. Em caso de sucesso, a mensagem enviada será retornada.
 
 | Campo                 | Tipo                                                                             | Requerido         | Descrição                                                                                                                                                                                                                                                                 |
 | --------------------- | -------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -162,7 +162,7 @@ Use this method to send photos. Em caso de sucesso, a mensagem enviada será ret
 | parse_mode            | String (Sequência de caracteres)                                                 | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption.                                                                                                                                              |
 | disable_notification  | Boolen (Boleano)                                                                 | false (Falso)     | Envia uma mensagem silenciosamente. Os usuários não receberão uma notificação em som.                                                                                                                                                                                     |
 | reply_to_message_id | Interger (Número)                                                                | false (Falso)     | If the message is a reply, ID of the original message                                                                                                                                                                                                                     |
-| reply_markup          | InlineKeyboardMarkup or ReplyKeyboardMarkup or ReplyKeyboardRemove or ForceReply | false (Falso)     | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user.                                                                                            |
+| reply_markup          | InlineKeyboardMarkup ou ReplyKeyboardMarkup ou ReplyKeyboardRemove ou ForceReply | false (Falso)     | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user.                                                                                            |
 
 Exemplo:
 
