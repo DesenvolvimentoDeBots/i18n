@@ -1,4 +1,4 @@
-# i18n
+# i18n [![Crowdin](https://d322cqt584bo4o.cloudfront.net/desenvolvimentodebots-i18n/localized.svg)](https://crowdin.com/project/desenvolvimentodebots-i18n)
 
 Tradução da documentação do Telegram Bot API para PT-BR
 
@@ -17,9 +17,7 @@ English:
 
 ## Telegram Bot API
 
-Original documetanção em [core.telegram.org/bots/api](https://core.telegram.org/bots/api). Esse projeto usar os dados obtidos no dia xx/xx/2018. Usando [JuanPotato/AutoTG](https://github.com/JuanPotato/AutoTG)
-
-## Dependencies
+Original documetanção em [core.telegram.org/bots/api](https://core.telegram.org/bots/api). Esse projeto usar os dados obtidos no dia 05/06/2018. Usando [JuanPotato/AutoTG](https://github.com/JuanPotato/AutoTG)
 
 ## Dependencies
 

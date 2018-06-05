@@ -1,5 +1,5 @@
 {
-  "name": "i18n",
+  "name": "DesenvolvimentoDeBots-i18n",
   "version": "1.0.0",
   "description": "Tradução da documentação do Telegram Bot API para PT-BR",
   "main": "index.js",
@@ -22,7 +22,6 @@
     "url": "https://github.com/DesenvolvimentoDeBots/i18n/issues"
   },
   "homepage": "https://github.com/DesenvolvimentoDeBots/i18n#readme",
-  "private": true,
   "dependencies": {
     "crowdin-glossary": "1.2.0",
     "env-cmd": "8.0.2",
