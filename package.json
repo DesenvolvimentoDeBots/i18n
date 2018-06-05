@@ -26,6 +26,7 @@
   "dependencies": {
     "crowdin-glossary": "1.2.0",
     "graceful-fs": "4.1.6",
+    "hogan.js": "3.0.2",
     "jsonfile": "4.0.0"
   }
 }
