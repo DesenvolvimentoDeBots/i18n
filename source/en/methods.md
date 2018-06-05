@@ -1,60 +1,60 @@
 # Methods
 
-- [getUpdates](#getUpdates)
-- [setWebhook](#setWebhook)
-- [sendMessage](#sendMessage)
-- [forwardMessage](#forwardMessage)
-- [sendPhoto](#sendPhoto)
-- [sendAudio](#sendAudio)
-- [sendDocument](#sendDocument)
-- [sendVideo](#sendVideo)
-- [sendVoice](#sendVoice)
-- [sendVideoNote](#sendVideoNote)
-- [sendMediaGroup](#sendMediaGroup)
-- [sendLocation](#sendLocation)
-- [editMessageLiveLocation](#editMessageLiveLocation)
-- [stopMessageLiveLocation](#stopMessageLiveLocation)
-- [sendVenue](#sendVenue)
-- [sendContact](#sendContact)
-- [getUserProfilePhotos](#getUserProfilePhotos)
-- [getFile](#getFile)
-- [kickChatMember](#kickChatMember)
-- [unbanChatMember](#unbanChatMember)
-- [restrictChatMember](#restrictChatMember)
-- [promoteChatMember](#promoteChatMember)
-- [exportChatInviteLink](#exportChatInviteLink)
-- [setChatPhoto](#setChatPhoto)
-- [deleteChatPhoto](#deleteChatPhoto)
-- [setChatTitle](#setChatTitle)
-- [setChatDescription](#setChatDescription)
-- [pinChatMessage](#pinChatMessage)
-- [unpinChatMessage](#unpinChatMessage)
-- [leaveChat](#leaveChat)
-- [getChat](#getChat)
-- [getChatAdministrators](#getChatAdministrators)
-- [getChatMembersCount](#getChatMembersCount)
-- [getChatMember](#getChatMember)
-- [setChatStickerSet](#setChatStickerSet)
-- [deleteChatStickerSet](#deleteChatStickerSet)
-- [answerCallbackQuery](#answerCallbackQuery)
-- [editMessageText](#editMessageText)
-- [editMessageCaption](#editMessageCaption)
-- [editMessageReplyMarkup](#editMessageReplyMarkup)
-- [deleteMessage](#deleteMessage)
-- [sendSticker](#sendSticker)
-- [getStickerSet](#getStickerSet)
-- [uploadStickerFile](#uploadStickerFile)
-- [createNewStickerSet](#createNewStickerSet)
-- [addStickerToSet](#addStickerToSet)
-- [setStickerPositionInSet](#setStickerPositionInSet)
-- [deleteStickerFromSet](#deleteStickerFromSet)
-- [answerInlineQuery](#answerInlineQuery)
-- [sendInvoice](#sendInvoice)
-- [answerShippingQuery](#answerShippingQuery)
-- [answerPreCheckoutQuery](#answerPreCheckoutQuery)
-- [sendGame](#sendGame)
-- [setGameScore](#setGameScore)
-- [getGameHighScores](#getGameHighScores)
+- [getUpdates](#getupdates)
+- [setWebhook](#setwebhook)
+- [sendMessage](#sendmessage)
+- [forwardMessage](#forwardmessage)
+- [sendPhoto](#sendphoto)
+- [sendAudio](#sendaudio)
+- [sendDocument](#senddocument)
+- [sendVideo](#sendvideo)
+- [sendVoice](#sendvoice)
+- [sendVideoNote](#sendvideonote)
+- [sendMediaGroup](#sendmediagroup)
+- [sendLocation](#sendlocation)
+- [editMessageLiveLocation](#editmessagelivelocation)
+- [stopMessageLiveLocation](#stopmessagelivelocation)
+- [sendVenue](#sendvenue)
+- [sendContact](#sendcontact)
+- [getUserProfilePhotos](#getuserprofilephotos)
+- [getFile](#getfile)
+- [kickChatMember](#kickchatmember)
+- [unbanChatMember](#unbanchatmember)
+- [restrictChatMember](#restrictchatmember)
+- [promoteChatMember](#promotechatmember)
+- [exportChatInviteLink](#exportchatinvitelink)
+- [setChatPhoto](#setchatphoto)
+- [deleteChatPhoto](#deletechatphoto)
+- [setChatTitle](#setchattitle)
+- [setChatDescription](#setchatdescription)
+- [pinChatMessage](#pinchatmessage)
+- [unpinChatMessage](#unpinchatmessage)
+- [leaveChat](#leavechat)
+- [getChat](#getchat)
+- [getChatAdministrators](#getchatadministrators)
+- [getChatMembersCount](#getchatmemberscount)
+- [getChatMember](#getchatmember)
+- [setChatStickerSet](#setchatstickerset)
+- [deleteChatStickerSet](#deletechatstickerset)
+- [answerCallbackQuery](#answercallbackquery)
+- [editMessageText](#editmessagetext)
+- [editMessageCaption](#editmessagecaption)
+- [editMessageReplyMarkup](#editmessagereplymarkup)
+- [deleteMessage](#deletemessage)
+- [sendSticker](#sendsticker)
+- [getStickerSet](#getstickerset)
+- [uploadStickerFile](#uploadstickerfile)
+- [createNewStickerSet](#createnewstickerset)
+- [addStickerToSet](#addstickertoset)
+- [setStickerPositionInSet](#setstickerpositioninset)
+- [deleteStickerFromSet](#deletestickerfromset)
+- [answerInlineQuery](#answerinlinequery)
+- [sendInvoice](#sendinvoice)
+- [answerShippingQuery](#answershippingquery)
+- [answerPreCheckoutQuery](#answerprecheckoutquery)
+- [sendGame](#sendgame)
+- [setGameScore](#setgamescore)
+- [getGameHighScores](#getgamehighscores)
 
 ## getUpdates
 Use this method to receive incoming updates using long polling (wiki). An Array of Update objects is returned.
@@ -148,7 +148,7 @@ Use this method to send photos. On success, the sent Message is returned.
 Field     | Type     | Required     | Desc     |
 --------- | -------- | ------------ | -------- |
 chat_id | Integer or String | true | Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
-photo | InputFile or String | true | Photo to send. Pass a file_id as String to send a photo that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a photo from the Internet, or upload a new photo using multipart/form-data. More info on Sending Files » |
+photo | InputFile or String | true | Photo to send. Pass a file_id as String to send a photo that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a photo from the Internet, or upload a new photo using multipart&#x2F;form-data. More info on Sending Files » |
 caption | String | false | Photo caption (may also be used when resending photos by file_id), 0-200 characters |
 parse_mode | String | false | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
 disable_notification | Boolean | false | Sends the message silently. Users will receive a notification with no sound. |
@@ -174,7 +174,7 @@ Use this method to send audio files, if you want Telegram clients to display the
 Field     | Type     | Required     | Desc     |
 --------- | -------- | ------------ | -------- |
 chat_id | Integer or String | true | Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
-audio | InputFile or String | true | Audio file to send. Pass a file_id as String to send an audio file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get an audio file from the Internet, or upload a new one using multipart/form-data. More info on Sending Files » |
+audio | InputFile or String | true | Audio file to send. Pass a file_id as String to send an audio file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get an audio file from the Internet, or upload a new one using multipart&#x2F;form-data. More info on Sending Files » |
 caption | String | false | Audio caption, 0-200 characters |
 parse_mode | String | false | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
 duration | Integer | false | Duration of the audio in seconds |
@@ -206,7 +206,7 @@ Use this method to send general files. On success, the sent Message is returned.
 Field     | Type     | Required     | Desc     |
 --------- | -------- | ------------ | -------- |
 chat_id | Integer or String | true | Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
-document | InputFile or String | true | File to send. Pass a file_id as String to send a file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart/form-data. More info on Sending Files » |
+document | InputFile or String | true | File to send. Pass a file_id as String to send a file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart&#x2F;form-data. More info on Sending Files » |
 caption | String | false | Document caption (may also be used when resending documents by file_id), 0-200 characters |
 parse_mode | String | false | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
 disable_notification | Boolean | false | Sends the message silently. Users will receive a notification with no sound. |
@@ -232,7 +232,7 @@ Use this method to send video files, Telegram clients support mp4 videos (other 
 Field     | Type     | Required     | Desc     |
 --------- | -------- | ------------ | -------- |
 chat_id | Integer or String | true | Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
-video | InputFile or String | true | Video to send. Pass a file_id as String to send a video that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a video from the Internet, or upload a new video using multipart/form-data. More info on Sending Files » |
+video | InputFile or String | true | Video to send. Pass a file_id as String to send a video that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a video from the Internet, or upload a new video using multipart&#x2F;form-data. More info on Sending Files » |
 duration | Integer | false | Duration of sent video in seconds |
 width | Integer | false | Video width |
 height | Integer | false | Video height |
@@ -266,7 +266,7 @@ Use this method to send audio files, if you want Telegram clients to display the
 Field     | Type     | Required     | Desc     |
 --------- | -------- | ------------ | -------- |
 chat_id | Integer or String | true | Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
-voice | InputFile or String | true | Audio file to send. Pass a file_id as String to send a file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart/form-data. More info on Sending Files » |
+voice | InputFile or String | true | Audio file to send. Pass a file_id as String to send a file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart&#x2F;form-data. More info on Sending Files » |
 caption | String | false | Voice message caption, 0-200 characters |
 parse_mode | String | false | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
 duration | Integer | false | Duration of the voice message in seconds |
@@ -294,7 +294,7 @@ As of v.4.0, Telegram clients support rounded square mp4 videos of up to 1 minut
 Field     | Type     | Required     | Desc     |
 --------- | -------- | ------------ | -------- |
 chat_id | Integer or String | true | Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
-video_note | InputFile or String | true | Video note to send. Pass a file_id as String to send a video note that exists on the Telegram servers (recommended) or upload a new video using multipart/form-data. More info on Sending Files ». Sending video notes by a URL is currently unsupported |
+video_note | InputFile or String | true | Video note to send. Pass a file_id as String to send a video note that exists on the Telegram servers (recommended) or upload a new video using multipart&#x2F;form-data. More info on Sending Files ». Sending video notes by a URL is currently unsupported |
 duration | Integer | false | Duration of sent video in seconds |
 length | Integer | false | Video width and height |
 disable_notification | Boolean | false | Sends the message silently. Users will receive a notification with no sound. |
@@ -479,7 +479,7 @@ getUserProfilePhotos({
 ```
 
 ## getFile
-Use this method to get basic info about a file and prepare it for downloading. For the moment, bots can download files of up to 20MB in size. On success, a File object is returned. The file can then be downloaded via the link https://api.telegram.org/file/bot&lt;token&gt;/&lt;file_path&gt;, where &lt;file_path&gt; is taken from the response. It is guaranteed that the link will be valid for at least 1 hour. When the link expires, a new one can be requested by calling getFile again.
+Use this method to get basic info about a file and prepare it for downloading. For the moment, bots can download files of up to 20MB in size. On success, a File object is returned. The file can then be downloaded via the link https:&#x2F;&#x2F;api.telegram.org&#x2F;file&#x2F;bot&lt;token&gt;&#x2F;&lt;file_path&gt;, where &lt;file_path&gt; is taken from the response. It is guaranteed that the link will be valid for at least 1 hour. When the link expires, a new one can be requested by calling getFile again.
 
 Field     | Type     | Required     | Desc     |
 --------- | -------- | ------------ | -------- |
@@ -604,7 +604,7 @@ Use this method to set a new profile photo for the chat. Photos can&#39;t be cha
 Field     | Type     | Required     | Desc     |
 --------- | -------- | ------------ | -------- |
 chat_id | Integer or String | true | Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
-photo | InputFile | true | New chat photo, uploaded using multipart/form-data |
+photo | InputFile | true | New chat photo, uploaded using multipart&#x2F;form-data |
 
 Example:
 ```javascript
@@ -802,7 +802,7 @@ Field     | Type     | Required     | Desc     |
 callback_query_id | String | true | Unique identifier for the query to be answered |
 text | String | false | Text of the notification. If not specified, nothing will be shown to the user, 0-200 characters |
 show_alert | Boolean | false | If true, an alert will be shown by the client instead of a notification at the top of the chat screen. Defaults to false. |
-url | String | false | URL that will be opened by the user&#39;s client. If you have created a Game and accepted the conditions via @Botfather, specify the URL that opens your game – note that this will only work if the query comes from a callback_game button.Otherwise, you may use links like t.me/your_bot?start=XXXX that open your bot with a parameter. |
+url | String | false | URL that will be opened by the user&#39;s client. If you have created a Game and accepted the conditions via @Botfather, specify the URL that opens your game – note that this will only work if the query comes from a callback_game button.Otherwise, you may use links like t.me&#x2F;your_bot?start&#x3D;XXXX that open your bot with a parameter. |
 cache_time | Integer | false | The maximum amount of time in seconds that the result of the callback query may be cached client-side. Telegram apps will support caching starting in version 3.14. Defaults to 0. |
 
 Example:
@@ -908,7 +908,7 @@ Use this method to send .webp stickers. On success, the sent Message is returned
 Field     | Type     | Required     | Desc     |
 --------- | -------- | ------------ | -------- |
 chat_id | Integer or String | true | Unique identifier for the target chat or username of the target channel (in the format @channelusername) |
-sticker | InputFile or String | true | Sticker to send. Pass a file_id as String to send a file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a .webp file from the Internet, or upload a new one using multipart/form-data. More info on Sending Files » |
+sticker | InputFile or String | true | Sticker to send. Pass a file_id as String to send a file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a .webp file from the Internet, or upload a new one using multipart&#x2F;form-data. More info on Sending Files » |
 disable_notification | Boolean | false | Sends the message silently. Users will receive a notification with no sound. |
 reply_to_message_id | Integer | false | If the message is a reply, ID of the original message |
 reply_markup | InlineKeyboardMarkup or ReplyKeyboardMarkup or ReplyKeyboardRemove or ForceReply | false | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user. |
@@ -960,9 +960,9 @@ Use this method to create new sticker set owned by a user. The bot will be able 
 Field     | Type     | Required     | Desc     |
 --------- | -------- | ------------ | -------- |
 user_id | Integer | true | User identifier of created sticker set owner |
-name | String | true | Short name of sticker set, to be used in t.me/addstickers/ URLs (e.g., animals). Can contain only english letters, digits and underscores. Must begin with a letter, can&#39;t contain consecutive underscores and must end in “_by_&lt;bot username&gt;”. &lt;bot_username&gt; is case insensitive. 1-64 characters. |
+name | String | true | Short name of sticker set, to be used in t.me&#x2F;addstickers&#x2F; URLs (e.g., animals). Can contain only english letters, digits and underscores. Must begin with a letter, can&#39;t contain consecutive underscores and must end in “_by_&lt;bot username&gt;”. &lt;bot_username&gt; is case insensitive. 1-64 characters. |
 title | String | true | Sticker set title, 1-64 characters |
-png_sticker | InputFile or String | true | Png image with the sticker, must be up to 512 kilobytes in size, dimensions must not exceed 512px, and either width or height must be exactly 512px. Pass a file_id as a String to send a file that already exists on the Telegram servers, pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart/form-data. More info on Sending Files » |
+png_sticker | InputFile or String | true | Png image with the sticker, must be up to 512 kilobytes in size, dimensions must not exceed 512px, and either width or height must be exactly 512px. Pass a file_id as a String to send a file that already exists on the Telegram servers, pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart&#x2F;form-data. More info on Sending Files » |
 emojis | String | true | One or more emoji corresponding to the sticker |
 contains_masks | Boolean | false | Pass True, if a set of mask stickers should be created |
 mask_position | MaskPosition | false | A JSON-serialized object for position where the mask should be placed on faces |
@@ -987,7 +987,7 @@ Field     | Type     | Required     | Desc     |
 --------- | -------- | ------------ | -------- |
 user_id | Integer | true | User identifier of sticker set owner |
 name | String | true | Sticker set name |
-png_sticker | InputFile or String | true | Png image with the sticker, must be up to 512 kilobytes in size, dimensions must not exceed 512px, and either width or height must be exactly 512px. Pass a file_id as a String to send a file that already exists on the Telegram servers, pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart/form-data. More info on Sending Files » |
+png_sticker | InputFile or String | true | Png image with the sticker, must be up to 512 kilobytes in size, dimensions must not exceed 512px, and either width or height must be exactly 512px. Pass a file_id as a String to send a file that already exists on the Telegram servers, pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart&#x2F;form-data. More info on Sending Files » |
 emojis | String | true | One or more emoji corresponding to the sticker |
 mask_position | MaskPosition | false | A JSON-serialized object for position where the mask should be placed on faces |
 
@@ -1043,7 +1043,7 @@ cache_time | Integer | false | The maximum amount of time in seconds that the re
 is_personal | Boolean | false | Pass True, if results may be cached on the server side only for the user that sent the query. By default, results may be returned to any user who sends the same query |
 next_offset | String | false | Pass the offset that a client should send in the next query with the same text to receive more results. Pass an empty string if there are no more results or if you don‘t support pagination. Offset length can’t exceed 64 bytes. |
 switch_pm_text | String | false | If passed, clients will display a button with specified text that switches the user to a private chat with the bot and sends the bot a start message with the parameter switch_pm_parameter |
-switch_pm_parameter | String | false | Deep-linking parameter for the /start message sent to the bot when user presses the switch button. 1-64 characters, only A-Z, a-z, 0-9, _ and - are allowed.Example: An inline bot that sends YouTube videos can ask the user to connect the bot to their YouTube account to adapt search results accordingly. To do this, it displays a ‘Connect your YouTube account’ button above the results, or even before showing any. The user presses the button, switches to a private chat with the bot and, in doing so, passes a start parameter that instructs the bot to return an oauth link. Once done, the bot can offer a switch_inline button so that the user can easily return to the chat where they wanted to use the bot&#39;s inline capabilities. |
+switch_pm_parameter | String | false | Deep-linking parameter for the &#x2F;start message sent to the bot when user presses the switch button. 1-64 characters, only A-Z, a-z, 0-9, _ and - are allowed.Example: An inline bot that sends YouTube videos can ask the user to connect the bot to their YouTube account to adapt search results accordingly. To do this, it displays a ‘Connect your YouTube account’ button above the results, or even before showing any. The user presses the button, switches to a private chat with the bot and, in doing so, passes a start parameter that instructs the bot to return an oauth link. Once done, the bot can offer a switch_inline button so that the user can easily return to the chat where they wanted to use the bot&#39;s inline capabilities. |
 
 Example:
 ```javascript

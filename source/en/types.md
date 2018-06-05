@@ -1,54 +1,54 @@
 # Types
 
-- [Update](#Update)
-- [WebhookInfo](#WebhookInfo)
-- [User](#User)
-- [Chat](#Chat)
-- [Message](#Message)
-- [MessageEntity](#MessageEntity)
-- [PhotoSize](#PhotoSize)
-- [Audio](#Audio)
-- [Document](#Document)
-- [Video](#Video)
-- [Voice](#Voice)
-- [VideoNote](#VideoNote)
-- [Contact](#Contact)
-- [Location](#Location)
-- [Venue](#Venue)
-- [UserProfilePhotos](#UserProfilePhotos)
-- [File](#File)
-- [ReplyKeyboardMarkup](#ReplyKeyboardMarkup)
-- [KeyboardButton](#KeyboardButton)
-- [ReplyKeyboardRemove](#ReplyKeyboardRemove)
-- [InlineKeyboardMarkup](#InlineKeyboardMarkup)
-- [InlineKeyboardButton](#InlineKeyboardButton)
-- [CallbackQuery](#CallbackQuery)
-- [ForceReply](#ForceReply)
-- [ChatPhoto](#ChatPhoto)
-- [ChatMember](#ChatMember)
-- [ResponseParameters](#ResponseParameters)
-- [InputMediaPhoto](#InputMediaPhoto)
-- [InputMediaVideo](#InputMediaVideo)
-- [Sticker](#Sticker)
-- [StickerSet](#StickerSet)
-- [MaskPosition](#MaskPosition)
-- [InlineQuery](#InlineQuery)
-- [InputTextMessageContent](#InputTextMessageContent)
-- [InputLocationMessageContent](#InputLocationMessageContent)
-- [InputVenueMessageContent](#InputVenueMessageContent)
-- [InputContactMessageContent](#InputContactMessageContent)
-- [ChosenInlineResult](#ChosenInlineResult)
-- [LabeledPrice](#LabeledPrice)
-- [Invoice](#Invoice)
-- [ShippingAddress](#ShippingAddress)
-- [OrderInfo](#OrderInfo)
-- [ShippingOption](#ShippingOption)
-- [SuccessfulPayment](#SuccessfulPayment)
-- [ShippingQuery](#ShippingQuery)
-- [PreCheckoutQuery](#PreCheckoutQuery)
-- [Game](#Game)
-- [Animation](#Animation)
-- [GameHighScore](#GameHighScore)
+- [Update](#update)
+- [WebhookInfo](#webhookinfo)
+- [User](#user)
+- [Chat](#chat)
+- [Message](#message)
+- [MessageEntity](#messageentity)
+- [PhotoSize](#photosize)
+- [Audio](#audio)
+- [Document](#document)
+- [Video](#video)
+- [Voice](#voice)
+- [VideoNote](#videonote)
+- [Contact](#contact)
+- [Location](#location)
+- [Venue](#venue)
+- [UserProfilePhotos](#userprofilephotos)
+- [File](#file)
+- [ReplyKeyboardMarkup](#replykeyboardmarkup)
+- [KeyboardButton](#keyboardbutton)
+- [ReplyKeyboardRemove](#replykeyboardremove)
+- [InlineKeyboardMarkup](#inlinekeyboardmarkup)
+- [InlineKeyboardButton](#inlinekeyboardbutton)
+- [CallbackQuery](#callbackquery)
+- [ForceReply](#forcereply)
+- [ChatPhoto](#chatphoto)
+- [ChatMember](#chatmember)
+- [ResponseParameters](#responseparameters)
+- [InputMediaPhoto](#inputmediaphoto)
+- [InputMediaVideo](#inputmediavideo)
+- [Sticker](#sticker)
+- [StickerSet](#stickerset)
+- [MaskPosition](#maskposition)
+- [InlineQuery](#inlinequery)
+- [InputTextMessageContent](#inputtextmessagecontent)
+- [InputLocationMessageContent](#inputlocationmessagecontent)
+- [InputVenueMessageContent](#inputvenuemessagecontent)
+- [InputContactMessageContent](#inputcontactmessagecontent)
+- [ChosenInlineResult](#choseninlineresult)
+- [LabeledPrice](#labeledprice)
+- [Invoice](#invoice)
+- [ShippingAddress](#shippingaddress)
+- [OrderInfo](#orderinfo)
+- [ShippingOption](#shippingoption)
+- [SuccessfulPayment](#successfulpayment)
+- [ShippingQuery](#shippingquery)
+- [PreCheckoutQuery](#precheckoutquery)
+- [Game](#game)
+- [Animation](#animation)
+- [GameHighScore](#gamehighscore)
 
 ## Update
 This object represents an incoming update.At most one of the optional parameters can be present in any given update.
@@ -99,7 +99,7 @@ This object represents a chat.
 
 Field     | Type     | Required     | Desc     |
 --------- | -------- | ------------ | -------- |
-id | Integer | true | Unique identifier for this chat. This number may be greater than 32 bits and some programming languages may have difficulty/silent defects in interpreting it. But it is smaller than 52 bits, so a signed 64 bit integer or double-precision float type are safe for storing this identifier. |
+id | Integer | true | Unique identifier for this chat. This number may be greater than 32 bits and some programming languages may have difficulty&#x2F;silent defects in interpreting it. But it is smaller than 52 bits, so a signed 64 bit integer or double-precision float type are safe for storing this identifier. |
 type | String | true | Type of chat, can be either “private”, “group”, “supergroup” or “channel” |
 title | String | false | Title, for supergroups, channels and group chats |
 username | String | false | Username, for private chats, supergroups and channels if available |
@@ -155,8 +155,8 @@ delete_chat_photo | True | false | Service message: the chat photo was deleted |
 group_chat_created | True | false | Service message: the group has been created |
 supergroup_chat_created | True | false | Service message: the supergroup has been created. This field can‘t be received in a message coming through updates, because bot can’t be a member of a supergroup when it is created. It can only be found in reply_to_message if someone replies to a very first message in a directly created supergroup. |
 channel_chat_created | True | false | Service message: the channel has been created. This field can‘t be received in a message coming through updates, because bot can’t be a member of a channel when it is created. It can only be found in reply_to_message if someone replies to a very first message in a channel. |
-migrate_to_chat_id | Integer | false | The group has been migrated to a supergroup with the specified identifier. This number may be greater than 32 bits and some programming languages may have difficulty/silent defects in interpreting it. But it is smaller than 52 bits, so a signed 64 bit integer or double-precision float type are safe for storing this identifier. |
-migrate_from_chat_id | Integer | false | The supergroup has been migrated from a group with the specified identifier. This number may be greater than 32 bits and some programming languages may have difficulty/silent defects in interpreting it. But it is smaller than 52 bits, so a signed 64 bit integer or double-precision float type are safe for storing this identifier. |
+migrate_to_chat_id | Integer | false | The group has been migrated to a supergroup with the specified identifier. This number may be greater than 32 bits and some programming languages may have difficulty&#x2F;silent defects in interpreting it. But it is smaller than 52 bits, so a signed 64 bit integer or double-precision float type are safe for storing this identifier. |
+migrate_from_chat_id | Integer | false | The supergroup has been migrated from a group with the specified identifier. This number may be greater than 32 bits and some programming languages may have difficulty&#x2F;silent defects in interpreting it. But it is smaller than 52 bits, so a signed 64 bit integer or double-precision float type are safe for storing this identifier. |
 pinned_message | Message | false | Specified message was pinned. Note that the Message object in this field will not contain further reply_to_message fields even if it is itself a reply. |
 invoice | Invoice | false | Message is an invoice for a payment, information about the invoice. More about payments » |
 successful_payment | SuccessfulPayment | false | Message is a service message about a successful payment, information about the payment. More about payments » |
@@ -176,7 +176,7 @@ user | User | false | For “text_mention” only, the mentioned user |
 
 
 ## PhotoSize
-This object represents one size of a photo or a file / sticker thumbnail.
+This object represents one size of a photo or a file &#x2F; sticker thumbnail.
 
 Field     | Type     | Required     | Desc     |
 --------- | -------- | ------------ | -------- |
@@ -289,13 +289,13 @@ photos | Array of Array of PhotoSize | true | Requested profile pictures (in up 
 
 
 ## File
-This object represents a file ready to be downloaded. The file can be downloaded via the link https://api.telegram.org/file/bot&lt;token&gt;/&lt;file_path&gt;. It is guaranteed that the link will be valid for at least 1 hour. When the link expires, a new one can be requested by calling getFile.
+This object represents a file ready to be downloaded. The file can be downloaded via the link https:&#x2F;&#x2F;api.telegram.org&#x2F;file&#x2F;bot&lt;token&gt;&#x2F;&lt;file_path&gt;. It is guaranteed that the link will be valid for at least 1 hour. When the link expires, a new one can be requested by calling getFile.
 
 Field     | Type     | Required     | Desc     |
 --------- | -------- | ------------ | -------- |
 file_id | String | true | Unique identifier for this file |
 file_size | Integer | false | File size, if known |
-file_path | String | false | File path. Use https://api.telegram.org/file/bot&lt;token&gt;/&lt;file_path&gt; to get the file. |
+file_path | String | false | File path. Use https:&#x2F;&#x2F;api.telegram.org&#x2F;file&#x2F;bot&lt;token&gt;&#x2F;&lt;file_path&gt; to get the file. |
 
 
 ## ReplyKeyboardMarkup
@@ -410,7 +410,7 @@ Contains information about why a request was unsuccessful.
 
 Field     | Type     | Required     | Desc     |
 --------- | -------- | ------------ | -------- |
-migrate_to_chat_id | Integer | false | The group has been migrated to a supergroup with the specified identifier. This number may be greater than 32 bits and some programming languages may have difficulty/silent defects in interpreting it. But it is smaller than 52 bits, so a signed 64 bit integer or double-precision float type are safe for storing this identifier. |
+migrate_to_chat_id | Integer | false | The group has been migrated to a supergroup with the specified identifier. This number may be greater than 32 bits and some programming languages may have difficulty&#x2F;silent defects in interpreting it. But it is smaller than 52 bits, so a signed 64 bit integer or double-precision float type are safe for storing this identifier. |
 retry_after | Integer | false | In case of exceeding flood control, the number of seconds left to wait before the request can be repeated |
 
 
@@ -420,7 +420,7 @@ Represents a photo to be sent.
 Field     | Type     | Required     | Desc     |
 --------- | -------- | ------------ | -------- |
 type | String | true | Type of the result, must be photo |
-media | String | true | File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass &quot;attach://&lt;file_attach_name&gt;&quot; to upload a new one using multipart/form-data under &lt;file_attach_name&gt; name. More info on Sending Files » |
+media | String | true | File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass &quot;attach:&#x2F;&#x2F;&lt;file_attach_name&gt;&quot; to upload a new one using multipart&#x2F;form-data under &lt;file_attach_name&gt; name. More info on Sending Files » |
 caption | String | false | Caption of the photo to be sent, 0-200 characters |
 parse_mode | String | false | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
 
@@ -431,7 +431,7 @@ Represents a video to be sent.
 Field     | Type     | Required     | Desc     |
 --------- | -------- | ------------ | -------- |
 type | String | true | Type of the result, must be video |
-media | String | true | File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass &quot;attach://&lt;file_attach_name&gt;&quot; to upload a new one using multipart/form-data under &lt;file_attach_name&gt; name. More info on Sending Files » |
+media | String | true | File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass &quot;attach:&#x2F;&#x2F;&lt;file_attach_name&gt;&quot; to upload a new one using multipart&#x2F;form-data under &lt;file_attach_name&gt; name. More info on Sending Files » |
 caption | String | false | Caption of the video to be sent, 0-200 characters |
 parse_mode | String | false | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
 width | Integer | false | Video width |
@@ -549,7 +549,7 @@ This object represents a portion of the price for goods or services.
 Field     | Type     | Required     | Desc     |
 --------- | -------- | ------------ | -------- |
 label | String | true | Portion label |
-amount | Integer | true | Price of the product in the smallest units of the currency (integer, not float/double). For example, for a price of US$ 1.45 pass amount = 145. See the exp parameter in currencies.json, it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). |
+amount | Integer | true | Price of the product in the smallest units of the currency (integer, not float&#x2F;double). For example, for a price of US$ 1.45 pass amount &#x3D; 145. See the exp parameter in currencies.json, it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). |
 
 
 ## Invoice
@@ -561,7 +561,7 @@ title | String | true | Product name |
 description | String | true | Product description |
 start_parameter | String | true | Unique bot deep-linking parameter that can be used to generate this invoice |
 currency | String | true | Three-letter ISO 4217 currency code |
-total_amount | Integer | true | Total price in the smallest units of the currency (integer, not float/double). For example, for a price of US$ 1.45 pass amount = 145. See the exp parameter in currencies.json, it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). |
+total_amount | Integer | true | Total price in the smallest units of the currency (integer, not float&#x2F;double). For example, for a price of US$ 1.45 pass amount &#x3D; 145. See the exp parameter in currencies.json, it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). |
 
 
 ## ShippingAddress
@@ -604,7 +604,7 @@ This object contains basic information about a successful payment.
 Field     | Type     | Required     | Desc     |
 --------- | -------- | ------------ | -------- |
 currency | String | true | Three-letter ISO 4217 currency code |
-total_amount | Integer | true | Total price in the smallest units of the currency (integer, not float/double). For example, for a price of US$ 1.45 pass amount = 145. See the exp parameter in currencies.json, it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). |
+total_amount | Integer | true | Total price in the smallest units of the currency (integer, not float&#x2F;double). For example, for a price of US$ 1.45 pass amount &#x3D; 145. See the exp parameter in currencies.json, it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). |
 invoice_payload | String | true | Bot specified invoice payload |
 shipping_option_id | String | false | Identifier of the shipping option chosen by the user |
 order_info | OrderInfo | false | Order info provided by the user |
@@ -631,7 +631,7 @@ Field     | Type     | Required     | Desc     |
 id | String | true | Unique query identifier |
 from | User | true | User who sent the query |
 currency | String | true | Three-letter ISO 4217 currency code |
-total_amount | Integer | true | Total price in the smallest units of the currency (integer, not float/double). For example, for a price of US$ 1.45 pass amount = 145. See the exp parameter in currencies.json, it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). |
+total_amount | Integer | true | Total price in the smallest units of the currency (integer, not float&#x2F;double). For example, for a price of US$ 1.45 pass amount &#x3D; 145. See the exp parameter in currencies.json, it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). |
 invoice_payload | String | true | Bot specified invoice payload |
 shipping_option_id | String | false | Identifier of the shipping option chosen by the user |
 order_info | OrderInfo | false | Order info provided by the user |

@@ -1,8 +1,8 @@
 const crowdinGlossary = require('crowdin-glossary')
 const jsonfile = require('jsonfile')
 const glossary = crowdinGlossary({
-	project: 'i18n',
-	crowdinKey: '',
+	project: 'desenvolvimentodebots-i18n',
+	crowdinKey: process.env.crowdin_key,
 	//languageCode: 'ptbr' //https://github.com/crowdin-modules/crowdin-glossary/pull/8
 })
 

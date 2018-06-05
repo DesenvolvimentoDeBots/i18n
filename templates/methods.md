@@ -1,7 +1,7 @@
 # Methods
 
 {{#list}}
-- [{{name}}](#{{name}})
+- [{{name}}](#{{#lowerCase}}{{name}}{{/lowerCase}})
 {{/list}}
 
 {{#list}}
