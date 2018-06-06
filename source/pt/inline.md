@@ -36,8 +36,8 @@ Represents a link to an article or web page.
 | hide_url                | Boolen (Boleano)                 | false (Falso)     | Pass True, if you don't want the URL to be shown in the message |
 | description             | String (Sequência de caracteres) | false (Falso)     | Short description of the result                                 |
 | thumb_url               | String (Sequência de caracteres) | false (Falso)     | Url of the thumbnail for the result                             |
-| thumb_width             | Interger (Número)                | false (Falso)     | Thumbnail width                                                 |
-| thumb_height            | Interger (Número)                | false (Falso)     | Thumbnail height                                                |
+| thumb_width             | Integer (Número)                 | false (Falso)     | Thumbnail width                                                 |
+| thumb_height            | Integer (Número)                 | false (Falso)     | Thumbnail height                                                |
 
 Exemplo:
 
@@ -67,8 +67,8 @@ Represents a link to a photo. By default, this photo will be sent by the user wi
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for this result, 1-64 bytes                                                                                |
 | photo_url               | String (Sequência de caracteres) | true (Verdadeiro) | A valid URL of the photo. Photo must be in jpeg format. Photo size must not exceed 5MB                                       |
 | thumb_url               | String (Sequência de caracteres) | true (Verdadeiro) | URL of the thumbnail for the photo                                                                                           |
-| photo_width             | Interger (Número)                | false (Falso)     | Width of the photo                                                                                                           |
-| photo_height            | Interger (Número)                | false (Falso)     | Height of the photo                                                                                                          |
+| photo_width             | Integer (Número)                 | false (Falso)     | Width of the photo                                                                                                           |
+| photo_height            | Integer (Número)                 | false (Falso)     | Height of the photo                                                                                                          |
 | title                   | String (Sequência de caracteres) | false (Falso)     | Title for the result                                                                                                         |
 | description             | String (Sequência de caracteres) | false (Falso)     | Short description of the result                                                                                              |
 | caption                 | String (Sequência de caracteres) | false (Falso)     | Caption of the photo to be sent, 0-200 characters                                                                            |
@@ -104,9 +104,9 @@ Represents a link to an animated GIF file. By default, this animated GIF file wi
 | tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be gif                                                                                              |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for this result, 1-64 bytes                                                                                |
 | gif_url                 | String (Sequência de caracteres) | true (Verdadeiro) | A valid URL for the GIF file. File size must not exceed 1MB                                                                  |
-| gif_width               | Interger (Número)                | false (Falso)     | Width of the GIF                                                                                                             |
-| gif_height              | Interger (Número)                | false (Falso)     | Height of the GIF                                                                                                            |
-| gif_duration            | Interger (Número)                | false (Falso)     | Duration of the GIF                                                                                                          |
+| gif_width               | Integer (Número)                 | false (Falso)     | Width of the GIF                                                                                                             |
+| gif_height              | Integer (Número)                 | false (Falso)     | Height of the GIF                                                                                                            |
+| gif_duration            | Integer (Número)                 | false (Falso)     | Duration of the GIF                                                                                                          |
 | thumb_url               | String (Sequência de caracteres) | true (Verdadeiro) | URL of the static thumbnail for the result (jpeg or gif)                                                                     |
 | title                   | String (Sequência de caracteres) | false (Falso)     | Title for the result                                                                                                         |
 | caption                 | String (Sequência de caracteres) | false (Falso)     | Caption of the GIF file to be sent, 0-200 characters                                                                         |
@@ -142,9 +142,9 @@ Represents a link to a video animation (H.264&#x2F;MPEG-4 AVC video without soun
 | tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be mpeg4_gif                                                                                        |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for this result, 1-64 bytes                                                                                |
 | mpeg4_url               | String (Sequência de caracteres) | true (Verdadeiro) | A valid URL for the MP4 file. File size must not exceed 1MB                                                                  |
-| mpeg4_width             | Interger (Número)                | false (Falso)     | Video width                                                                                                                  |
-| mpeg4_height            | Interger (Número)                | false (Falso)     | Video height                                                                                                                 |
-| mpeg4_duration          | Interger (Número)                | false (Falso)     | Video duration                                                                                                               |
+| mpeg4_width             | Integer (Número)                 | false (Falso)     | Video width                                                                                                                  |
+| mpeg4_height            | Integer (Número)                 | false (Falso)     | Video height                                                                                                                 |
+| mpeg4_duration          | Integer (Número)                 | false (Falso)     | Video duration                                                                                                               |
 | thumb_url               | String (Sequência de caracteres) | true (Verdadeiro) | URL of the static thumbnail (jpeg or gif) for the result                                                                     |
 | title                   | String (Sequência de caracteres) | false (Falso)     | Title for the result                                                                                                         |
 | caption                 | String (Sequência de caracteres) | false (Falso)     | Caption of the MPEG-4 file to be sent, 0-200 characters                                                                      |
@@ -185,9 +185,9 @@ Represents a link to a page containing an embedded video player or a video file.
 | title                   | String (Sequência de caracteres) | true (Verdadeiro) | Title for the result                                                                                                                                                       |
 | caption                 | String (Sequência de caracteres) | false (Falso)     | Caption of the video to be sent, 0-200 characters                                                                                                                          |
 | parse_mode              | String (Sequência de caracteres) | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption.                                               |
-| video_width             | Interger (Número)                | false (Falso)     | Video width                                                                                                                                                                |
-| video_height            | Interger (Número)                | false (Falso)     | Video height                                                                                                                                                               |
-| video_duration          | Interger (Número)                | false (Falso)     | Video duration in seconds                                                                                                                                                  |
+| video_width             | Integer (Número)                 | false (Falso)     | Video width                                                                                                                                                                |
+| video_height            | Integer (Número)                 | false (Falso)     | Video height                                                                                                                                                               |
+| video_duration          | Integer (Número)                 | false (Falso)     | Video duration in seconds                                                                                                                                                  |
 | description             | String (Sequência de caracteres) | false (Falso)     | Short description of the result                                                                                                                                            |
 | reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message                                                                                                                                    |
 | input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the video. This field is required if InlineQueryResultVideo is used to send an HTML-page as a result (e.g., a YouTube video). |
@@ -226,7 +226,7 @@ Represents a link to an mp3 audio file. By default, this audio file will be sent
 | caption                 | String (Sequência de caracteres) | false (Falso)     | Caption, 0-200 characters                                                                                                    |
 | parse_mode              | String (Sequência de caracteres) | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
 | performer               | String (Sequência de caracteres) | false (Falso)     | Performer                                                                                                                    |
-| audio_duration          | Interger (Número)                | false (Falso)     | Audio duration in seconds                                                                                                    |
+| audio_duration          | Integer (Número)                 | false (Falso)     | Audio duration in seconds                                                                                                    |
 | reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message                                                                                      |
 | input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the audio                                                                       |
 
@@ -259,7 +259,7 @@ Represents a link to a voice recording in an .ogg container encoded with OPUS. B
 | title                   | String (Sequência de caracteres) | true (Verdadeiro) | Recording title                                                                                                              |
 | caption                 | String (Sequência de caracteres) | false (Falso)     | Caption, 0-200 characters                                                                                                    |
 | parse_mode              | String (Sequência de caracteres) | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
-| voice_duration          | Interger (Número)                | false (Falso)     | Recording duration in seconds                                                                                                |
+| voice_duration          | Integer (Número)                 | false (Falso)     | Recording duration in seconds                                                                                                |
 | reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message                                                                                      |
 | input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the voice recording                                                             |
 
@@ -296,8 +296,8 @@ Represents a link to a file. By default, this file will be sent by the user with
 | reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message                                                                                      |
 | input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the file                                                                        |
 | thumb_url               | String (Sequência de caracteres) | false (Falso)     | URL of the thumbnail (jpeg only) for the file                                                                                |
-| thumb_width             | Interger (Número)                | false (Falso)     | Thumbnail width                                                                                                              |
-| thumb_height            | Interger (Número)                | false (Falso)     | Thumbnail height                                                                                                             |
+| thumb_width             | Integer (Número)                 | false (Falso)     | Thumbnail width                                                                                                              |
+| thumb_height            | Integer (Número)                 | false (Falso)     | Thumbnail height                                                                                                             |
 
 Exemplo:
 
@@ -330,12 +330,12 @@ Represents a location on a map. By default, the location will be sent by the use
 | latitude                | Float número                     | true (Verdadeiro) | Location latitude in degrees                                                             |
 | longitude               | Float número                     | true (Verdadeiro) | Location longitude in degrees                                                            |
 | title                   | String (Sequência de caracteres) | true (Verdadeiro) | Location title                                                                           |
-| live_period             | Interger (Número)                | false (Falso)     | Period in seconds for which the location can be updated, should be between 60 and 86400. |
+| live_period             | Integer (Número)                 | false (Falso)     | Period in seconds for which the location can be updated, should be between 60 and 86400. |
 | reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message                                                  |
 | input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the location                                |
 | thumb_url               | String (Sequência de caracteres) | false (Falso)     | Url of the thumbnail for the result                                                      |
-| thumb_width             | Interger (Número)                | false (Falso)     | Thumbnail width                                                                          |
-| thumb_height            | Interger (Número)                | false (Falso)     | Thumbnail height                                                                         |
+| thumb_width             | Integer (Número)                 | false (Falso)     | Thumbnail width                                                                          |
+| thumb_height            | Integer (Número)                 | false (Falso)     | Thumbnail height                                                                         |
 
 Exemplo:
 
@@ -371,8 +371,8 @@ Represents a venue. By default, the venue will be sent by the user. Alternativel
 | reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message                |
 | input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the venue |
 | thumb_url               | String (Sequência de caracteres) | false (Falso)     | Url of the thumbnail for the result                    |
-| thumb_width             | Interger (Número)                | false (Falso)     | Thumbnail width                                        |
-| thumb_height            | Interger (Número)                | false (Falso)     | Thumbnail height                                       |
+| thumb_width             | Integer (Número)                 | false (Falso)     | Thumbnail width                                        |
+| thumb_height            | Integer (Número)                 | false (Falso)     | Thumbnail height                                       |
 
 Exemplo:
 
@@ -407,8 +407,8 @@ Represents a contact with a phone number. By default, this contact will be sent 
 | reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message                  |
 | input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the contact |
 | thumb_url               | String (Sequência de caracteres) | false (Falso)     | Url of the thumbnail for the result                      |
-| thumb_width             | Interger (Número)                | false (Falso)     | Thumbnail width                                          |
-| thumb_height            | Interger (Número)                | false (Falso)     | Thumbnail height                                         |
+| thumb_width             | Integer (Número)                 | false (Falso)     | Thumbnail width                                          |
+| thumb_height            | Integer (Número)                 | false (Falso)     | Thumbnail height                                         |
 
 Exemplo:
 
