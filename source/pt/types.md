@@ -69,7 +69,7 @@ Esse objeto representa uma atualização por vir. Ao menos um dos parâmetros op
 
 ## WebhookInfo
 
-Contains information about the current status of a webhook.
+Contém informações sobre o status atual de um webhook.
 
 | Campo                    | Tipo                             | Requerido         | Descrição                                                                                                                   |
 | ------------------------ | -------------------------------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------- |
@@ -83,20 +83,20 @@ Contains information about the current status of a webhook.
 
 ## User
 
-This object represents a Telegram user or bot.
+Esse objeto representa um usuário ou um bot do Telegram.
 
-| Campo         | Tipo                             | Requerido         | Descrição                                |
-| ------------- | -------------------------------- | ----------------- | ---------------------------------------- |
-| id            | Interger (Número)                | true (Verdadeiro) | Unique identifier for this user or bot   |
-| is_bot        | Boolen (Boleano)                 | true (Verdadeiro) | True, if this user is a bot              |
-| first_name    | String (Sequência de caracteres) | true (Verdadeiro) | User‘s or bot’s first name               |
-| last_name     | String (Sequência de caracteres) | false (Falso)     | User‘s or bot’s last name                |
-| username      | String (Sequência de caracteres) | false (Falso)     | User‘s or bot’s username                 |
-| language_code | String (Sequência de caracteres) | false (Falso)     | IETF language tag of the user's language |
+| Campo         | Tipo                             | Requerido         | Descrição                                        |
+| ------------- | -------------------------------- | ----------------- | ------------------------------------------------ |
+| id            | Interger (Número)                | true (Verdadeiro) | Identificador exclusivo para esse usuário ou bot |
+| is_bot        | Boolen (Boleano)                 | true (Verdadeiro) | Verdadeiro, se esse usuário é um bot             |
+| first_name    | String (Sequência de caracteres) | true (Verdadeiro) | Primeiro nome de um usuário ou um bot            |
+| last_name     | String (Sequência de caracteres) | false (Falso)     | Sobrenome de um usuário ou um bot                |
+| username      | String (Sequência de caracteres) | false (Falso)     | Nome de usuário de um usuário ou um bot          |
+| language_code | String (Sequência de caracteres) | false (Falso)     | IETF language tag of the user's language         |
 
 ## Chat
 
-This object represents a chat.
+Esse objeto representa um chat.
 
 | Campo                            | Tipo                             | Requerido         | Descrição                                                                                                                                                                                                                                                                                           |
 | -------------------------------- | -------------------------------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -110,13 +110,13 @@ This object represents a chat.
 | photo                            | ChatPhoto                        | false (Falso)     | Chat photo. Returned only in getChat.                                                                                                                                                                                                                                                               |
 | description                      | String (Sequência de caracteres) | false (Falso)     | Description, for supergroups and channel chats. Returned only in getChat.                                                                                                                                                                                                                           |
 | invite_link                      | String (Sequência de caracteres) | false (Falso)     | Chat invite link, for supergroups and channel chats. Returned only in getChat.                                                                                                                                                                                                                      |
-| pinned_message                   | Message                          | false (Falso)     | Pinned message, for supergroups and channel chats. Returned only in getChat.                                                                                                                                                                                                                        |
+| pinned_message                   | Message (Mensagem)               | false (Falso)     | Pinned message, for supergroups and channel chats. Returned only in getChat.                                                                                                                                                                                                                        |
 | sticker_set_name               | String (Sequência de caracteres) | false (Falso)     | For supergroups, name of group sticker set. Returned only in getChat.                                                                                                                                                                                                                               |
 | can_set_sticker_set            | Boolen (Boleano)                 | false (Falso)     | True, if the bot can change the group sticker set. Returned only in getChat.                                                                                                                                                                                                                        |
 
 ## Message (Mensagem)
 
-This object represents a message.
+Esse objeto representa uma mensagem.
 
 | Campo                     | Tipo                             | Requerido         | Descrição                                                                                                                                                                                                                                                                                                                                       |
 | ------------------------- | -------------------------------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
