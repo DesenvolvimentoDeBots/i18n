@@ -1,11 +1,11 @@
 {
-  "name": "i18n",
+  "name": "desenvolvimento-de-bots-i18n",
   "version": "1.0.0",
   "description": "Tradução da documentação do Telegram Bot API para PT-BR",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Nice test :)\"",
-    "upload-glossary": "node scripts/upload-glossary.js",
+    "upload-glossary": "env-cmd .env node scripts/upload-glossary.js",
     "build": "node scripts/build.js"
   },
   "repository": {
@@ -22,10 +22,11 @@
     "url": "https://github.com/DesenvolvimentoDeBots/i18n/issues"
   },
   "homepage": "https://github.com/DesenvolvimentoDeBots/i18n#readme",
-  "private": true,
   "dependencies": {
     "crowdin-glossary": "1.2.0",
+    "env-cmd": "8.0.2",
     "graceful-fs": "4.1.6",
-    "jsonfile": "4.0.0"
+    "jsonfile": "4.0.0",
+    "mustache": "2.3.0"
   }
 }
