@@ -75,8 +75,8 @@ Contém informações sobre o status atual de um webhook.
 | ------------------------ | -------------------------------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------- |
 | url                      | String (Sequência de caracteres) | true (Verdadeiro) | Webhook URL, pode ser vazia se o webhook não estiver configurado                                                            |
 | has_custom_certificate | Boolen (Boleano)                 | true (Verdadeiro) | True, if a custom certificate was provided for webhook certificate checks                                                   |
-| pending_update_count   | Integer (Número)                 | true (Verdadeiro) | Number of updates awaiting delivery                                                                                         |
-| last_error_date        | Integer (Número)                 | false (Falso)     | Unix time for the most recent error that happened when trying to deliver an update via webhook                              |
+| pending_update_count   | Integer (Número)                 | true (Verdadeiro) | Número de atualizações esperando entrega                                                                                    |
+| last_error_date        | Integer (Número)                 | false (Falso)     | Unix time para o erro mais recente que ocorreu ao tentar entregar uma atualização via webhook                               |
 | last_error_message     | String (Sequência de caracteres) | false (Falso)     | Error message in human-readable format for the most recent error that happened when trying to deliver an update via webhook |
 | max_connections          | Integer (Número)                 | false (Falso)     | Maximum allowed number of simultaneous HTTPS connections to the webhook for update delivery                                 |
 | allowed_updates          | Array de String                  | false (Falso)     | A list of update types the bot is subscribed to. Defaults to all update types                                               |
