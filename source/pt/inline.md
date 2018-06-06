@@ -30,14 +30,14 @@ Represents a link to an article or web page.
 | tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be article                             |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for this result, 1-64 Bytes                   |
 | title                   | String (Sequência de caracteres) | true (Verdadeiro) | Title of the result                                             |
-| input_message_content | InputMessageContent              | true (Verdadeiro) | Content of the message to be sent                               |
+| input_message_content | InputMessageContent              | true (Verdadeiro) | O conteúdo da mensagem a ser enviada                            |
 | reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message                         |
-| url                     | String (Sequência de caracteres) | false (Falso)     | URL of the result                                               |
+| url                     | String (Sequência de caracteres) | false (Falso)     | URL do resultado                                                |
 | hide_url                | Boolen (Boleano)                 | false (Falso)     | Pass True, if you don't want the URL to be shown in the message |
 | description             | String (Sequência de caracteres) | false (Falso)     | Short description of the result                                 |
 | thumb_url               | String (Sequência de caracteres) | false (Falso)     | Url of the thumbnail for the result                             |
-| thumb_width             | Integer (Número)                 | false (Falso)     | Thumbnail width                                                 |
-| thumb_height            | Integer (Número)                 | false (Falso)     | Thumbnail height                                                |
+| thumb_width             | Integer (Número)                 | false (Falso)     | Largura da miniatura                                            |
+| thumb_height            | Integer (Número)                 | false (Falso)     | Altura da miniatura                                             |
 
 Exemplo:
 
@@ -296,8 +296,8 @@ Represents a link to a file. By default, this file will be sent by the user with
 | reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message                                                                                      |
 | input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the file                                                                        |
 | thumb_url               | String (Sequência de caracteres) | false (Falso)     | URL of the thumbnail (jpeg only) for the file                                                                                |
-| thumb_width             | Integer (Número)                 | false (Falso)     | Thumbnail width                                                                                                              |
-| thumb_height            | Integer (Número)                 | false (Falso)     | Thumbnail height                                                                                                             |
+| thumb_width             | Integer (Número)                 | false (Falso)     | Largura da miniatura                                                                                                         |
+| thumb_height            | Integer (Número)                 | false (Falso)     | Altura da miniatura                                                                                                          |
 
 Exemplo:
 
@@ -334,8 +334,8 @@ Represents a location on a map. By default, the location will be sent by the use
 | reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message                                                  |
 | input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the location                                |
 | thumb_url               | String (Sequência de caracteres) | false (Falso)     | Url of the thumbnail for the result                                                      |
-| thumb_width             | Integer (Número)                 | false (Falso)     | Thumbnail width                                                                          |
-| thumb_height            | Integer (Número)                 | false (Falso)     | Thumbnail height                                                                         |
+| thumb_width             | Integer (Número)                 | false (Falso)     | Largura da miniatura                                                                     |
+| thumb_height            | Integer (Número)                 | false (Falso)     | Altura da miniatura                                                                      |
 
 Exemplo:
 
@@ -371,8 +371,8 @@ Represents a venue. By default, the venue will be sent by the user. Alternativel
 | reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message                |
 | input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the venue |
 | thumb_url               | String (Sequência de caracteres) | false (Falso)     | Url of the thumbnail for the result                    |
-| thumb_width             | Integer (Número)                 | false (Falso)     | Thumbnail width                                        |
-| thumb_height            | Integer (Número)                 | false (Falso)     | Thumbnail height                                       |
+| thumb_width             | Integer (Número)                 | false (Falso)     | Largura da miniatura                                   |
+| thumb_height            | Integer (Número)                 | false (Falso)     | Altura da miniatura                                    |
 
 Exemplo:
 
@@ -407,8 +407,8 @@ Represents a contact with a phone number. By default, this contact will be sent 
 | reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message                  |
 | input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the contact |
 | thumb_url               | String (Sequência de caracteres) | false (Falso)     | Url of the thumbnail for the result                      |
-| thumb_width             | Integer (Número)                 | false (Falso)     | Thumbnail width                                          |
-| thumb_height            | Integer (Número)                 | false (Falso)     | Thumbnail height                                         |
+| thumb_width             | Integer (Número)                 | false (Falso)     | Largura da miniatura                                     |
+| thumb_height            | Integer (Número)                 | false (Falso)     | Altura da miniatura                                      |
 
 Exemplo:
 
