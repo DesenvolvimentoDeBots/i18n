@@ -25,56 +25,56 @@
 
 Represents a link to an article or web page.
 
-| Campo                   | Tipo                             | Requerido         | Descrição                                                       |
-| ----------------------- | -------------------------------- | ----------------- | --------------------------------------------------------------- |
-| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "article"                              |
-| id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes            |
-| title                   | String (Sequência de caracteres) | true (Verdadeiro) | Título do result                                                |
-| input_message_content | InputMessageContent              | true (Verdadeiro) | O conteúdo da mensagem a ser enviada                            |
-| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                            |
-| url                     | String (Sequência de caracteres) | false (Falso)     | URL do resultado                                                |
-| hide_url                | Boolen (Boleano)                 | false (Falso)     | Pass True, if you don't want the URL to be shown in the message |
-| description             | String (Sequência de caracteres) | false (Falso)     | Breve descrição do result                                       |
-| thumb_url               | String (Sequência de caracteres) | false (Falso)     | Url of the thumbnail for the result                             |
-| thumb_width             | Integer (Número)                 | false (Falso)     | Largura da miniatura                                            |
-| thumb_height            | Integer (Número)                 | false (Falso)     | Altura da miniatura                                             |
+| Campo                   | Tipo                             | Requerido         | Descrição                                                         |
+| ----------------------- | -------------------------------- | ----------------- | ----------------------------------------------------------------- |
+| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "article"                                |
+| id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes              |
+| title                   | String (Sequência de caracteres) | true (Verdadeiro) | Título do result                                                  |
+| input_message_content | InputMessageContent              | true (Verdadeiro) | O conteúdo da mensagem a ser enviada                              |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                              |
+| url                     | String (Sequência de caracteres) | false (Falso)     | URL do resultado                                                  |
+| hide_url                | Boolen (Boleano)                 | false (Falso)     | Passe True se você não deseja que o URL seja mostrado na mensagem |
+| description             | String (Sequência de caracteres) | false (Falso)     | Breve descrição do result                                         |
+| thumb_url               | String (Sequência de caracteres) | false (Falso)     | URL da miniatura do result                                        |
+| thumb_width             | Integer (Número)                 | false (Falso)     | Largura da miniatura                                              |
+| thumb_height            | Integer (Número)                 | false (Falso)     | Altura da miniatura                                               |
 
 Exemplo:
 
 ```javascript
 [{
-    type = String,
-    id = String,
-    title = String,
+    type = String (Sequência de caracteres),
+    id = String (Sequência de caracteres),
+    title = String (Sequência de caracteres),
     input_message_content = InputMessageContent,
     reply_markup = InlineKeyboardMarkup,
-    url = String,
-    hide_url = Boolean,
-    description = String,
-    thumb_url = String,
-    thumb_width = Integer,
-    thumb_height = Integer,
+    url = String (Sequência de caracteres),
+    hide_url = Boolean (Booleano),
+    description = String (Sequência de caracteres),
+    thumb_url = String (Sequência de caracteres),
+    thumb_width = Integer (Número),
+    thumb_height = Integer (Número),
 }]
 ```
 
 ## InlineQueryResultPhoto
 
-Represents a link to a photo. By default, this photo will be sent by the user with optional caption. Alternatively, you can use input_message_content to send a message with the specified content instead of the photo.
+Representa um link para um objeto do tipo photo. Por padrão essa foto será enviada pelo usuário com legenda opcional. Alternatively, you can use input_message_content to send a message with the specified content instead of the photo.
 
-| Campo                   | Tipo                             | Requerido         | Descrição                                                                                                                    |
-| ----------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be photo                                                                                            |
-| id                      | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for this result, 1-64 bytes                                                                                |
-| photo_url               | String (Sequência de caracteres) | true (Verdadeiro) | A valid URL of the photo. Photo must be in jpeg format. Photo size must not exceed 5MB                                       |
-| thumb_url               | String (Sequência de caracteres) | true (Verdadeiro) | URL of the thumbnail for the photo                                                                                           |
-| photo_width             | Integer (Número)                 | false (Falso)     | Width of the photo                                                                                                           |
-| photo_height            | Integer (Número)                 | false (Falso)     | Height of the photo                                                                                                          |
-| title                   | String (Sequência de caracteres) | false (Falso)     | Title for the result                                                                                                         |
-| description             | String (Sequência de caracteres) | false (Falso)     | Short description of the result                                                                                              |
-| caption                 | String (Sequência de caracteres) | false (Falso)     | Caption of the photo to be sent, 0-200 characters                                                                            |
-| parse_mode              | String (Sequência de caracteres) | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
-| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message                                                                                      |
-| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the photo                                                                       |
+| Campo                   | Tipo                             | Requerido         | Descrição                                                                                      |
+| ----------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------- |
+| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "photo"                                                               |
+| id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                           |
+| photo_url               | String (Sequência de caracteres) | true (Verdadeiro) | Uma URL válida da foto. A foto deve estar no formato jpeg. Photo size must not exceed 5MB      |
+| thumb_url               | String (Sequência de caracteres) | true (Verdadeiro) | URL da miniatura da foto                                                                       |
+| photo_width             | Integer (Número)                 | false (Falso)     | Largura da foto                                                                                |
+| photo_height            | Integer (Número)                 | false (Falso)     | Altura da foto                                                                                 |
+| title                   | String (Sequência de caracteres) | false (Falso)     | Título do result                                                                               |
+| description             | String (Sequência de caracteres) | false (Falso)     | Breve descrição do result                                                                      |
+| caption                 | String (Sequência de caracteres) | false (Falso)     | Legenda da foto a ser enviada, 0-200 caracteres                                                |
+| parse_mode              | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda da foto. |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                                                           |
+| input_message_content | InputMessageContent              | false (Falso)     | O conteúdo da mensagem a ser enviada, em vez da foto                                           |
 
 Exemplo:
 
