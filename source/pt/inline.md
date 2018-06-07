@@ -97,7 +97,7 @@ Exemplo:
 
 ## InlineQueryResultGif
 
-Representa um link para um arquivo GIF animado. Por padrão esse GIF animado será enviado pelo usuário com legenda opcional. Como alternativa, você pode usar o input_message_content para enviar uma mensagem com um conteúdo especificado em vez de uma gif.
+Representa um link para um arquivo GIF animado. Por padrão esse GIF animado será enviado pelo usuário com legenda opcional. Como alternativa, você pode usar o input_message_content para enviar uma mensagem com um conteúdo especificado em vez de uma animação.
 
 | Campo                   | Tipo                             | Requerido         | Descrição                                                                                      |
 | ----------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------- |
@@ -141,13 +141,13 @@ Representa um link para um arquivo de vídeo animado (H.264&#x2F;MPEG-4 AVC de v
 | ----------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------- |
 | tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "mpeg4_gif"                                                           |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                           |
-| mpeg4_url               | String (Sequência de caracteres) | true (Verdadeiro) | A valid URL for the MP4 file. File size must not exceed 1MB                                    |
-| mpeg4_width             | Integer (Número)                 | false (Falso)     | Video width                                                                                    |
-| mpeg4_height            | Integer (Número)                 | false (Falso)     | Video height                                                                                   |
-| mpeg4_duration          | Integer (Número)                 | false (Falso)     | Video duration                                                                                 |
-| thumb_url               | String (Sequência de caracteres) | true (Verdadeiro) | URL of the static thumbnail (jpeg or gif) for the result                                       |
+| mpeg4_url               | String (Sequência de caracteres) | true (Verdadeiro) | Uma URL válida para o arquivo MP4. O tamanho do arquivo não deve ultrapassar 1MB               |
+| mpeg4_width             | Integer (Número)                 | false (Falso)     | Largura do vídeo                                                                               |
+| mpeg4_height            | Integer (Número)                 | false (Falso)     | Altura do vídeo                                                                                |
+| mpeg4_duration          | Integer (Número)                 | false (Falso)     | Duração do vídeo                                                                               |
+| thumb_url               | String (Sequência de caracteres) | true (Verdadeiro) | URL da miniatura estática (gif ou jpeg) para o resultado                                       |
 | title                   | String (Sequência de caracteres) | false (Falso)     | Título do result                                                                               |
-| caption                 | String (Sequência de caracteres) | false (Falso)     | Caption of the MPEG-4 file to be sent, 0-200 characters                                        |
+| caption                 | String (Sequência de caracteres) | false (Falso)     | Legenda do arquivo MPEG-4 a ser enviado, 0-200 caracteres                                      |
 | parse_mode              | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda da foto. |
 | reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                                                           |
 | input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the video animation                               |
@@ -185,8 +185,8 @@ Represents a link to a page containing an embedded video player or a video file.
 | title                   | String (Sequência de caracteres) | true (Verdadeiro) | Título do result                                                                                                                                                           |
 | caption                 | String (Sequência de caracteres) | false (Falso)     | Caption of the video to be sent, 0-200 characters                                                                                                                          |
 | parse_mode              | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda da foto.                                                                             |
-| video_width             | Integer (Número)                 | false (Falso)     | Video width                                                                                                                                                                |
-| video_height            | Integer (Número)                 | false (Falso)     | Video height                                                                                                                                                               |
+| video_width             | Integer (Número)                 | false (Falso)     | Largura do vídeo                                                                                                                                                           |
+| video_height            | Integer (Número)                 | false (Falso)     | Altura do vídeo                                                                                                                                                            |
 | video_duration          | Integer (Número)                 | false (Falso)     | Video duration in seconds                                                                                                                                                  |
 | description             | String (Sequência de caracteres) | false (Falso)     | Breve descrição do result                                                                                                                                                  |
 | reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                                                                                                                                       |
@@ -217,18 +217,18 @@ Exemplo:
 
 Represents a link to an mp3 audio file. By default, this audio file will be sent by the user. Alternatively, you can use input_message_content to send a message with the specified content instead of the audio.
 
-| Campo                   | Tipo                             | Requerido         | Descrição                                                                                     |
-| ----------------------- | -------------------------------- | ----------------- | --------------------------------------------------------------------------------------------- |
-| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be audio                                                             |
-| id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                          |
-| audio_url               | String (Sequência de caracteres) | true (Verdadeiro) | A valid URL for the audio file                                                                |
-| title                   | String (Sequência de caracteres) | true (Verdadeiro) | Title                                                                                         |
-| caption                 | String (Sequência de caracteres) | false (Falso)     | Caption, 0-200 characters                                                                     |
-| parse_mode              | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda do GIF. |
-| performer               | String (Sequência de caracteres) | false (Falso)     | Performer                                                                                     |
-| audio_duration          | Integer (Número)                 | false (Falso)     | Audio duration in seconds                                                                     |
-| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                                                          |
-| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the audio                                        |
+| Campo                   | Tipo                             | Requerido         | Descrição                                                                                      |
+| ----------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------- |
+| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be audio                                                              |
+| id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                           |
+| audio_url               | String (Sequência de caracteres) | true (Verdadeiro) | A valid URL for the audio file                                                                 |
+| title                   | String (Sequência de caracteres) | true (Verdadeiro) | Title                                                                                          |
+| caption                 | String (Sequência de caracteres) | false (Falso)     | Caption, 0-200 characters                                                                      |
+| parse_mode              | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda da foto. |
+| performer               | String (Sequência de caracteres) | false (Falso)     | Performer                                                                                      |
+| audio_duration          | Integer (Número)                 | false (Falso)     | Audio duration in seconds                                                                      |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                                                           |
+| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the audio                                         |
 
 Exemplo:
 
@@ -251,17 +251,17 @@ Exemplo:
 
 Represents a link to a voice recording in an .ogg container encoded with OPUS. By default, this voice recording will be sent by the user. Alternatively, you can use input_message_content to send a message with the specified content instead of the the voice message.
 
-| Campo                   | Tipo                             | Requerido         | Descrição                                                                                     |
-| ----------------------- | -------------------------------- | ----------------- | --------------------------------------------------------------------------------------------- |
-| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be voice                                                             |
-| id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                          |
-| voice_url               | String (Sequência de caracteres) | true (Verdadeiro) | A valid URL for the voice recording                                                           |
-| title                   | String (Sequência de caracteres) | true (Verdadeiro) | Recording title                                                                               |
-| caption                 | String (Sequência de caracteres) | false (Falso)     | Caption, 0-200 characters                                                                     |
-| parse_mode              | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda do GIF. |
-| voice_duration          | Integer (Número)                 | false (Falso)     | Recording duration in seconds                                                                 |
-| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                                                          |
-| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the voice recording                              |
+| Campo                   | Tipo                             | Requerido         | Descrição                                                                                      |
+| ----------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------- |
+| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be voice                                                              |
+| id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                           |
+| voice_url               | String (Sequência de caracteres) | true (Verdadeiro) | A valid URL for the voice recording                                                            |
+| title                   | String (Sequência de caracteres) | true (Verdadeiro) | Recording title                                                                                |
+| caption                 | String (Sequência de caracteres) | false (Falso)     | Caption, 0-200 characters                                                                      |
+| parse_mode              | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda da foto. |
+| voice_duration          | Integer (Número)                 | false (Falso)     | Recording duration in seconds                                                                  |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                                                           |
+| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the voice recording                               |
 
 Exemplo:
 
@@ -451,19 +451,19 @@ Exemplo:
 
 ## InlineQueryResultCachedPhoto
 
-Represents a link to a photo stored on the Telegram servers. By default, this photo will be sent by the user with an optional caption. Alternatively, you can use input_message_content to send a message with the specified content instead of the photo.
+Represents a link to a photo stored on the Telegram servers. By default, this photo will be sent by the user with an optional caption. Como alternativa, você pode usar o input_message_content para enviar uma mensagem com um conteúdo especificado em vez da foto.
 
-| Campo                   | Tipo                             | Requerido         | Descrição                                                                                     |
-| ----------------------- | -------------------------------- | ----------------- | --------------------------------------------------------------------------------------------- |
-| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "photo"                                                              |
-| id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                          |
-| photo_file_id         | String (Sequência de caracteres) | true (Verdadeiro) | A valid file identifier of the photo                                                          |
-| title                   | String (Sequência de caracteres) | false (Falso)     | Título do result                                                                              |
-| description             | String (Sequência de caracteres) | false (Falso)     | Breve descrição do result                                                                     |
-| caption                 | String (Sequência de caracteres) | false (Falso)     | Legenda da foto a ser enviada, 0-200 caracteres                                               |
-| parse_mode              | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda do GIF. |
-| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                                                          |
-| input_message_content | InputMessageContent              | false (Falso)     | O conteúdo da mensagem a ser enviada, em vez da foto                                          |
+| Campo                   | Tipo                             | Requerido         | Descrição                                                                                      |
+| ----------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------- |
+| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "photo"                                                               |
+| id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                           |
+| photo_file_id         | String (Sequência de caracteres) | true (Verdadeiro) | A valid file identifier of the photo                                                           |
+| title                   | String (Sequência de caracteres) | false (Falso)     | Título do result                                                                               |
+| description             | String (Sequência de caracteres) | false (Falso)     | Breve descrição do result                                                                      |
+| caption                 | String (Sequência de caracteres) | false (Falso)     | Legenda da foto a ser enviada, 0-200 caracteres                                                |
+| parse_mode              | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda da foto. |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                                                           |
+| input_message_content | InputMessageContent              | false (Falso)     | O conteúdo da mensagem a ser enviada, em vez da foto                                           |
 
 Exemplo:
 
@@ -513,18 +513,18 @@ Exemplo:
 
 ## InlineQueryResultCachedMpeg4Gif
 
-Represents a link to a video animation (H.264&#x2F;MPEG-4 AVC video without sound) stored on the Telegram servers. By default, this animated MPEG-4 file will be sent by the user with an optional caption. Alternatively, you can use input_message_content to send a message with the specified content instead of the animation.
+Represents a link to a video animation (H.264&#x2F;MPEG-4 AVC video without sound) stored on the Telegram servers. By default, this animated MPEG-4 file will be sent by the user with an optional caption. Como alternativa, você pode usar o input_message_content para enviar uma mensagem com um conteúdo especificado em vez de uma gif.
 
-| Campo                   | Tipo                             | Requerido         | Descrição                                                                                     |
-| ----------------------- | -------------------------------- | ----------------- | --------------------------------------------------------------------------------------------- |
-| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be mpeg4_gif                                                         |
-| id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                          |
-| mpeg4_file_id         | String (Sequência de caracteres) | true (Verdadeiro) | A valid file identifier for the MP4 file                                                      |
-| title                   | String (Sequência de caracteres) | false (Falso)     | Título do result                                                                              |
-| caption                 | String (Sequência de caracteres) | false (Falso)     | Caption of the MPEG-4 file to be sent, 0-200 characters                                       |
-| parse_mode              | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda do GIF. |
-| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                                                          |
-| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the video animation                              |
+| Campo                   | Tipo                             | Requerido         | Descrição                                                                                      |
+| ----------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------- |
+| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "mpeg4_gif"                                                           |
+| id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                           |
+| mpeg4_file_id         | String (Sequência de caracteres) | true (Verdadeiro) | A valid file identifier for the MP4 file                                                       |
+| title                   | String (Sequência de caracteres) | false (Falso)     | Título do result                                                                               |
+| caption                 | String (Sequência de caracteres) | false (Falso)     | Legenda do arquivo MPEG-4 a ser enviado, 0-200 caracteres                                      |
+| parse_mode              | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda da foto. |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                                                           |
+| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the video animation                               |
 
 Exemplo:
 
@@ -601,17 +601,17 @@ Exemplo:
 
 Represents a link to a video file stored on the Telegram servers. By default, this video file will be sent by the user with an optional caption. Alternatively, you can use input_message_content to send a message with the specified content instead of the video.
 
-| Campo                   | Tipo                             | Requerido         | Descrição                                                                                      |
-| ----------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------- |
-| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be video                                                              |
-| id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                           |
-| video_file_id         | String (Sequência de caracteres) | true (Verdadeiro) | A valid file identifier for the video file                                                     |
-| title                   | String (Sequência de caracteres) | true (Verdadeiro) | Título do result                                                                               |
-| description             | String (Sequência de caracteres) | false (Falso)     | Breve descrição do result                                                                      |
-| caption                 | String (Sequência de caracteres) | false (Falso)     | Caption of the video to be sent, 0-200 characters                                              |
-| parse_mode              | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda da foto. |
-| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                                                           |
-| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the video                                         |
+| Campo                   | Tipo                             | Requerido         | Descrição                                                                                     |
+| ----------------------- | -------------------------------- | ----------------- | --------------------------------------------------------------------------------------------- |
+| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be video                                                             |
+| id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                          |
+| video_file_id         | String (Sequência de caracteres) | true (Verdadeiro) | A valid file identifier for the video file                                                    |
+| title                   | String (Sequência de caracteres) | true (Verdadeiro) | Título do result                                                                              |
+| description             | String (Sequência de caracteres) | false (Falso)     | Breve descrição do result                                                                     |
+| caption                 | String (Sequência de caracteres) | false (Falso)     | Caption of the video to be sent, 0-200 characters                                             |
+| parse_mode              | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda do GIF. |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                                                          |
+| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the video                                        |
 
 Exemplo:
 
@@ -663,15 +663,15 @@ Exemplo:
 
 Represents a link to an mp3 audio file stored on the Telegram servers. By default, this audio file will be sent by the user. Alternatively, you can use input_message_content to send a message with the specified content instead of the audio.
 
-| Campo                   | Tipo                             | Requerido         | Descrição                                                                                      |
-| ----------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------- |
-| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be audio                                                              |
-| id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                           |
-| audio_file_id         | String (Sequência de caracteres) | true (Verdadeiro) | A valid file identifier for the audio file                                                     |
-| caption                 | String (Sequência de caracteres) | false (Falso)     | Caption, 0-200 characters                                                                      |
-| parse_mode              | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda da foto. |
-| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                                                           |
-| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the audio                                         |
+| Campo                   | Tipo                             | Requerido         | Descrição                                                                                     |
+| ----------------------- | -------------------------------- | ----------------- | --------------------------------------------------------------------------------------------- |
+| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be audio                                                             |
+| id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                          |
+| audio_file_id         | String (Sequência de caracteres) | true (Verdadeiro) | A valid file identifier for the audio file                                                    |
+| caption                 | String (Sequência de caracteres) | false (Falso)     | Caption, 0-200 characters                                                                     |
+| parse_mode              | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda do GIF. |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                                                          |
+| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the audio                                        |
 
 Exemplo:
 
