@@ -23,7 +23,7 @@
 
 ## InlineQueryResultArticle
 
-Represents a link to an article or web page.
+Representa um link para um artigo ou página da web.
 
 | Campo                   | Tipo                             | Requerido         | Descrição                                                         |
 | ----------------------- | -------------------------------- | ----------------- | ----------------------------------------------------------------- |
@@ -61,35 +61,35 @@ Exemplo:
 
 Representa um link para um objeto do tipo photo. Por padrão essa foto será enviada pelo usuário com legenda opcional. Alternatively, you can use input_message_content to send a message with the specified content instead of the photo.
 
-| Campo                   | Tipo                             | Requerido         | Descrição                                                                                      |
-| ----------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------- |
-| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "photo"                                                               |
-| id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                           |
-| photo_url               | String (Sequência de caracteres) | true (Verdadeiro) | Uma URL válida da foto. A foto deve estar no formato jpeg. Photo size must not exceed 5MB      |
-| thumb_url               | String (Sequência de caracteres) | true (Verdadeiro) | URL da miniatura da foto                                                                       |
-| photo_width             | Integer (Número)                 | false (Falso)     | Largura da foto                                                                                |
-| photo_height            | Integer (Número)                 | false (Falso)     | Altura da foto                                                                                 |
-| title                   | String (Sequência de caracteres) | false (Falso)     | Título do result                                                                               |
-| description             | String (Sequência de caracteres) | false (Falso)     | Breve descrição do result                                                                      |
-| caption                 | String (Sequência de caracteres) | false (Falso)     | Legenda da foto a ser enviada, 0-200 caracteres                                                |
-| parse_mode              | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda da foto. |
-| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                                                           |
-| input_message_content | InputMessageContent              | false (Falso)     | O conteúdo da mensagem a ser enviada, em vez da foto                                           |
+| Campo                   | Tipo                             | Requerido         | Descrição                                                                                           |
+| ----------------------- | -------------------------------- | ----------------- | --------------------------------------------------------------------------------------------------- |
+| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "photo"                                                                    |
+| id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                                |
+| photo_url               | String (Sequência de caracteres) | true (Verdadeiro) | Uma URL válida da foto. A foto deve estar no formato jpeg. Tamanho da foto não deve ultrapassar 5MB |
+| thumb_url               | String (Sequência de caracteres) | true (Verdadeiro) | URL da miniatura da foto                                                                            |
+| photo_width             | Integer (Número)                 | false (Falso)     | Largura da foto                                                                                     |
+| photo_height            | Integer (Número)                 | false (Falso)     | Altura da foto                                                                                      |
+| title                   | String (Sequência de caracteres) | false (Falso)     | Título do result                                                                                    |
+| description             | String (Sequência de caracteres) | false (Falso)     | Breve descrição do result                                                                           |
+| caption                 | String (Sequência de caracteres) | false (Falso)     | Legenda da foto a ser enviada, 0-200 caracteres                                                     |
+| parse_mode              | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda da foto.      |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                                                                |
+| input_message_content | InputMessageContent              | false (Falso)     | O conteúdo da mensagem a ser enviada, em vez da foto                                                |
 
 Exemplo:
 
 ```javascript
 [{
-    type = String,
-    id = String,
-    photo_url = String,
-    thumb_url = String,
-    photo_width = Integer,
-    photo_height = Integer,
-    title = String,
-    description = String,
-    caption = String,
-    parse_mode = String,
+    type = String (Sequência de caracteres),
+    id = String (Sequência de caracteres),
+    photo_url = String (Sequência de caracteres),
+    thumb_url = String (Sequência de caracteres),
+    photo_width = Integer (Número),
+    photo_height = Integer (Número),
+    title = String (Sequência de caracteres),
+    description = String (Sequência de caracteres),
+    caption = String (Sequência de caracteres),
+    parse_mode = String (Sequência de caracteres),
     reply_markup = InlineKeyboardMarkup,
     input_message_content = InputMessageContent,
 }]
@@ -97,37 +97,37 @@ Exemplo:
 
 ## InlineQueryResultGif
 
-Represents a link to an animated GIF file. By default, this animated GIF file will be sent by the user with optional caption. Alternatively, you can use input_message_content to send a message with the specified content instead of the animation.
+Representa um link para um arquivo GIF animado. Por padrão esse GIF animado será enviado pelo usuário com legenda opcional. Alternatively, you can use input_message_content to send a message with the specified content instead of the animation.
 
-| Campo                   | Tipo                             | Requerido         | Descrição                                                                                                                    |
-| ----------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be gif                                                                                              |
-| id                      | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for this result, 1-64 bytes                                                                                |
-| gif_url                 | String (Sequência de caracteres) | true (Verdadeiro) | A valid URL for the GIF file. File size must not exceed 1MB                                                                  |
-| gif_width               | Integer (Número)                 | false (Falso)     | Width of the GIF                                                                                                             |
-| gif_height              | Integer (Número)                 | false (Falso)     | Height of the GIF                                                                                                            |
-| gif_duration            | Integer (Número)                 | false (Falso)     | Duration of the GIF                                                                                                          |
-| thumb_url               | String (Sequência de caracteres) | true (Verdadeiro) | URL of the static thumbnail for the result (jpeg or gif)                                                                     |
-| title                   | String (Sequência de caracteres) | false (Falso)     | Title for the result                                                                                                         |
-| caption                 | String (Sequência de caracteres) | false (Falso)     | Caption of the GIF file to be sent, 0-200 characters                                                                         |
-| parse_mode              | String (Sequência de caracteres) | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption. |
-| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message                                                                                      |
-| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the GIF animation                                                               |
+| Campo                   | Tipo                             | Requerido         | Descrição                                                                                     |
+| ----------------------- | -------------------------------- | ----------------- | --------------------------------------------------------------------------------------------- |
+| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "gif"                                                                |
+| id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                          |
+| gif_url                 | String (Sequência de caracteres) | true (Verdadeiro) | Uma URL válida para o arquivo GIF. File size must not exceed 1MB                              |
+| gif_width               | Integer (Número)                 | false (Falso)     | Largura do GIF                                                                                |
+| gif_height              | Integer (Número)                 | false (Falso)     | Altura do GIF                                                                                 |
+| gif_duration            | Integer (Número)                 | false (Falso)     | Duração do GIF                                                                                |
+| thumb_url               | String (Sequência de caracteres) | true (Verdadeiro) | URL da miniatura estática para o result (jpeg ou gif)                                         |
+| title                   | String (Sequência de caracteres) | false (Falso)     | Título do result                                                                              |
+| caption                 | String (Sequência de caracteres) | false (Falso)     | Legenda do GIF a ser enviado, 0-200 caracteres                                                |
+| parse_mode              | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda do GIF. |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                                                          |
+| input_message_content | InputMessageContent              | false (Falso)     | O conteúdo da mensagem a ser enviada, em vez do GIF                                           |
 
 Exemplo:
 
 ```javascript
 [{
-    type = String,
-    id = String,
-    gif_url = String,
-    gif_width = Integer,
-    gif_height = Integer,
-    gif_duration = Integer,
-    thumb_url = String,
-    title = String,
-    caption = String,
-    parse_mode = String,
+    type = String (Sequência de caracteres),
+    id = String (Sequência de caracteres),
+    gif_url = String (Sequência de caracteres),
+    gif_width = Integer (Número),
+    gif_height = Integer (Número),
+    gif_duration = Integer (Número),
+    thumb_url = String (Sequência de caracteres),
+    title = String (Sequência de caracteres),
+    caption = String (Sequência de caracteres),
+    parse_mode = String (Sequência de caracteres),
     reply_markup = InlineKeyboardMarkup,
     input_message_content = InputMessageContent,
 }]
