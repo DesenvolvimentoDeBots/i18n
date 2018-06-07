@@ -215,18 +215,18 @@ Exemplo:
 
 ## InlineQueryResultAudio
 
-Represents a link to an mp3 audio file. By default, this audio file will be sent by the user. Alternatively, you can use input_message_content to send a message with the specified content instead of the audio.
+Representa um link para um arquivo em mp3. Por padrão, esse arquivo de áudio será enviado pelo usuário. Como alternativa, você pode usar o input_message_content para enviar uma mensagem com um conteúdo especificado em vez da áudio.
 
 | Campo                   | Tipo                             | Requerido         | Descrição                                                                                      |
 | ----------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------- |
-| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be audio                                                              |
+| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "audio"                                                               |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                           |
-| audio_url               | String (Sequência de caracteres) | true (Verdadeiro) | A valid URL for the audio file                                                                 |
-| title                   | String (Sequência de caracteres) | true (Verdadeiro) | Title                                                                                          |
-| caption                 | String (Sequência de caracteres) | false (Falso)     | Caption, 0-200 characters                                                                      |
+| audio_url               | String (Sequência de caracteres) | true (Verdadeiro) | Uma URL válida para o arquivo de audio                                                         |
+| title                   | String (Sequência de caracteres) | true (Verdadeiro) | Título                                                                                         |
+| caption                 | String (Sequência de caracteres) | false (Falso)     | Legenda, 0-200 caracteres no máximo                                                            |
 | parse_mode              | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda da foto. |
-| performer               | String (Sequência de caracteres) | false (Falso)     | Performer                                                                                      |
-| audio_duration          | Integer (Número)                 | false (Falso)     | Audio duration in seconds                                                                      |
+| performer               | String (Sequência de caracteres) | false (Falso)     | Artista                                                                                        |
+| audio_duration          | Integer (Número)                 | false (Falso)     | Definir a duração do áudio em segundos                                                         |
 | reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                                                           |
 | input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the audio                                         |
 
