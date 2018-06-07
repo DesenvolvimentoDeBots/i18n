@@ -79,7 +79,7 @@ Contém informações sobre o status atual de um webhook.
 | last_error_date        | Integer (Número)                 | false (Falso)     | Unix time para o erro mais recente que ocorreu ao tentar entregar uma atualização via webhook                               |
 | last_error_message     | String (Sequência de caracteres) | false (Falso)     | Error message in human-readable format for the most recent error that happened when trying to deliver an update via webhook |
 | max_connections          | Integer (Número)                 | false (Falso)     | Número máximo permitido de conexões simultâneas HTTPS para o webhook para a entrega de atualizações                         |
-| allowed_updates          | Array de String                  | false (Falso)     | A list of update types the bot is subscribed to. Padrão para todos os tipos de atualização                                  |
+| allowed_updates          | Array de String                  | false (Falso)     | Uma lista de tipos de atualização que o bot está inscrito. Padrão para todos os tipos de atualização                        |
 
 ## User
 
@@ -250,7 +250,7 @@ Esse objeto representa uma mensagem de vídeo (disponível em apps Telegram como
 
 ## Contact
 
-This object represents a phone contact.
+Esse objeto representa um telefone de contato.
 
 | Campo        | Tipo                             | Requerido         | Descrição                             |
 | ------------ | -------------------------------- | ----------------- | ------------------------------------- |
@@ -292,19 +292,19 @@ Esse objeto representa as fotos de perfil de um usuário.
 
 This object represents a file ready to be downloaded. The file can be downloaded via the link https:&#x2F;&#x2F;api.telegram.org&#x2F;file&#x2F;bot&lt;token&gt;&#x2F;&lt;file_path&gt;. It is guaranteed that the link will be valid for at least 1 hour. When the link expires, a new one can be requested by calling getFile.
 
-| Campo     | Tipo                             | Requerido         | Descrição                                                                                                                                                  |
-| --------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| file_id   | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse arquivo                                                                                                                  |
-| file_size | Integer (Número)                 | false (Falso)     | Tamanho do arquivo, se conhecido                                                                                                                           |
-| file_path | String (Sequência de caracteres) | false (Falso)     | Caminho do arquivo. Use https:&#x2F;&#x2F;api.telegram.org&#x2F;file&#x2F;bot&lt;token&gt;&#x2F;&lt;file_path&gt; to get the file. |
+| Campo     | Tipo                             | Requerido         | Descrição                                                                                           |
+| --------- | -------------------------------- | ----------------- | --------------------------------------------------------------------------------------------------- |
+| file_id   | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse arquivo                                                           |
+| file_size | Integer (Número)                 | false (Falso)     | Tamanho do arquivo, se conhecido                                                                    |
+| file_path | String (Sequência de caracteres) | false (Falso)     | Caminho do arquivo. Usar https://api.telegram.org/file/bot<token>/<file_path> para obter o arquivo. |
 
 ## ReplyKeyboardMarkup
 
-This object represents a custom keyboard with reply options (see Introduction to bots for details and examples).
+Esse objeto representa um teclado personalizado com opções de resposta (veja Introdução aos Bots para detalhes e exemplos).
 
 | Campo               | Tipo                             | Requerido         | Descrição                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | ------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| keyboard            | Array of Array of KeyboardButton | true (Verdadeiro) | Array of button rows, each represented by an Array of KeyboardButton objects                                                                                                                                                                                                                                                                                                                                                       |
+| keyboard            | Array de Array de KeyboardButton | true (Verdadeiro) | Array of button rows, each represented by an Array of KeyboardButton objects                                                                                                                                                                                                                                                                                                                                                       |
 | resize_keyboard     | Boolen (Boleano)                 | false (Falso)     | Requests clients to resize the keyboard vertically for optimal fit (e.g., make the keyboard smaller if there are just two rows of buttons). Defaults to false, in which case the custom keyboard is always of the same height as the app's standard keyboard.                                                                                                                                                                      |
 | one_time_keyboard | Boolen (Boleano)                 | false (Falso)     | Requests clients to hide the keyboard as soon as it's been used. The keyboard will still be available, but clients will automatically display the usual letter-keyboard in the chat – the user can press a special button in the input field to see the custom keyboard again. Defaults to false.                                                                                                                                  |
 | selective           | Boolen (Boleano)                 | false (Falso)     | Use this parameter if you want to show the keyboard to specific users only. Targets: 1) users that are @mentioned in the text of the Message object; 2) if the bot's message is a reply (has reply_to_message_id), sender of the original message.Example: A user requests to change the bot‘s language, bot replies to the request with a keyboard to select the new language. Other users in the group don’t see the keyboard. |
@@ -334,7 +334,7 @@ This object represents an inline keyboard that appears right next to the message
 
 | Campo           | Tipo                                   | Requerido         | Descrição                                                                          |
 | --------------- | -------------------------------------- | ----------------- | ---------------------------------------------------------------------------------- |
-| inline_keyboard | Array of Array of InlineKeyboardButton | true (Verdadeiro) | Array of button rows, each represented by an Array of InlineKeyboardButton objects |
+| inline_keyboard | Array de Array de InlineKeyboardButton | true (Verdadeiro) | Array of button rows, each represented by an Array of InlineKeyboardButton objects |
 
 ## InlineKeyboardButton
 
