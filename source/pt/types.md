@@ -203,13 +203,13 @@ This object represents an audio file to be treated as music by the Telegram clie
 
 This object represents a general file (as opposed to photos, voice messages and audio files).
 
-| Campo     | Tipo                             | Requerido         | Descrição                                  |
-| --------- | -------------------------------- | ----------------- | ------------------------------------------ |
-| file_id   | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo do arquivo         |
-| thumb     | PhotoSize                        | false (Falso)     | Document thumbnail as defined by sender    |
-| file_name | String (Sequência de caracteres) | false (Falso)     | Original filename as defined by sender     |
-| mime_type | String (Sequência de caracteres) | false (Falso)     | MIME type of the file as defined by sender |
-| file_size | Integer (Número)                 | false (Falso)     | Tamanho do arquivo                         |
+| Campo     | Tipo                             | Requerido         | Descrição                                             |
+| --------- | -------------------------------- | ----------------- | ----------------------------------------------------- |
+| file_id   | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo do arquivo                    |
+| thumb     | PhotoSize                        | false (Falso)     | Document thumbnail as defined by sender               |
+| file_name | String (Sequência de caracteres) | false (Falso)     | Original filename as defined by sender                |
+| mime_type | String (Sequência de caracteres) | false (Falso)     | Tipo MIME do arquivo conforme definido pelo remetente |
+| file_size | Integer (Número)                 | false (Falso)     | Tamanho do arquivo                                    |
 
 ## Video
 
@@ -217,7 +217,7 @@ Esse objeto representa um arquivo de vídeo.
 
 | Campo     | Tipo                             | Requerido         | Descrição                                                     |
 | --------- | -------------------------------- | ----------------- | ------------------------------------------------------------- |
-| file_id   | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse arquivo                     |
+| file_id   | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo desse arquivo                         |
 | width     | Integer (Número)                 | true (Verdadeiro) | Video width as defined by sender                              |
 | height    | Integer (Número)                 | true (Verdadeiro) | Video height as defined by sender                             |
 | duration  | Integer (Número)                 | true (Verdadeiro) | Duração do vídeo em segundos conforme definido pelo remetente |
@@ -229,12 +229,12 @@ Esse objeto representa um arquivo de vídeo.
 
 This object represents a voice note.
 
-| Campo     | Tipo                             | Requerido         | Descrição                                             |
-| --------- | -------------------------------- | ----------------- | ----------------------------------------------------- |
-| file_id   | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse arquivo             |
-| duration  | Integer (Número)                 | true (Verdadeiro) | Duration of the audio in seconds as defined by sender |
-| mime_type | String (Sequência de caracteres) | false (Falso)     | MIME type of the file as defined by sender            |
-| file_size | Integer (Número)                 | false (Falso)     | Tamanho do arquivo                                    |
+| Campo     | Tipo                             | Requerido         | Descrição                                                     |
+| --------- | -------------------------------- | ----------------- | ------------------------------------------------------------- |
+| file_id   | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo desse arquivo                         |
+| duration  | Integer (Número)                 | true (Verdadeiro) | Duração do áudio em segundos conforme definido pelo remetente |
+| mime_type | String (Sequência de caracteres) | false (Falso)     | Tipo MIME do arquivo conforme definido pelo remetente         |
+| file_size | Integer (Número)                 | false (Falso)     | Tamanho do arquivo                                            |
 
 ## VideoNote
 
@@ -242,7 +242,7 @@ Esse objeto representa uma mensagem de vídeo (disponível em apps Telegram como
 
 | Campo     | Tipo                             | Requerido         | Descrição                                                     |
 | --------- | -------------------------------- | ----------------- | ------------------------------------------------------------- |
-| file_id   | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse arquivo                     |
+| file_id   | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo desse arquivo                         |
 | lenght    | Integer (Número)                 | true (Verdadeiro) | Video width and height as defined by sender                   |
 | duration  | Integer (Número)                 | true (Verdadeiro) | Duração do vídeo em segundos conforme definido pelo remetente |
 | thumb     | PhotoSize                        | false (Falso)     | Miniatura do vídeo                                            |
@@ -294,7 +294,7 @@ This object represents a file ready to be downloaded. The file can be downloaded
 
 | Campo     | Tipo                             | Requerido         | Descrição                                                                                           |
 | --------- | -------------------------------- | ----------------- | --------------------------------------------------------------------------------------------------- |
-| file_id   | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse arquivo                                                           |
+| file_id   | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo desse arquivo                                                               |
 | file_size | Integer (Número)                 | false (Falso)     | Tamanho do arquivo, se conhecido                                                                    |
 | file_path | String (Sequência de caracteres) | false (Falso)     | Caminho do arquivo. Usar https://api.telegram.org/file/bot<token>/<file_path> para obter o arquivo. |
 
@@ -323,10 +323,10 @@ This object represents one button of the reply keyboard. For simple text buttons
 
 Upon receiving a message with this object, Telegram clients will remove the current custom keyboard and display the default letter-keyboard. By default, custom keyboards are displayed until a new keyboard is sent by a bot. An exception is made for one-time keyboards that are hidden immediately after the user presses a button (see ReplyKeyboardMarkup).
 
-| Campo           | Tipo             | Requerido         | Descrição                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| --------------- | ---------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| remove_keyboard | True             | true (Verdadeiro) | Requests clients to remove the custom keyboard (user will not be able to summon this keyboard; if you want to hide the keyboard from sight but keep it accessible, use one_time_keyboard in ReplyKeyboardMarkup)                                                                                                                                                                                                                                                       |
-| selective       | Boolen (Boleano) | false (Falso)     | Use this parameter if you want to remove the keyboard for specific users only. Targets: 1) users that are @mentioned in the text of the Message object; 2) if the bot's message is a reply (has reply_to_message_id), sender of the original message.Example: A user votes in a poll, bot returns confirmation message in reply to the vote and removes the keyboard for that user, while still showing the keyboard with poll options to users who haven't voted yet. |
+| Campo           | Tipo              | Requerido         | Descrição                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| --------------- | ----------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| remove_keyboard | True (Verdadeiro) | true (Verdadeiro) | Requests clients to remove the custom keyboard (user will not be able to summon this keyboard; if you want to hide the keyboard from sight but keep it accessible, use one_time_keyboard in ReplyKeyboardMarkup)                                                                                                                                                                                                                                                       |
+| selective       | Boolen (Boleano)  | false (Falso)     | Use this parameter if you want to remove the keyboard for specific users only. Targets: 1) users that are @mentioned in the text of the Message object; 2) if the bot's message is a reply (has reply_to_message_id), sender of the original message.Example: A user votes in a poll, bot returns confirmation message in reply to the vote and removes the keyboard for that user, while still showing the keyboard with poll options to users who haven't voted yet. |
 
 ## InlineKeyboardMarkup
 
@@ -368,10 +368,10 @@ This object represents an incoming callback query from a callback button in an i
 
 Upon receiving a message with this object, Telegram clients will display a reply interface to the user (act as if the user has selected the bot‘s message and tapped ’Reply'). This can be extremely useful if you want to create user-friendly step-by-step interfaces without having to sacrifice privacy mode.
 
-| Campo       | Tipo             | Requerido         | Descrição                                                                                                                                                                                                                                        |
-| ----------- | ---------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| force_reply | True             | true (Verdadeiro) | Shows reply interface to the user, as if they manually selected the bot‘s message and tapped ’Reply'                                                                                                                                             |
-| selective   | Boolen (Boleano) | false (Falso)     | Use this parameter if you want to force reply from specific users only. Targets: 1) users that are @mentioned in the text of the Message object; 2) if the bot's message is a reply (has reply_to_message_id), sender of the original message. |
+| Campo       | Tipo              | Requerido         | Descrição                                                                                                                                                                                                                                        |
+| ----------- | ----------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| force_reply | True (Verdadeiro) | true (Verdadeiro) | Shows reply interface to the user, as if they manually selected the bot‘s message and tapped ’Reply'                                                                                                                                             |
+| selective   | Boolen (Boleano)  | false (Falso)     | Use this parameter if you want to force reply from specific users only. Targets: 1) users that are @mentioned in the text of the Message object; 2) if the bot's message is a reply (has reply_to_message_id), sender of the original message. |
 
 ## ChatPhoto
 
@@ -420,10 +420,10 @@ Represents a photo to be sent.
 
 | Campo      | Tipo                             | Requerido         | Descrição                                                                                                                                                                                                                                                                                                                                                            |
 | ---------- | -------------------------------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| tipo       | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be photo                                                                                                                                                                                                                                                                                                                                    |
+| tipo       | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "photo"                                                                                                                                                                                                                                                                                                                                     |
 | media      | String (Sequência de caracteres) | true (Verdadeiro) | File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass "attach:&#x2F;&#x2F;&lt;file_attach_name&gt;" to upload a new one using multipart&#x2F;form-data under &lt;file_attach_name&gt; name. More info on Sending Files » |
-| caption    | String (Sequência de caracteres) | false (Falso)     | Caption of the photo to be sent, 0-200 characters                                                                                                                                                                                                                                                                                                                    |
-| parse_mode | String (Sequência de caracteres) | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption.                                                                                                                                                                                                                                         |
+| caption    | String (Sequência de caracteres) | false (Falso)     | Legenda da foto a ser enviada, 0-200 caracteres                                                                                                                                                                                                                                                                                                                      |
+| parse_mode | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda da foto.                                                                                                                                                                                                                                                                       |
 
 ## InputMediaVideo
 
@@ -434,7 +434,7 @@ Represents a video to be sent.
 | tipo               | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be video                                                                                                                                                                                                                                                                                                                                    |
 | media              | String (Sequência de caracteres) | true (Verdadeiro) | File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass "attach:&#x2F;&#x2F;&lt;file_attach_name&gt;" to upload a new one using multipart&#x2F;form-data under &lt;file_attach_name&gt; name. More info on Sending Files » |
 | caption            | String (Sequência de caracteres) | false (Falso)     | Caption of the video to be sent, 0-200 characters                                                                                                                                                                                                                                                                                                                    |
-| parse_mode         | String (Sequência de caracteres) | false (Falso)     | Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption.                                                                                                                                                                                                                                         |
+| parse_mode         | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda do GIF.                                                                                                                                                                                                                                                                        |
 | width              | Integer (Número)                 | false (Falso)     | Video width                                                                                                                                                                                                                                                                                                                                                          |
 | height             | Integer (Número)                 | false (Falso)     | Video height                                                                                                                                                                                                                                                                                                                                                         |
 | duration           | Integer (Número)                 | false (Falso)     | Video duration                                                                                                                                                                                                                                                                                                                                                       |
@@ -446,14 +446,14 @@ This object represents a sticker.
 
 | Campo         | Tipo                             | Requerido         | Descrição                                                       |
 | ------------- | -------------------------------- | ----------------- | --------------------------------------------------------------- |
-| file_id       | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for this file                                 |
+| file_id       | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo desse arquivo                           |
 | width         | Integer (Número)                 | true (Verdadeiro) | Sticker width                                                   |
 | height        | Integer (Número)                 | true (Verdadeiro) | Sticker height                                                  |
 | thumb         | PhotoSize                        | false (Falso)     | Sticker thumbnail in the .webp or .jpg format                   |
 | emoji         | String (Sequência de caracteres) | false (Falso)     | Emoji associated with the sticker                               |
 | set_name      | String (Sequência de caracteres) | false (Falso)     | Name of the sticker set to which the sticker belongs            |
 | mask_position | MaskPosition                     | false (Falso)     | For mask stickers, the position where the mask should be placed |
-| file_size     | Integer (Número)                 | false (Falso)     | File size                                                       |
+| file_size     | Integer (Número)                 | false (Falso)     | Tamanho do arquivo                                              |
 
 ## StickerSet
 
@@ -525,11 +525,11 @@ Represents the content of a venue message to be sent as the result of an inline 
 
 Represents the content of a contact message to be sent as the result of an inline query.
 
-| Campo        | Tipo                             | Requerido         | Descrição                |
-| ------------ | -------------------------------- | ----------------- | ------------------------ |
-| phone_number | String (Sequência de caracteres) | true (Verdadeiro) | Contact's phone number   |
-| first_name   | String (Sequência de caracteres) | true (Verdadeiro) | Primeiro nome do contato |
-| last_name    | String (Sequência de caracteres) | false (Falso)     | Último nome do contato   |
+| Campo        | Tipo                             | Requerido         | Descrição                      |
+| ------------ | -------------------------------- | ----------------- | ------------------------------ |
+| phone_number | String (Sequência de caracteres) | true (Verdadeiro) | Número de telefone de contacto |
+| first_name   | String (Sequência de caracteres) | true (Verdadeiro) | Primeiro nome do contato       |
+| last_name    | String (Sequência de caracteres) | false (Falso)     | Último nome do contato         |
 
 ## ChosenInlineResult
 
@@ -645,22 +645,22 @@ This object represents a game. Use BotFather to create and edit games, their sho
 | ------------- | -------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | title         | String (Sequência de caracteres) | true (Verdadeiro) | Title of the game                                                                                                                                                                                                                                |
 | description   | String (Sequência de caracteres) | true (Verdadeiro) | Description of the game                                                                                                                                                                                                                          |
-| photo         | Array of PhotoSize               | true (Verdadeiro) | Photo that will be displayed in the game message in chats.                                                                                                                                                                                       |
+| photo         | Array de PhotoSize               | true (Verdadeiro) | Photo that will be displayed in the game message in chats.                                                                                                                                                                                       |
 | text          | String (Sequência de caracteres) | false (Falso)     | Brief description of the game or high scores included in the game message. Can be automatically edited to include current high scores for the game when the bot calls setGameScore, or manually edited using editMessageText. 0-4096 characters. |
-| text_entities | Array of MessageEntity           | false (Falso)     | Special entities that appear in text, such as usernames, URLs, bot commands, etc.                                                                                                                                                                |
+| text_entities | Array de MessageEntity           | false (Falso)     | Special entities that appear in text, such as usernames, URLs, bot commands, etc.                                                                                                                                                                |
 | animation     | Animation                        | false (Falso)     | Animation that will be displayed in the game message in chats. Upload via BotFather                                                                                                                                                              |
 
 ## Animation
 
 You can provide an animation for your game so that it looks stylish in chats (check out Lumberjack for an example). This object represents an animation file to be displayed in the message containing a game.
 
-| Campo     | Tipo                             | Requerido         | Descrição                                        |
-| --------- | -------------------------------- | ----------------- | ------------------------------------------------ |
-| file_id   | String (Sequência de caracteres) | true (Verdadeiro) | Unique file identifier                           |
-| thumb     | PhotoSize                        | false (Falso)     | Animation thumbnail as defined by sender         |
-| file_name | String (Sequência de caracteres) | false (Falso)     | Original animation filename as defined by sender |
-| mime_type | String (Sequência de caracteres) | false (Falso)     | MIME type of the file as defined by sender       |
-| file_size | Integer (Número)                 | false (Falso)     | File size                                        |
+| Campo     | Tipo                             | Requerido         | Descrição                                             |
+| --------- | -------------------------------- | ----------------- | ----------------------------------------------------- |
+| file_id   | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo do arquivo                    |
+| thumb     | PhotoSize                        | false (Falso)     | Animation thumbnail as defined by sender              |
+| file_name | String (Sequência de caracteres) | false (Falso)     | Original animation filename as defined by sender      |
+| mime_type | String (Sequência de caracteres) | false (Falso)     | Tipo MIME do arquivo conforme definido pelo remetente |
+| file_size | Integer (Número)                 | false (Falso)     | Tamanho do arquivo                                    |
 
 ## GameHighScore
 
