@@ -27,14 +27,14 @@ Represents a link to an article or web page.
 
 | Campo                   | Tipo                             | Requerido         | Descrição                                                       |
 | ----------------------- | -------------------------------- | ----------------- | --------------------------------------------------------------- |
-| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be article                             |
-| id                      | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for this result, 1-64 Bytes                   |
-| title                   | String (Sequência de caracteres) | true (Verdadeiro) | Title of the result                                             |
+| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "article"                              |
+| id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes            |
+| title                   | String (Sequência de caracteres) | true (Verdadeiro) | Título do result                                                |
 | input_message_content | InputMessageContent              | true (Verdadeiro) | O conteúdo da mensagem a ser enviada                            |
-| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard attached to the message                         |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                            |
 | url                     | String (Sequência de caracteres) | false (Falso)     | URL do resultado                                                |
 | hide_url                | Boolen (Boleano)                 | false (Falso)     | Pass True, if you don't want the URL to be shown in the message |
-| description             | String (Sequência de caracteres) | false (Falso)     | Short description of the result                                 |
+| description             | String (Sequência de caracteres) | false (Falso)     | Breve descrição do result                                       |
 | thumb_url               | String (Sequência de caracteres) | false (Falso)     | Url of the thumbnail for the result                             |
 | thumb_width             | Integer (Número)                 | false (Falso)     | Largura da miniatura                                            |
 | thumb_height            | Integer (Número)                 | false (Falso)     | Altura da miniatura                                             |
