@@ -254,7 +254,7 @@ Esse objeto representa um telefone de contato.
 
 | Campo        | Tipo                             | Requerido         | Descrição                             |
 | ------------ | -------------------------------- | ----------------- | ------------------------------------- |
-| phone_number | String (Sequência de caracteres) | true (Verdadeiro) | Número de telefone de contacto        |
+| phone_number | String (Sequência de caracteres) | true (Verdadeiro) | Número de telefone do contato         |
 | first_name   | String (Sequência de caracteres) | true (Verdadeiro) | Primeiro nome do contato              |
 | last_name    | String (Sequência de caracteres) | false (Falso)     | Último nome do contato                |
 | user_id      | Integer (Número)                 | false (Falso)     | Contact's user identifier in Telegram |
@@ -525,11 +525,11 @@ Represents the content of a venue message to be sent as the result of an inline 
 
 Represents the content of a contact message to be sent as the result of an inline query.
 
-| Campo        | Tipo                             | Requerido         | Descrição                      |
-| ------------ | -------------------------------- | ----------------- | ------------------------------ |
-| phone_number | String (Sequência de caracteres) | true (Verdadeiro) | Número de telefone de contacto |
-| first_name   | String (Sequência de caracteres) | true (Verdadeiro) | Primeiro nome do contato       |
-| last_name    | String (Sequência de caracteres) | false (Falso)     | Último nome do contato         |
+| Campo        | Tipo                             | Requerido         | Descrição                     |
+| ------------ | -------------------------------- | ----------------- | ----------------------------- |
+| phone_number | String (Sequência de caracteres) | true (Verdadeiro) | Número de telefone do contato |
+| first_name   | String (Sequência de caracteres) | true (Verdadeiro) | Primeiro nome do contato      |
+| last_name    | String (Sequência de caracteres) | false (Falso)     | Último nome do contato        |
 
 ## ChosenInlineResult
 
