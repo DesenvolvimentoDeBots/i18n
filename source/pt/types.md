@@ -213,17 +213,17 @@ This object represents a general file (as opposed to photos, voice messages and 
 
 ## Video
 
-This object represents a video file.
+Esse objeto representa um arquivo de vídeo.
 
-| Campo     | Tipo                             | Requerido         | Descrição                                             |
-| --------- | -------------------------------- | ----------------- | ----------------------------------------------------- |
-| file_id   | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for this file                       |
-| width     | Integer (Número)                 | true (Verdadeiro) | Video width as defined by sender                      |
-| height    | Integer (Número)                 | true (Verdadeiro) | Video height as defined by sender                     |
-| duration  | Integer (Número)                 | true (Verdadeiro) | Duration of the video in seconds as defined by sender |
-| thumb     | PhotoSize                        | false (Falso)     | Video thumbnail                                       |
-| mime_type | String (Sequência de caracteres) | false (Falso)     | Mime type of a file as defined by sender              |
-| file_size | Integer (Número)                 | false (Falso)     | File size                                             |
+| Campo     | Tipo                             | Requerido         | Descrição                                                     |
+| --------- | -------------------------------- | ----------------- | ------------------------------------------------------------- |
+| file_id   | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse arquivo                     |
+| width     | Integer (Número)                 | true (Verdadeiro) | Video width as defined by sender                              |
+| height    | Integer (Número)                 | true (Verdadeiro) | Video height as defined by sender                             |
+| duration  | Integer (Número)                 | true (Verdadeiro) | Duração do vídeo em segundos conforme definido pelo remetente |
+| thumb     | PhotoSize                        | false (Falso)     | Miniatura do vídeo                                            |
+| mime_type | String (Sequência de caracteres) | false (Falso)     | Mime type of a file as defined by sender                      |
+| file_size | Integer (Número)                 | false (Falso)     | Tamanho do arquivo                                            |
 
 ## Voice
 
@@ -231,22 +231,22 @@ This object represents a voice note.
 
 | Campo     | Tipo                             | Requerido         | Descrição                                             |
 | --------- | -------------------------------- | ----------------- | ----------------------------------------------------- |
-| file_id   | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for this file                       |
+| file_id   | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse arquivo             |
 | duration  | Integer (Número)                 | true (Verdadeiro) | Duration of the audio in seconds as defined by sender |
 | mime_type | String (Sequência de caracteres) | false (Falso)     | MIME type of the file as defined by sender            |
-| file_size | Integer (Número)                 | false (Falso)     | File size                                             |
+| file_size | Integer (Número)                 | false (Falso)     | Tamanho do arquivo                                    |
 
 ## VideoNote
 
-This object represents a video message (available in Telegram apps as of v.4.0).
+Esse objeto representa uma mensagem de vídeo (disponível em apps Telegram como v.4.0).
 
-| Campo     | Tipo                             | Requerido         | Descrição                                             |
-| --------- | -------------------------------- | ----------------- | ----------------------------------------------------- |
-| file_id   | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for this file                       |
-| length    | Integer (Número)                 | true (Verdadeiro) | Video width and height as defined by sender           |
-| duration  | Integer (Número)                 | true (Verdadeiro) | Duration of the video in seconds as defined by sender |
-| thumb     | PhotoSize                        | false (Falso)     | Video thumbnail                                       |
-| file_size | Integer (Número)                 | false (Falso)     | File size                                             |
+| Campo     | Tipo                             | Requerido         | Descrição                                                     |
+| --------- | -------------------------------- | ----------------- | ------------------------------------------------------------- |
+| file_id   | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse arquivo                     |
+| lenght    | Integer (Número)                 | true (Verdadeiro) | Video width and height as defined by sender                   |
+| duration  | Integer (Número)                 | true (Verdadeiro) | Duração do vídeo em segundos conforme definido pelo remetente |
+| thumb     | PhotoSize                        | false (Falso)     | Miniatura do vídeo                                            |
+| file_size | Integer (Número)                 | false (Falso)     | Tamanho do arquivo                                            |
 
 ## Contact
 
@@ -254,19 +254,19 @@ This object represents a phone contact.
 
 | Campo        | Tipo                             | Requerido         | Descrição                             |
 | ------------ | -------------------------------- | ----------------- | ------------------------------------- |
-| phone_number | String (Sequência de caracteres) | true (Verdadeiro) | Contact's phone number                |
+| phone_number | String (Sequência de caracteres) | true (Verdadeiro) | Número de telefone de contacto        |
 | first_name   | String (Sequência de caracteres) | true (Verdadeiro) | Primeiro nome do contato              |
 | last_name    | String (Sequência de caracteres) | false (Falso)     | Último nome do contato                |
 | user_id      | Integer (Número)                 | false (Falso)     | Contact's user identifier in Telegram |
 
 ## Location
 
-This object represents a point on the map.
+Esse objeto representa um ponto no mapa.
 
-| Campo     | Tipo  | Requerido         | Descrição                      |
-| --------- | ----- | ----------------- | ------------------------------ |
-| longitude | Float | true (Verdadeiro) | Longitude as defined by sender |
-| latitude  | Float | true (Verdadeiro) | Latitude as defined by sender  |
+| Campo     | Tipo  | Requerido         | Descrição                                  |
+| --------- | ----- | ----------------- | ------------------------------------------ |
+| longitude | Float | true (Verdadeiro) | Longitude conforme definido pelo remetente |
+| latitude  | Float | true (Verdadeiro) | Latitude conforme definido pelo remetente  |
 
 ## Venue
 
@@ -281,22 +281,22 @@ This object represents a venue.
 
 ## UserProfilePhotos
 
-This object represent a user's profile pictures.
+Esse objeto representa as fotos de perfil de um usuário.
 
 | Campo       | Tipo                        | Requerido         | Descrição                                            |
 | ----------- | --------------------------- | ----------------- | ---------------------------------------------------- |
 | total_count | Integer (Número)            | true (Verdadeiro) | Total number of profile pictures the target user has |
-| photos      | Array of Array of PhotoSize | true (Verdadeiro) | Requested profile pictures (in up to 4 sizes each)   |
+| photos      | Array de Array de PhotoSize | true (Verdadeiro) | Requested profile pictures (in up to 4 sizes each)   |
 
 ## File
 
 This object represents a file ready to be downloaded. The file can be downloaded via the link https:&#x2F;&#x2F;api.telegram.org&#x2F;file&#x2F;bot&lt;token&gt;&#x2F;&lt;file_path&gt;. It is guaranteed that the link will be valid for at least 1 hour. When the link expires, a new one can be requested by calling getFile.
 
-| Campo     | Tipo                             | Requerido         | Descrição                                                                                                                                         |
-| --------- | -------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| file_id   | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for this file                                                                                                                   |
-| file_size | Integer (Número)                 | false (Falso)     | File size, if known                                                                                                                               |
-| file_path | String (Sequência de caracteres) | false (Falso)     | File path. Use https:&#x2F;&#x2F;api.telegram.org&#x2F;file&#x2F;bot&lt;token&gt;&#x2F;&lt;file_path&gt; to get the file. |
+| Campo     | Tipo                             | Requerido         | Descrição                                                                                                                                                  |
+| --------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| file_id   | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse arquivo                                                                                                                  |
+| file_size | Integer (Número)                 | false (Falso)     | Tamanho do arquivo, se conhecido                                                                                                                           |
+| file_path | String (Sequência de caracteres) | false (Falso)     | Caminho do arquivo. Use https:&#x2F;&#x2F;api.telegram.org&#x2F;file&#x2F;bot&lt;token&gt;&#x2F;&lt;file_path&gt; to get the file. |
 
 ## ReplyKeyboardMarkup
 
