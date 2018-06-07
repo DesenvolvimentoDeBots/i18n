@@ -59,7 +59,7 @@ Exemplo:
 
 ## InlineQueryResultPhoto
 
-Representa um link para um objeto do tipo photo. Por padrão essa foto será enviada pelo usuário com legenda opcional. Alternatively, you can use input_message_content to send a message with the specified content instead of the photo.
+Representa um link para um objeto do tipo photo. Por padrão essa foto será enviada pelo usuário com legenda opcional. Como alternativa, você pode usar o input_message_content para enviar uma mensagem com um conteúdo especificado em vez da foto.
 
 | Campo                   | Tipo                             | Requerido         | Descrição                                                                                           |
 | ----------------------- | -------------------------------- | ----------------- | --------------------------------------------------------------------------------------------------- |
@@ -97,13 +97,13 @@ Exemplo:
 
 ## InlineQueryResultGif
 
-Representa um link para um arquivo GIF animado. Por padrão esse GIF animado será enviado pelo usuário com legenda opcional. Alternatively, you can use input_message_content to send a message with the specified content instead of the animation.
+Representa um link para um arquivo GIF animado. Por padrão esse GIF animado será enviado pelo usuário com legenda opcional. Como alternativa, você pode usar o input_message_content para enviar uma mensagem com um conteúdo especificado em vez de uma gif.
 
 | Campo                   | Tipo                             | Requerido         | Descrição                                                                                      |
 | ----------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------- |
 | tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "gif"                                                                 |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                           |
-| gif_url                 | String (Sequência de caracteres) | true (Verdadeiro) | Uma URL válida para o arquivo GIF. File size must not exceed 1MB                               |
+| gif_url                 | String (Sequência de caracteres) | true (Verdadeiro) | Uma URL válida para o arquivo GIF. O tamanho do arquivo não deve ultrapassar 1MB               |
 | gif_width               | Integer (Número)                 | false (Falso)     | Largura do GIF                                                                                 |
 | gif_height              | Integer (Número)                 | false (Falso)     | Altura do GIF                                                                                  |
 | gif_duration            | Integer (Número)                 | false (Falso)     | Duração do GIF                                                                                 |
@@ -135,11 +135,11 @@ Exemplo:
 
 ## InlineQueryResultMpeg4Gif
 
-Represents a link to a video animation (H.264&#x2F;MPEG-4 AVC video without sound). By default, this animated MPEG-4 file will be sent by the user with optional caption. Alternatively, you can use input_message_content to send a message with the specified content instead of the animation.
+Representa um link para um arquivo de vídeo animado (H.264&#x2F;MPEG-4 AVC de vídeo sem audio). Por padrão esse MPEG-4 animado será enviado pelo usuário com legenda opcional. Como alternativa, você pode usar o input_message_content para enviar uma mensagem com um conteúdo especificado em vez de uma animação.
 
 | Campo                   | Tipo                             | Requerido         | Descrição                                                                                      |
 | ----------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------- |
-| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be mpeg4_gif                                                          |
+| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "mpeg4_gif"                                                           |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                           |
 | mpeg4_url               | String (Sequência de caracteres) | true (Verdadeiro) | A valid URL for the MP4 file. File size must not exceed 1MB                                    |
 | mpeg4_width             | Integer (Número)                 | false (Falso)     | Video width                                                                                    |
@@ -401,7 +401,7 @@ Represents a contact with a phone number. By default, this contact will be sent 
 | ----------------------- | -------------------------------- | ----------------- | -------------------------------------------------------- |
 | tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be contact                      |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes     |
-| phone_number            | String (Sequência de caracteres) | true (Verdadeiro) | Número de telefone de contacto                           |
+| phone_number            | String (Sequência de caracteres) | true (Verdadeiro) | Número de telefone do contato                            |
 | first_name              | String (Sequência de caracteres) | true (Verdadeiro) | Primeiro nome do contato                                 |
 | last_name               | String (Sequência de caracteres) | false (Falso)     | Último nome do contato                                   |
 | reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                     |
