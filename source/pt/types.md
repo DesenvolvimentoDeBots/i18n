@@ -150,9 +150,9 @@ Esse objeto representa uma mensagem.
 | venue                     | Venue                            | false (Falso)     | Message is a venue, information about the venue                                                                                                                                                                                                                                                                                                         |
 | new_chat_members        | Array de Usuário                 | false (Falso)     | Novos membros que foram adicionados ao grupo ou supergrupo e informações sobre o mesmo (o bot em si pode ser um desses membros)                                                                                                                                                                                                                         |
 | left_chat_member        | User                             | false (Falso)     | Um membro foi removido do grupo, informações sobre o mesmo (esse membro pode ser o próprio bot)                                                                                                                                                                                                                                                         |
-| new_chat_title          | String (Sequência de caracteres) | false (Falso)     | A chat title was changed to this value                                                                                                                                                                                                                                                                                                                  |
+| new_chat_title          | String (Sequência de caracteres) | false (Falso)     | Um título do chat foi alterado para este valor                                                                                                                                                                                                                                                                                                          |
 | new_chat_photo          | Array de PhotoSize               | false (Falso)     | A chat photo was change to this value                                                                                                                                                                                                                                                                                                                   |
-| delete_chat_photo       | True (Verdadeiro)                | false (Falso)     | Service message: the chat photo was deleted                                                                                                                                                                                                                                                                                                             |
+| delete_chat_photo       | True (Verdadeiro)                | false (Falso)     | Mensagem de serviço: a foto do chat foi apagada                                                                                                                                                                                                                                                                                                         |
 | group_chat_created      | True (Verdadeiro)                | false (Falso)     | Mensagem de serviço: o grupo foi criado                                                                                                                                                                                                                                                                                                                 |
 | supergroup_chat_created | True (Verdadeiro)                | false (Falso)     | Service message: the supergroup has been created. This field can‘t be received in a message coming through updates, because bot can’t be a member of a supergroup when it is created. It can only be found in reply_to_message if someone replies to a very first message in a directly created supergroup.                                           |
 | channel_chat_created    | True (Verdadeiro)                | false (Falso)     | Mensagem de serviço: o canal foi criado. This field can‘t be received in a message coming through updates, because bot can’t be a member of a channel when it is created. It can only be found in reply_to_message if someone replies to a very first message in a channel.                                                                           |
@@ -165,39 +165,39 @@ Esse objeto representa uma mensagem.
 
 ## MessageEntity
 
-This object represents one special entity in a text message. For example, hashtags, usernames, URLs, etc.
+Esse objeto representa uma entidade especial em uma mensagem de texto. Por exemplo, hashtags, nomes de usuário, URLs, etc.
 
-| Campo  | Tipo                             | Requerido         | Descrição                                                                                                                                                                                                                                                   |
-| ------ | -------------------------------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| tipo   | String (Sequência de caracteres) | true (Verdadeiro) | Type of the entity. Can be mention (@username), hashtag, bot_command, url, email, bold (bold text), italic (italic text), code (monowidth string), pre (monowidth block), text_link (for clickable text URLs), text_mention (for users without usernames) |
-| offset | Integer (Número)                 | true (Verdadeiro) | Offset in UTF-16 code units to the start of the entity                                                                                                                                                                                                      |
-| length | Integer (Número)                 | true (Verdadeiro) | Length of the entity in UTF-16 code units                                                                                                                                                                                                                   |
-| url    | String (Sequência de caracteres) | false (Falso)     | For “text_link” only, url that will be opened after user taps on the text                                                                                                                                                                                   |
-| user   | User                             | false (Falso)     | For “text_mention” only, the mentioned user                                                                                                                                                                                                                 |
+| Campo  | Tipo                             | Requerido         | Descrição                                                                                                                                                                                                                                                 |
+| ------ | -------------------------------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| tipo   | String (Sequência de caracteres) | true (Verdadeiro) | Tipo da entidade. Can be mention (@username), hashtag, bot_command, url, email, bold (bold text), italic (italic text), code (monowidth string), pre (monowidth block), text_link (for clickable text URLs), text_mention (for users without usernames) |
+| offset | Integer (Número)                 | true (Verdadeiro) | Offset in UTF-16 code units to the start of the entity                                                                                                                                                                                                    |
+| lenght | Integer (Número)                 | true (Verdadeiro) | Length of the entity in UTF-16 code units                                                                                                                                                                                                                 |
+| url    | String (Sequência de caracteres) | false (Falso)     | For “text_link” only, url that will be opened after user taps on the text                                                                                                                                                                                 |
+| user   | User                             | false (Falso)     | For “text_mention” only, the mentioned user                                                                                                                                                                                                               |
 
 ## PhotoSize
 
-This object represents one size of a photo or a file &#x2F; sticker thumbnail.
+Este objeto representa um tamanho de uma foto ou a miniatura de um arquivo/sticker.
 
-| Campo     | Tipo                             | Requerido         | Descrição                       |
-| --------- | -------------------------------- | ----------------- | ------------------------------- |
-| file_id   | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for this file |
-| width     | Integer (Número)                 | true (Verdadeiro) | Largura da foto                 |
-| height    | Integer (Número)                 | true (Verdadeiro) | Altura da foto                  |
-| file_size | Integer (Número)                 | false (Falso)     | File size                       |
+| Campo     | Tipo                             | Requerido         | Descrição                             |
+| --------- | -------------------------------- | ----------------- | ------------------------------------- |
+| file_id   | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo desse arquivo |
+| width     | Integer (Número)                 | true (Verdadeiro) | Largura da foto                       |
+| height    | Integer (Número)                 | true (Verdadeiro) | Altura da foto                        |
+| file_size | Integer (Número)                 | false (Falso)     | Tamanho do arquivo                    |
 
 ## Audio
 
 This object represents an audio file to be treated as music by the Telegram clients.
 
-| Campo     | Tipo                             | Requerido         | Descrição                                                    |
-| --------- | -------------------------------- | ----------------- | ------------------------------------------------------------ |
-| file_id   | String (Sequência de caracteres) | true (Verdadeiro) | Unique identifier for this file                              |
-| duration  | Integer (Número)                 | true (Verdadeiro) | Duration of the audio in seconds as defined by sender        |
-| performer | String (Sequência de caracteres) | false (Falso)     | Performer of the audio as defined by sender or by audio tags |
-| title     | String (Sequência de caracteres) | false (Falso)     | Title of the audio as defined by sender or by audio tags     |
-| mime_type | String (Sequência de caracteres) | false (Falso)     | MIME type of the file as defined by sender                   |
-| file_size | Integer (Número)                 | false (Falso)     | File size                                                    |
+| Campo     | Tipo                             | Requerido         | Descrição                                                             |
+| --------- | -------------------------------- | ----------------- | --------------------------------------------------------------------- |
+| file_id   | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo desse arquivo                                 |
+| duration  | Integer (Número)                 | true (Verdadeiro) | Duração do áudio em segundos conforme definido pelo remetente         |
+| performer | String (Sequência de caracteres) | false (Falso)     | Performer of the audio as defined by sender or by audio tags          |
+| title     | String (Sequência de caracteres) | false (Falso)     | Título do áudio conforme definido pelo remetente ou por tags de áudio |
+| mime_type | String (Sequência de caracteres) | false (Falso)     | Tipo MIME do arquivo conforme definido pelo remetente                 |
+| file_size | Integer (Número)                 | false (Falso)     | Tamanho do arquivo                                                    |
 
 ## Document
 
@@ -205,11 +205,11 @@ This object represents a general file (as opposed to photos, voice messages and 
 
 | Campo     | Tipo                             | Requerido         | Descrição                                  |
 | --------- | -------------------------------- | ----------------- | ------------------------------------------ |
-| file_id   | String (Sequência de caracteres) | true (Verdadeiro) | Unique file identifier                     |
+| file_id   | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo do arquivo         |
 | thumb     | PhotoSize                        | false (Falso)     | Document thumbnail as defined by sender    |
 | file_name | String (Sequência de caracteres) | false (Falso)     | Original filename as defined by sender     |
 | mime_type | String (Sequência de caracteres) | false (Falso)     | MIME type of the file as defined by sender |
-| file_size | Integer (Número)                 | false (Falso)     | File size                                  |
+| file_size | Integer (Número)                 | false (Falso)     | Tamanho do arquivo                         |
 
 ## Video
 
