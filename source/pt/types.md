@@ -102,7 +102,7 @@ Esse objeto representa um chat.
 | -------------------------------- | -------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | id                               | Integer (Número)                 | true (Verdadeiro) | Identificador exclusivo para esse chat. Esse número pode ser maior que 32 bits e algumas linguagens de programação podem ter defeitos de dificuldade/silenciação na interpretação. But it is smaller than 52 bits, so a signed 64 bit integer or double-precision float type are safe for storing this identifier. |
 | tipo                             | String (Sequência de caracteres) | true (Verdadeiro) | Tipo de chat, pode ser tanto quanto “privado”, “grupo”, “supergrupo” ou “canal”                                                                                                                                                                                                                                    |
-| title                            | String (Sequência de caracteres) | false (Falso)     | Título, para supergrupos, canais e grupos                                                                                                                                                                                                                                                                          |
+| título                           | String (Sequência de caracteres) | false (Falso)     | Título, para supergrupos, canais e grupos                                                                                                                                                                                                                                                                          |
 | username                         | String (Sequência de caracteres) | false (Falso)     | Nome de usuário, para chats privados, supergrupos e canais, se disponível                                                                                                                                                                                                                                          |
 | first_name                       | String (Sequência de caracteres) | false (Falso)     | Primeiro nome da outra parte em um chat privado                                                                                                                                                                                                                                                                    |
 | last_name                        | String (Sequência de caracteres) | false (Falso)     | Sobrenome da outra parte em um chat privado                                                                                                                                                                                                                                                                        |
@@ -194,7 +194,7 @@ This object represents an audio file to be treated as music by the Telegram clie
 | --------- | -------------------------------- | ----------------- | --------------------------------------------------------------------- |
 | file_id   | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo desse arquivo                                 |
 | duration  | Integer (Número)                 | true (Verdadeiro) | Duração do áudio em segundos conforme definido pelo remetente         |
-| performer | String (Sequência de caracteres) | false (Falso)     | Performer of the audio as defined by sender or by audio tags          |
+| artista   | String (Sequência de caracteres) | false (Falso)     | Performer of the audio as defined by sender or by audio tags          |
 | title     | String (Sequência de caracteres) | false (Falso)     | Título do áudio conforme definido pelo remetente ou por tags de áudio |
 | mime_type | String (Sequência de caracteres) | false (Falso)     | Tipo MIME do arquivo conforme definido pelo remetente                 |
 | file_size | Integer (Número)                 | false (Falso)     | Tamanho do arquivo                                                    |
@@ -254,7 +254,7 @@ Esse objeto representa um telefone de contato.
 
 | Campo        | Tipo                             | Requerido         | Descrição                             |
 | ------------ | -------------------------------- | ----------------- | ------------------------------------- |
-| phone_number | String (Sequência de caracteres) | true (Verdadeiro) | Número de telefone de contacto        |
+| phone_number | String (Sequência de caracteres) | true (Verdadeiro) | Número de telefone do contato         |
 | first_name   | String (Sequência de caracteres) | true (Verdadeiro) | Primeiro nome do contato              |
 | last_name    | String (Sequência de caracteres) | false (Falso)     | Último nome do contato                |
 | user_id      | Integer (Número)                 | false (Falso)     | Contact's user identifier in Telegram |
@@ -431,13 +431,13 @@ Represents a video to be sent.
 
 | Campo              | Tipo                             | Requerido         | Descrição                                                                                                                                                                                                                                                                                                                                                            |
 | ------------------ | -------------------------------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| tipo               | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be video                                                                                                                                                                                                                                                                                                                                    |
+| tipo               | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "video"                                                                                                                                                                                                                                                                                                                                     |
 | media              | String (Sequência de caracteres) | true (Verdadeiro) | File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass "attach:&#x2F;&#x2F;&lt;file_attach_name&gt;" to upload a new one using multipart&#x2F;form-data under &lt;file_attach_name&gt; name. More info on Sending Files » |
-| caption            | String (Sequência de caracteres) | false (Falso)     | Caption of the video to be sent, 0-200 characters                                                                                                                                                                                                                                                                                                                    |
-| parse_mode         | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda do GIF.                                                                                                                                                                                                                                                                        |
-| width              | Integer (Número)                 | false (Falso)     | Video width                                                                                                                                                                                                                                                                                                                                                          |
-| height             | Integer (Número)                 | false (Falso)     | Video height                                                                                                                                                                                                                                                                                                                                                         |
-| duration           | Integer (Número)                 | false (Falso)     | Video duration                                                                                                                                                                                                                                                                                                                                                       |
+| caption            | String (Sequência de caracteres) | false (Falso)     | Legenda da vídeo a ser enviada, 0-200 caracteres                                                                                                                                                                                                                                                                                                                     |
+| parse_mode         | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda da foto.                                                                                                                                                                                                                                                                       |
+| width              | Integer (Número)                 | false (Falso)     | Largura do vídeo                                                                                                                                                                                                                                                                                                                                                     |
+| height             | Integer (Número)                 | false (Falso)     | Altura do vídeo                                                                                                                                                                                                                                                                                                                                                      |
+| duration           | Integer (Número)                 | false (Falso)     | Duração do vídeo                                                                                                                                                                                                                                                                                                                                                     |
 | supports_streaming | Boolen (Boleano)                 | false (Falso)     | Pass True, if the uploaded video is suitable for streaming                                                                                                                                                                                                                                                                                                           |
 
 ## Sticker
@@ -503,11 +503,11 @@ Represents the content of a text message to be sent as the result of an inline q
 
 Represents the content of a location message to be sent as the result of an inline query.
 
-| Campo       | Tipo             | Requerido         | Descrição                                                                                |
-| ----------- | ---------------- | ----------------- | ---------------------------------------------------------------------------------------- |
-| latitude    | Float            | true (Verdadeiro) | Latitude of the location in degrees                                                      |
-| longitude   | Float            | true (Verdadeiro) | Longitude of the location in degrees                                                     |
-| live_period | Integer (Número) | false (Falso)     | Period in seconds for which the location can be updated, should be between 60 and 86400. |
+| Campo       | Tipo             | Requerido         | Descrição                                                                                     |
+| ----------- | ---------------- | ----------------- | --------------------------------------------------------------------------------------------- |
+| latitude    | Float            | true (Verdadeiro) | Latitude of the location in degrees                                                           |
+| longitude   | Float            | true (Verdadeiro) | Longitude of the location in degrees                                                          |
+| live_period | Integer (Número) | false (Falso)     | Período em segundos para que a localização possa ser atualizada, deve estar entre 60 e 86400. |
 
 ## InputVenueMessageContent
 
@@ -525,11 +525,11 @@ Represents the content of a venue message to be sent as the result of an inline 
 
 Represents the content of a contact message to be sent as the result of an inline query.
 
-| Campo        | Tipo                             | Requerido         | Descrição                      |
-| ------------ | -------------------------------- | ----------------- | ------------------------------ |
-| phone_number | String (Sequência de caracteres) | true (Verdadeiro) | Número de telefone de contacto |
-| first_name   | String (Sequência de caracteres) | true (Verdadeiro) | Primeiro nome do contato       |
-| last_name    | String (Sequência de caracteres) | false (Falso)     | Último nome do contato         |
+| Campo        | Tipo                             | Requerido         | Descrição                     |
+| ------------ | -------------------------------- | ----------------- | ----------------------------- |
+| phone_number | String (Sequência de caracteres) | true (Verdadeiro) | Número de telefone do contato |
+| first_name   | String (Sequência de caracteres) | true (Verdadeiro) | Primeiro nome do contato      |
+| last_name    | String (Sequência de caracteres) | false (Falso)     | Último nome do contato        |
 
 ## ChosenInlineResult
 
@@ -670,4 +670,4 @@ This object represents one row of the high scores table for a game.
 | -------- | ---------------- | ----------------- | ----------------------------------------- |
 | position | Integer (Número) | true (Verdadeiro) | Position in high score table for the game |
 | user     | User             | true (Verdadeiro) | User                                      |
-| score    | Integer (Número) | true (Verdadeiro) | Score                                     |
+| score    | Integer (Número) | true (Verdadeiro) | Pontuação                                 |
