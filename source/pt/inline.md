@@ -253,7 +253,7 @@ Represents a link to a voice recording in an .ogg container encoded with OPUS. B
 
 | Campo                   | Tipo                             | Requerido         | Descrição                                                                                      |
 | ----------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------- |
-| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be voice                                                              |
+| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "voice"                                                               |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                           |
 | voice_url               | String (Sequência de caracteres) | true (Verdadeiro) | A valid URL for the voice recording                                                            |
 | title                   | String (Sequência de caracteres) | true (Verdadeiro) | Recording title                                                                                |
@@ -285,12 +285,12 @@ Represents a link to a file. By default, this file will be sent by the user with
 
 | Campo                   | Tipo                             | Requerido         | Descrição                                                                                     |
 | ----------------------- | -------------------------------- | ----------------- | --------------------------------------------------------------------------------------------- |
-| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be document                                                          |
+| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "document"                                                           |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                          |
 | title                   | String (Sequência de caracteres) | true (Verdadeiro) | Título do result                                                                              |
-| caption                 | String (Sequência de caracteres) | false (Falso)     | Caption of the document to be sent, 0-200 characters                                          |
+| caption                 | String (Sequência de caracteres) | false (Falso)     | Legenda do documento a ser enviado, 0-200 caracteres                                          |
 | parse_mode              | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda do GIF. |
-| document_url            | String (Sequência de caracteres) | true (Verdadeiro) | A valid URL for the file                                                                      |
+| document_url            | String (Sequência de caracteres) | true (Verdadeiro) | Uma URL válida para o arquivo                                                                 |
 | mime_type               | String (Sequência de caracteres) | true (Verdadeiro) | Mime type of the content of the file, either “application&#x2F;pdf” or “application&#x2F;zip” |
 | description             | String (Sequência de caracteres) | false (Falso)     | Breve descrição do result                                                                     |
 | reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                                                          |
@@ -332,7 +332,7 @@ Represents a location on a map. By default, the location will be sent by the use
 | title                   | String (Sequência de caracteres) | true (Verdadeiro) | Location title                                                                                |
 | live_period             | Integer (Número)                 | false (Falso)     | Período em segundos para que a localização possa ser atualizada, deve estar entre 60 e 86400. |
 | reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                                                          |
-| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the location                                     |
+| input_message_content | InputMessageContent              | false (Falso)     | Conteúdo da mensagem a ser enviada em vez da localização                                      |
 | thumb_url               | String (Sequência de caracteres) | false (Falso)     | URL da miniatura do result                                                                    |
 | thumb_width             | Integer (Número)                 | false (Falso)     | Largura da miniatura                                                                          |
 | thumb_height            | Integer (Número)                 | false (Falso)     | Altura da miniatura                                                                           |
@@ -429,13 +429,13 @@ Exemplo:
 
 ## InlineQueryResultGame
 
-Represents a Game.
+Representa um Jogo.
 
 | Campo             | Tipo                             | Requerido         | Descrição                                            |
 | ----------------- | -------------------------------- | ----------------- | ---------------------------------------------------- |
-| tipo              | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be game                     |
+| tipo              | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "game"                      |
 | id                | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes |
-| game_short_name | String (Sequência de caracteres) | true (Verdadeiro) | Short name of the game                               |
+| game_short_name | String (Sequência de caracteres) | true (Verdadeiro) | Nome abreviado do jogo                               |
 | reply_markup      | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                 |
 
 Exemplo:
@@ -451,7 +451,7 @@ Exemplo:
 
 ## InlineQueryResultCachedPhoto
 
-Represents a link to a photo stored on the Telegram servers. By default, this photo will be sent by the user with an optional caption. Como alternativa, você pode usar o input_message_content para enviar uma mensagem com um conteúdo especificado em vez da foto.
+Representa um link para uma foto armazenada nos servidores do Telegram. Por padrão, essa foto será enviada pelo usuário com uma legenda opcional. Como alternativa, você pode usar o input_message_content para enviar uma mensagem com um conteúdo especificado em vez da foto.
 
 | Campo                   | Tipo                             | Requerido         | Descrição                                                                                      |
 | ----------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------- |
@@ -571,12 +571,12 @@ Representa um link para um arquivo armazenado nos servidores do Telegram. By def
 
 | Campo                   | Tipo                             | Requerido         | Descrição                                                                                     |
 | ----------------------- | -------------------------------- | ----------------- | --------------------------------------------------------------------------------------------- |
-| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be document                                                          |
+| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "document"                                                           |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                          |
 | title                   | String (Sequência de caracteres) | true (Verdadeiro) | Título do result                                                                              |
 | document_file_id      | String (Sequência de caracteres) | true (Verdadeiro) | Um identificador de arquivo válido para o arquivo                                             |
 | description             | String (Sequência de caracteres) | false (Falso)     | Breve descrição do result                                                                     |
-| caption                 | String (Sequência de caracteres) | false (Falso)     | Caption of the document to be sent, 0-200 characters                                          |
+| caption                 | String (Sequência de caracteres) | false (Falso)     | Legenda do documento a ser enviado, 0-200 caracteres                                          |
 | parse_mode              | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda do GIF. |
 | reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                                                          |
 | input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the file                                         |
@@ -638,7 +638,7 @@ Represents a link to a voice message stored on the Telegram servers. By default,
 
 | Campo                   | Tipo                             | Requerido         | Descrição                                                                                      |
 | ----------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------- |
-| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be voice                                                              |
+| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "voice"                                                               |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                           |
 | voice_file_id         | String (Sequência de caracteres) | true (Verdadeiro) | A valid file identifier for the voice message                                                  |
 | title                   | String (Sequência de caracteres) | true (Verdadeiro) | Título da mensagem de voz                                                                      |
