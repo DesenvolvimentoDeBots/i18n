@@ -259,9 +259,9 @@ Represents a link to a voice recording in an .ogg container encoded with OPUS. B
 | title                   | String (Sequência de caracteres) | true (Verdadeiro) | Recording title                                                                                |
 | caption                 | String (Sequência de caracteres) | false (Falso)     | Legenda, 0-200 caracteres no máximo                                                            |
 | parse_mode              | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda da foto. |
-| voice_duration          | Integer (Número)                 | false (Falso)     | Recording duration in seconds                                                                  |
+| voice_duration          | Integer (Número)                 | false (Falso)     | Duração da gravação em segundos                                                                |
 | reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                                                           |
-| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the voice recording                               |
+| input_message_content | InputMessageContent              | false (Falso)     | Conteúdo da mensagem a ser enviada em vez da gravação de voz                                   |
 
 Exemplo:
 
@@ -323,19 +323,19 @@ Exemplo:
 
 Represents a location on a map. By default, the location will be sent by the user. Alternatively, you can use input_message_content to send a message with the specified content instead of the location.
 
-| Campo                   | Tipo                             | Requerido         | Descrição                                                                                |
-| ----------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------- |
-| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be location                                                     |
-| id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                     |
-| latitude                | Float número                     | true (Verdadeiro) | Location latitude in degrees                                                             |
-| longitude               | Float número                     | true (Verdadeiro) | Location longitude in degrees                                                            |
-| title                   | String (Sequência de caracteres) | true (Verdadeiro) | Location title                                                                           |
-| live_period             | Integer (Número)                 | false (Falso)     | Period in seconds for which the location can be updated, should be between 60 and 86400. |
-| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                                                     |
-| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the location                                |
-| thumb_url               | String (Sequência de caracteres) | false (Falso)     | URL da miniatura do result                                                               |
-| thumb_width             | Integer (Número)                 | false (Falso)     | Largura da miniatura                                                                     |
-| thumb_height            | Integer (Número)                 | false (Falso)     | Altura da miniatura                                                                      |
+| Campo                   | Tipo                             | Requerido         | Descrição                                                                                     |
+| ----------------------- | -------------------------------- | ----------------- | --------------------------------------------------------------------------------------------- |
+| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be location                                                          |
+| id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                          |
+| latitude                | Float número                     | true (Verdadeiro) | Location latitude in degrees                                                                  |
+| longitude               | Float número                     | true (Verdadeiro) | Location longitude in degrees                                                                 |
+| title                   | String (Sequência de caracteres) | true (Verdadeiro) | Location title                                                                                |
+| live_period             | Integer (Número)                 | false (Falso)     | Período em segundos para que a localização possa ser atualizada, deve estar entre 60 e 86400. |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                                                          |
+| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the location                                     |
+| thumb_url               | String (Sequência de caracteres) | false (Falso)     | URL da miniatura do result                                                                    |
+| thumb_width             | Integer (Número)                 | false (Falso)     | Largura da miniatura                                                                          |
+| thumb_height            | Integer (Número)                 | false (Falso)     | Altura da miniatura                                                                           |
 
 Exemplo:
 
@@ -567,14 +567,14 @@ Exemplo:
 
 ## InlineQueryResultCachedDocument
 
-Represents a link to a file stored on the Telegram servers. By default, this file will be sent by the user with an optional caption. Alternatively, you can use input_message_content to send a message with the specified content instead of the file.
+Representa um link para um arquivo armazenado nos servidores do Telegram. By default, this file will be sent by the user with an optional caption. Alternatively, you can use input_message_content to send a message with the specified content instead of the file.
 
 | Campo                   | Tipo                             | Requerido         | Descrição                                                                                     |
 | ----------------------- | -------------------------------- | ----------------- | --------------------------------------------------------------------------------------------- |
 | tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be document                                                          |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                          |
 | title                   | String (Sequência de caracteres) | true (Verdadeiro) | Título do result                                                                              |
-| document_file_id      | String (Sequência de caracteres) | true (Verdadeiro) | A valid file identifier for the file                                                          |
+| document_file_id      | String (Sequência de caracteres) | true (Verdadeiro) | Um identificador de arquivo válido para o arquivo                                             |
 | description             | String (Sequência de caracteres) | false (Falso)     | Breve descrição do result                                                                     |
 | caption                 | String (Sequência de caracteres) | false (Falso)     | Caption of the document to be sent, 0-200 characters                                          |
 | parse_mode              | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda do GIF. |
@@ -585,13 +585,16 @@ Exemplo:
 
 ```javascript
 [{
-    type = String,
-    id = String,
-    title = String,
-    document_file_id = String,
-    description = String,
-    caption = String,
-    parse_mode = String,
+    type = String (Sequência de caracteres),
+    id = String (Sequência de caracteres),
+    photo_url = String (Sequência de caracteres),
+    thumb_url = String (Sequência de caracteres),
+    photo_width = Integer (Número),
+    photo_height = Integer (Número),
+    title = String (Sequência de caracteres),
+    description = String (Sequência de caracteres),
+    caption = String (Sequência de caracteres),
+    parse_mode = String (Sequência de caracteres),
     reply_markup = InlineKeyboardMarkup,
     input_message_content = InputMessageContent,
 }]
@@ -661,7 +664,7 @@ Exemplo:
 
 ## InlineQueryResultCachedAudio
 
-Represents a link to an mp3 audio file stored on the Telegram servers. Por padrão, esse arquivo de áudio será enviado pelo usuário. Como alternativa, você pode usar o input_message_content para enviar uma mensagem com um conteúdo especificado em vez da áudio.
+Representa um link para um aúdio mp3 armazenado nos servidores do Telegram. Por padrão, esse arquivo de áudio será enviado pelo usuário. Como alternativa, você pode usar o input_message_content para enviar uma mensagem com um conteúdo especificado em vez da áudio.
 
 | Campo                   | Tipo                             | Requerido         | Descrição                                                                                     |
 | ----------------------- | -------------------------------- | ----------------- | --------------------------------------------------------------------------------------------- |
