@@ -503,11 +503,11 @@ Represents the content of a text message to be sent as the result of an inline q
 
 Represents the content of a location message to be sent as the result of an inline query.
 
-| Campo       | Tipo             | Requerido         | Descrição                                                                                |
-| ----------- | ---------------- | ----------------- | ---------------------------------------------------------------------------------------- |
-| latitude    | Float            | true (Verdadeiro) | Latitude of the location in degrees                                                      |
-| longitude   | Float            | true (Verdadeiro) | Longitude of the location in degrees                                                     |
-| live_period | Integer (Número) | false (Falso)     | Period in seconds for which the location can be updated, should be between 60 and 86400. |
+| Campo       | Tipo             | Requerido         | Descrição                                                                                     |
+| ----------- | ---------------- | ----------------- | --------------------------------------------------------------------------------------------- |
+| latitude    | Float            | true (Verdadeiro) | Latitude of the location in degrees                                                           |
+| longitude   | Float            | true (Verdadeiro) | Longitude of the location in degrees                                                          |
+| live_period | Integer (Número) | false (Falso)     | Período em segundos para que a localização possa ser atualizada, deve estar entre 60 e 86400. |
 
 ## InputVenueMessageContent
 
@@ -670,4 +670,4 @@ This object represents one row of the high scores table for a game.
 | -------- | ---------------- | ----------------- | ----------------------------------------- |
 | position | Integer (Número) | true (Verdadeiro) | Position in high score table for the game |
 | user     | User             | true (Verdadeiro) | User                                      |
-| score    | Integer (Número) | true (Verdadeiro) | Score                                     |
+| score    | Integer (Número) | true (Verdadeiro) | Pontuação                                 |
