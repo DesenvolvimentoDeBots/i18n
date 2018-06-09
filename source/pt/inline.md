@@ -599,7 +599,7 @@ Exemplo:
 
 ## InlineQueryResultCachedVideo
 
-Represents a link to a video file stored on the Telegram servers. Por padrão, esse arquivo de vídeo será enviado pelo usuário com uma legenda opcional. Como alternativa, você pode usar o input_message_content para enviar uma mensagem com um conteúdo especificado em vez da vídeo.
+Representa um link para um arquivo de vídeo armazenado nos servidores do Telegram. Por padrão, esse arquivo de vídeo será enviado pelo usuário com uma legenda opcional. Como alternativa, você pode usar o input_message_content para enviar uma mensagem com um conteúdo especificado em vez da vídeo.
 
 | Campo                   | Tipo                             | Requerido         | Descrição                                                                                     |
 | ----------------------- | -------------------------------- | ----------------- | --------------------------------------------------------------------------------------------- |
@@ -638,11 +638,11 @@ Represents a link to a voice message stored on the Telegram servers. By default,
 | tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be voice                                                              |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                           |
 | voice_file_id         | String (Sequência de caracteres) | true (Verdadeiro) | A valid file identifier for the voice message                                                  |
-| title                   | String (Sequência de caracteres) | true (Verdadeiro) | Voice message title                                                                            |
+| title                   | String (Sequência de caracteres) | true (Verdadeiro) | Título da mensagem de voz                                                                      |
 | caption                 | String (Sequência de caracteres) | false (Falso)     | Legenda, 0-200 caracteres no máximo                                                            |
 | parse_mode              | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda da foto. |
 | reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                                                           |
-| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the voice message                                 |
+| input_message_content | InputMessageContent              | false (Falso)     | Conteúdo da mensagem a ser enviada em vez da mensagem de voz                                   |
 
 Exemplo:
 
