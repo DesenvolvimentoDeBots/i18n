@@ -284,7 +284,7 @@ Exemplo:
 
 ## InlineQueryResultDocument
 
-Represents a link to a file. By default, this file will be sent by the user with an optional caption. Alternatively, you can use input_message_content to send a message with the specified content instead of the file. Currently, only .PDF and .ZIP files can be sent using this method.
+Representa um link para um arquivo. Por padrão, este arquivo será enviado pelo usuário com uma legenda opcional. Alternatively, you can use input_message_content to send a message with the specified content instead of the file. Currently, only .PDF and .ZIP files can be sent using this method.
 
 | Campo                   | Tipo                             | Requerido         | Descrição                                                                                     |
 | ----------------------- | -------------------------------- | ----------------- | --------------------------------------------------------------------------------------------- |
@@ -570,7 +570,7 @@ Exemplo:
 
 ## InlineQueryResultCachedDocument
 
-Representa um link para um arquivo armazenado nos servidores do Telegram. By default, this file will be sent by the user with an optional caption. Alternatively, you can use input_message_content to send a message with the specified content instead of the file.
+Representa um link para um arquivo armazenado nos servidores do Telegram. Por padrão, este arquivo será enviado pelo usuário com uma legenda opcional. Alternatively, you can use input_message_content to send a message with the specified content instead of the file.
 
 | Campo                   | Tipo                             | Requerido         | Descrição                                                                                     |
 | ----------------------- | -------------------------------- | ----------------- | --------------------------------------------------------------------------------------------- |
@@ -617,7 +617,7 @@ Representa um link para um arquivo de vídeo armazenado nos servidores do Telegr
 | caption                 | String (Sequência de caracteres) | false (Falso)     | Legenda da vídeo a ser enviada, 0-200 caracteres                                              |
 | parse_mode              | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda do GIF. |
 | reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                                                          |
-| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the video                                        |
+| input_message_content | InputMessageContent              | false (Falso)     | Conteúdo da mensagem a ser enviada, em vez do vídeo                                           |
 
 Exemplo:
 
