@@ -74,7 +74,7 @@ Contém informações sobre o status atual de um webhook.
 | Campo                    | Tipo                             | Requerido         | Descrição                                                                                                                   |
 | ------------------------ | -------------------------------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------- |
 | url                      | String (Sequência de caracteres) | true (Verdadeiro) | Webhook URL, pode ser vazia se o webhook não estiver configurado                                                            |
-| has_custom_certificate | Boolen (Boleano)                 | true (Verdadeiro) | True, if a custom certificate was provided for webhook certificate checks                                                   |
+| has_custom_certificate | Boolen (Boleano)                 | true (Verdadeiro) | Se isso estive como "true", um certificado deve ser fornecido para uso de verificação da integração do webhook.             |
 | pending_update_count   | Integer (Número)                 | true (Verdadeiro) | Número de atualizações esperando entrega                                                                                    |
 | last_error_date        | Integer (Número)                 | false (Falso)     | Unix time para o erro mais recente que ocorreu ao tentar entregar uma atualização via webhook                               |
 | last_error_message     | String (Sequência de caracteres) | false (Falso)     | Error message in human-readable format for the most recent error that happened when trying to deliver an update via webhook |
@@ -664,10 +664,10 @@ You can provide an animation for your game so that it looks stylish in chats (ch
 
 ## GameHighScore
 
-This object represents one row of the high scores table for a game.
+Esse objeto representa uma linha da tabela de pontuações mais altas de um jogo.
 
-| Campo    | Tipo             | Requerido         | Descrição                                 |
-| -------- | ---------------- | ----------------- | ----------------------------------------- |
-| position | Integer (Número) | true (Verdadeiro) | Position in high score table for the game |
-| user     | User             | true (Verdadeiro) | User                                      |
-| score    | Integer (Número) | true (Verdadeiro) | Pontuação                                 |
+| Campo    | Tipo             | Requerido         | Descrição                              |
+| -------- | ---------------- | ----------------- | -------------------------------------- |
+| position | Integer (Número) | true (Verdadeiro) | Posição na tabela de pontuação do jogo |
+| user     | User             | true (Verdadeiro) | User                                   |
+| score    | Integer (Número) | true (Verdadeiro) | Pontuação                              |
