@@ -398,7 +398,7 @@ Exemplo:
 
 ## InlineQueryResultContact
 
-Represents a contact with a phone number. By default, this contact will be sent by the user. Alternatively, you can use input_message_content to send a message with the specified content instead of the contact.
+Representa o número de telefone do contato. Por padrão, esse contato será enviado pelo usuário. Alternatively, you can use input_message_content to send a message with the specified content instead of the contact.
 
 | Campo                   | Tipo                             | Requerido         | Descrição                                                |
 | ----------------------- | -------------------------------- | ----------------- | -------------------------------------------------------- |
@@ -546,11 +546,11 @@ Exemplo:
 
 ## InlineQueryResultCachedSticker
 
-Represents a link to a sticker stored on the Telegram servers. By default, this sticker will be sent by the user. Alternatively, you can use input_message_content to send a message with the specified content instead of the sticker.
+Representa um link para um arquivo de sticker armazenado nos servidores do Telegram. Por padrão, esse sticker será enviado pelo usuário. Alternatively, you can use input_message_content to send a message with the specified content instead of the sticker.
 
 | Campo                   | Tipo                             | Requerido         | Descrição                                                |
 | ----------------------- | -------------------------------- | ----------------- | -------------------------------------------------------- |
-| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be sticker                      |
+| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "sticker"                       |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes     |
 | sticker_file_id       | String (Sequência de caracteres) | true (Verdadeiro) | A valid file identifier of the sticker                   |
 | reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                     |
