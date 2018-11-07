@@ -102,7 +102,7 @@ setWebhook({
 
 ## sendMessage
 
-Use this method to send text messages. Em caso de sucesso, a mensagem enviada será retornada.
+Use este método para enviar mensagens de texto. Em caso de sucesso, a mensagem enviada será retornada.
 
 | Campo                      | Tipo                                                                             | Requerido         | Descrição                                                                                                                                                                      |
 | -------------------------- | -------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
