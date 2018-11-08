@@ -150,7 +150,7 @@ Representa um link para um arquivo de vídeo animado (H.264&#x2F;MPEG-4 AVC de v
 | caption                 | String (Sequência de caracteres) | false (Falso)     | Legenda do arquivo MPEG-4 a ser enviado, 0-200 caracteres                                     |
 | parse_mode              | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda do GIF. |
 | reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                                                          |
-| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the video animation                              |
+| input_message_content | InputMessageContent              | false (Falso)     | O conteúdo da mensagem a ser enviada, em vez de um vídeo animado                              |
 
 Exemplo:
 
@@ -527,7 +527,7 @@ Represents a link to a video animation (H.264&#x2F;MPEG-4 AVC video without soun
 | caption                 | String (Sequência de caracteres) | false (Falso)     | Legenda do arquivo MPEG-4 a ser enviado, 0-200 caracteres                                      |
 | parse_mode              | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda da foto. |
 | reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                                                           |
-| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the video animation                               |
+| input_message_content | InputMessageContent              | false (Falso)     | O conteúdo da mensagem a ser enviada, em vez de um vídeo animado                               |
 
 Exemplo:
 
