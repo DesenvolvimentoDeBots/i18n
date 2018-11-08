@@ -362,20 +362,20 @@ Exemplo:
 
 Representa um "venue". Por padrão, o "venue" será enviado pelo usuário. Como alternativa, você pode usar o input_message_content para enviar uma mensagem com um conteúdo especificado em vez do "venue".
 
-| Campo                   | Tipo                             | Requerido         | Descrição                                              |
-| ----------------------- | -------------------------------- | ----------------- | ------------------------------------------------------ |
-| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "venue"                       |
-| id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes   |
-| latitude                | Float                            | true (Verdadeiro) | Latitude of the venue location in degrees              |
-| longitude               | Float                            | true (Verdadeiro) | Longitude of the venue location in degrees             |
-| title                   | String (Sequência de caracteres) | true (Verdadeiro) | Title of the venue                                     |
-| address                 | String (Sequência de caracteres) | true (Verdadeiro) | Address of the venue                                   |
-| foursquare_id           | String (Sequência de caracteres) | false (Falso)     | Foursquare identifier of the venue if known            |
-| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                   |
-| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the venue |
-| thumb_url               | String (Sequência de caracteres) | false (Falso)     | URL da miniatura do result                             |
-| thumb_width             | Integer (Número)                 | false (Falso)     | Largura da miniatura                                   |
-| thumb_height            | Integer (Número)                 | false (Falso)     | Altura da miniatura                                    |
+| Campo                   | Tipo                             | Requerido         | Descrição                                             |
+| ----------------------- | -------------------------------- | ----------------- | ----------------------------------------------------- |
+| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "venue"                      |
+| id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes  |
+| latitude                | Float                            | true (Verdadeiro) | Localização, latitude em graus                        |
+| longitude               | Float                            | true (Verdadeiro) | Localização, longitude em graus                       |
+| title                   | String (Sequência de caracteres) | true (Verdadeiro) | Título do local                                       |
+| address                 | String (Sequência de caracteres) | true (Verdadeiro) | Endereço do local                                     |
+| foursquare_id           | String (Sequência de caracteres) | false (Falso)     | Foursquare identifier of the venue if known           |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                  |
+| input_message_content | InputMessageContent              | false (Falso)     | Conteúdo da mensagem a ser enviada, em vez do "venue" |
+| thumb_url               | String (Sequência de caracteres) | false (Falso)     | URL da miniatura do result                            |
+| thumb_width             | Integer (Número)                 | false (Falso)     | Largura da miniatura                                  |
+| thumb_height            | Integer (Número)                 | false (Falso)     | Altura da miniatura                                   |
 
 Exemplo:
 
@@ -400,18 +400,18 @@ Exemplo:
 
 Representa o número de telefone do contato. Por padrão, esse contato será enviado pelo usuário. Alternatively, you can use input_message_content to send a message with the specified content instead of the contact.
 
-| Campo                   | Tipo                             | Requerido         | Descrição                                                |
-| ----------------------- | -------------------------------- | ----------------- | -------------------------------------------------------- |
-| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be contact                      |
-| id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes     |
-| phone_number            | String (Sequência de caracteres) | true (Verdadeiro) | Número de telefone do contato                            |
-| first_name              | String (Sequência de caracteres) | true (Verdadeiro) | Primeiro nome do contato                                 |
-| last_name               | String (Sequência de caracteres) | false (Falso)     | Último nome do contato                                   |
-| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                     |
-| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the contact |
-| thumb_url               | String (Sequência de caracteres) | false (Falso)     | URL da miniatura do result                               |
-| thumb_width             | Integer (Número)                 | false (Falso)     | Largura da miniatura                                     |
-| thumb_height            | Integer (Número)                 | false (Falso)     | Altura da miniatura                                      |
+| Campo                   | Tipo                             | Requerido         | Descrição                                            |
+| ----------------------- | -------------------------------- | ----------------- | ---------------------------------------------------- |
+| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "contact"                   |
+| id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes |
+| phone_number            | String (Sequência de caracteres) | true (Verdadeiro) | Número de telefone do contato                        |
+| first_name              | String (Sequência de caracteres) | true (Verdadeiro) | Primeiro nome do contato                             |
+| last_name               | String (Sequência de caracteres) | false (Falso)     | Último nome do contato                               |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                 |
+| input_message_content | InputMessageContent              | false (Falso)     | Conteúdo da mensagem a ser enviada em vez da contato |
+| thumb_url               | String (Sequência de caracteres) | false (Falso)     | URL da miniatura do result                           |
+| thumb_width             | Integer (Número)                 | false (Falso)     | Largura da miniatura                                 |
+| thumb_height            | Integer (Número)                 | false (Falso)     | Altura da miniatura                                  |
 
 Exemplo:
 
@@ -460,7 +460,7 @@ Representa um link para uma foto armazenada nos servidores do Telegram. Por padr
 | ----------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------- |
 | tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "photo"                                                               |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                           |
-| photo_file_id         | String (Sequência de caracteres) | true (Verdadeiro) | A valid file identifier of the photo                                                           |
+| photo_file_id         | String (Sequência de caracteres) | true (Verdadeiro) | Um arquivo válido identificador da foto                                                        |
 | title                   | String (Sequência de caracteres) | false (Falso)     | Título do result                                                                               |
 | description             | String (Sequência de caracteres) | false (Falso)     | Breve descrição do result                                                                      |
 | caption                 | String (Sequência de caracteres) | false (Falso)     | Legenda da foto a ser enviada, 0-200 caracteres                                                |
@@ -492,7 +492,7 @@ Represents a link to an animated GIF file stored on the Telegram servers. By def
 | ----------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------- |
 | tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "gif"                                                                 |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                           |
-| gif_file_id           | String (Sequência de caracteres) | true (Verdadeiro) | A valid file identifier for the GIF file                                                       |
+| gif_file_id           | String (Sequência de caracteres) | true (Verdadeiro) | Um identificador de arquivo válido para o arquivo GIF                                          |
 | title                   | String (Sequência de caracteres) | false (Falso)     | Título do result                                                                               |
 | caption                 | String (Sequência de caracteres) | false (Falso)     | Legenda do GIF a ser enviado, 0-200 caracteres                                                 |
 | parse_mode              | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda da foto. |
@@ -522,7 +522,7 @@ Represents a link to a video animation (H.264&#x2F;MPEG-4 AVC video without soun
 | ----------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------- |
 | tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "mpeg4_gif"                                                           |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                           |
-| mpeg4_file_id         | String (Sequência de caracteres) | true (Verdadeiro) | A valid file identifier for the MP4 file                                                       |
+| mpeg4_file_id         | String (Sequência de caracteres) | true (Verdadeiro) | Um identificador de arquivo válido para o arquivo MP4                                          |
 | title                   | String (Sequência de caracteres) | false (Falso)     | Título do result                                                                               |
 | caption                 | String (Sequência de caracteres) | false (Falso)     | Legenda do arquivo MPEG-4 a ser enviado, 0-200 caracteres                                      |
 | parse_mode              | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda da foto. |
@@ -552,7 +552,7 @@ Representa um link para um arquivo de sticker armazenado nos servidores do Teleg
 | ----------------------- | -------------------------------- | ----------------- | -------------------------------------------------------- |
 | tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "sticker"                       |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes     |
-| sticker_file_id       | String (Sequência de caracteres) | true (Verdadeiro) | A valid file identifier of the sticker                   |
+| sticker_file_id       | String (Sequência de caracteres) | true (Verdadeiro) | Um arquivo válido identificador do adesivo               |
 | reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                     |
 | input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the sticker |
 
@@ -611,7 +611,7 @@ Representa um link para um arquivo de vídeo armazenado nos servidores do Telegr
 | ----------------------- | -------------------------------- | ----------------- | --------------------------------------------------------------------------------------------- |
 | tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "video"                                                              |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                          |
-| video_file_id         | String (Sequência de caracteres) | true (Verdadeiro) | A valid file identifier for the video file                                                    |
+| video_file_id         | String (Sequência de caracteres) | true (Verdadeiro) | Válido de identificador do arquivo de vídeo                                                   |
 | title                   | String (Sequência de caracteres) | true (Verdadeiro) | Título do result                                                                              |
 | description             | String (Sequência de caracteres) | false (Falso)     | Breve descrição do result                                                                     |
 | caption                 | String (Sequência de caracteres) | false (Falso)     | Legenda da vídeo a ser enviada, 0-200 caracteres                                              |
@@ -643,7 +643,7 @@ Represents a link to a voice message stored on the Telegram servers. By default,
 | ----------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------- |
 | tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "voice"                                                               |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                           |
-| voice_file_id         | String (Sequência de caracteres) | true (Verdadeiro) | A valid file identifier for the voice message                                                  |
+| voice_file_id         | String (Sequência de caracteres) | true (Verdadeiro) | Um identificador de arquivo válido para a mensagem de voz                                      |
 | title                   | String (Sequência de caracteres) | true (Verdadeiro) | Título da mensagem de voz                                                                      |
 | caption                 | String (Sequência de caracteres) | false (Falso)     | Legenda, 0-200 caracteres no máximo                                                            |
 | parse_mode              | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda da foto. |
