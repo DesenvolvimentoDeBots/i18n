@@ -180,7 +180,7 @@ Representa um link para uma página que contém um reprodutor de vídeo incorpor
 | tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "video"                                                                                                                                                                  |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                                                                                                                              |
 | video_url               | String (Sequência de caracteres) | true (Verdadeiro) | Uma URL válida para o player de vídeo incorporado ou um arquivo de vídeo                                                                                                                          |
-| mime_type               | String (Sequência de caracteres) | true (Verdadeiro) | Mime type of the content of video url, “text&#x2F;html” or “video&#x2F;mp4”                                                                                                                       |
+| mime_type               | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do conteúdo da url deve ser “text&#x2F;html” ou “video&#x2F;mp4”                                                                                                                             |
 | thumb_url               | String (Sequência de caracteres) | true (Verdadeiro) | URL da miniatura estática (jpeg somente) para o vídeo                                                                                                                                             |
 | title                   | String (Sequência de caracteres) | true (Verdadeiro) | Título do result                                                                                                                                                                                  |
 | caption                 | String (Sequência de caracteres) | false (Falso)     | Legenda da vídeo a ser enviada, 0-200 caracteres                                                                                                                                                  |
@@ -249,7 +249,7 @@ Exemplo:
 
 ## InlineQueryResultVoice
 
-Represents a link to a voice recording in an .ogg container encoded with OPUS. By default, this voice recording will be sent by the user. Alternatively, you can use input_message_content to send a message with the specified content instead of the the voice message.
+Representa um link para uma gravação de voz em um .ogg codificado com OPUS. Por padrão, esse gravação de voz será enviado pelo usuário. Como alternativa, você pode usar o input_message_content para enviar uma mensagem com um conteúdo especificado em vez da mensagem de voz.
 
 | Campo                   | Tipo                             | Requerido         | Descrição                                                                                      |
 | ----------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------- |
@@ -284,7 +284,7 @@ Exemplo:
 
 ## InlineQueryResultDocument
 
-Representa um link para um arquivo. Por padrão, este arquivo será enviado pelo usuário com uma legenda opcional. Alternatively, you can use input_message_content to send a message with the specified content instead of the file. Currently, only .PDF and .ZIP files can be sent using this method.
+Representa um link para um arquivo. Por padrão, este arquivo será enviado pelo usuário com uma legenda opcional. Como alternativa, você pode usar o input_message_content para enviar uma mensagem com um conteúdo especificado em vez do arquivo. Atualmente, somente arquivos .PDF e .ZIP podem ser enviadas usando este método.
 
 | Campo                   | Tipo                             | Requerido         | Descrição                                                                                     |
 | ----------------------- | -------------------------------- | ----------------- | --------------------------------------------------------------------------------------------- |
@@ -294,11 +294,11 @@ Representa um link para um arquivo. Por padrão, este arquivo será enviado pelo
 | caption                 | String (Sequência de caracteres) | false (Falso)     | Legenda do documento a ser enviado, 0-200 caracteres                                          |
 | parse_mode              | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda do GIF. |
 | document_url            | String (Sequência de caracteres) | true (Verdadeiro) | Uma URL válida para o arquivo                                                                 |
-| mime_type               | String (Sequência de caracteres) | true (Verdadeiro) | Mime type of the content of the file, either “application&#x2F;pdf” or “application&#x2F;zip” |
+| mime_type               | String (Sequência de caracteres) | true (Verdadeiro) | Tipo de conteúdo do arquivo deve ser “application&#x2F;pdf” ou “application&#x2F;zip”         |
 | description             | String (Sequência de caracteres) | false (Falso)     | Breve descrição do result                                                                     |
 | reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                                                          |
-| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the file                                         |
-| thumb_url               | String (Sequência de caracteres) | false (Falso)     | URL of the thumbnail (jpeg only) for the file                                                 |
+| input_message_content | InputMessageContent              | false (Falso)     | Conteúdo da mensagem a ser enviada, em vez do arquivo                                         |
+| thumb_url               | String (Sequência de caracteres) | false (Falso)     | URL da miniatura estática (jpeg somente) para o arquivo                                       |
 | thumb_width             | Integer (Número)                 | false (Falso)     | Largura da miniatura                                                                          |
 | thumb_height            | Integer (Número)                 | false (Falso)     | Altura da miniatura                                                                           |
 
@@ -324,15 +324,15 @@ Exemplo:
 
 ## InlineQueryResultLocation
 
-Represents a location on a map. By default, the location will be sent by the user. Alternatively, you can use input_message_content to send a message with the specified content instead of the location.
+Representa uma localização no mapa. Por padrão, a localização será enviado pelo usuário. Como alternativa, você pode usar o input_message_content para enviar uma mensagem com um conteúdo especificado em vez de uma localização.
 
 | Campo                   | Tipo                             | Requerido         | Descrição                                                                                     |
 | ----------------------- | -------------------------------- | ----------------- | --------------------------------------------------------------------------------------------- |
-| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be location                                                          |
+| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do resultado, deve ser "location"                                                        |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                          |
-| latitude                | Float número                     | true (Verdadeiro) | Location latitude in degrees                                                                  |
-| longitude               | Float número                     | true (Verdadeiro) | Location longitude in degrees                                                                 |
-| title                   | String (Sequência de caracteres) | true (Verdadeiro) | Location title                                                                                |
+| latitude                | Float número                     | true (Verdadeiro) | Localização, latitude em graus                                                                |
+| longitude               | Float número                     | true (Verdadeiro) | Localização, longitude em graus                                                               |
+| title                   | String (Sequência de caracteres) | true (Verdadeiro) | Título da localização                                                                         |
 | live_period             | Integer (Número)                 | false (Falso)     | Período em segundos para que a localização possa ser atualizada, deve estar entre 60 e 86400. |
 | reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                                                          |
 | input_message_content | InputMessageContent              | false (Falso)     | Conteúdo da mensagem a ser enviada em vez da localização                                      |
@@ -360,11 +360,11 @@ Exemplo:
 
 ## InlineQueryResultVenue
 
-Represents a venue. By default, the venue will be sent by the user. Alternatively, you can use input_message_content to send a message with the specified content instead of the venue.
+Representa um "venue". Por padrão, o "venue" será enviado pelo usuário. Como alternativa, você pode usar o input_message_content para enviar uma mensagem com um conteúdo especificado em vez do "venue".
 
 | Campo                   | Tipo                             | Requerido         | Descrição                                              |
 | ----------------------- | -------------------------------- | ----------------- | ------------------------------------------------------ |
-| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Type of the result, must be venue                      |
+| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "venue"                       |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes   |
 | latitude                | Float                            | true (Verdadeiro) | Latitude of the venue location in degrees              |
 | longitude               | Float                            | true (Verdadeiro) | Longitude of the venue location in degrees             |
@@ -570,7 +570,7 @@ Exemplo:
 
 ## InlineQueryResultCachedDocument
 
-Representa um link para um arquivo armazenado nos servidores do Telegram. Por padrão, este arquivo será enviado pelo usuário com uma legenda opcional. Alternatively, you can use input_message_content to send a message with the specified content instead of the file.
+Representa um link para um arquivo armazenado nos servidores do Telegram. Por padrão, este arquivo será enviado pelo usuário com uma legenda opcional. Como alternativa, você pode usar o input_message_content para enviar uma mensagem com um conteúdo especificado em vez do arquivo.
 
 | Campo                   | Tipo                             | Requerido         | Descrição                                                                                     |
 | ----------------------- | -------------------------------- | ----------------- | --------------------------------------------------------------------------------------------- |
@@ -582,7 +582,7 @@ Representa um link para um arquivo armazenado nos servidores do Telegram. Por pa
 | caption                 | String (Sequência de caracteres) | false (Falso)     | Legenda do documento a ser enviado, 0-200 caracteres                                          |
 | parse_mode              | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda do GIF. |
 | reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                                                          |
-| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the file                                         |
+| input_message_content | InputMessageContent              | false (Falso)     | Conteúdo da mensagem a ser enviada, em vez do arquivo                                         |
 
 Exemplo:
 
