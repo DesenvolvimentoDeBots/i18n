@@ -92,7 +92,7 @@ Esse objeto representa um usuário ou um bot do Telegram.
 | first_name    | String (Sequência de caracteres) | true (Verdadeiro) | Primeiro nome de um usuário ou um bot            |
 | last_name     | String (Sequência de caracteres) | false (Falso)     | Sobrenome de um usuário ou um bot                |
 | username      | String (Sequência de caracteres) | false (Falso)     | Nome de usuário de um usuário ou um bot          |
-| language_code | String (Sequência de caracteres) | false (Falso)     | IETF language tag of the user's language         |
+| language_code | String (Sequência de caracteres) | false (Falso)     | Tag IETF de idioma do usuário                    |
 
 ## Chat
 
@@ -123,7 +123,7 @@ Esse objeto representa uma mensagem.
 | message_id                | Integer (Número)                 | true (Verdadeiro) | Identificador exclusivo de mensagem dentro deste chat                                                                                                                                                                                                                                                                                                   |
 | from                      | User                             | false (Falso)     | Remetente, vazio para mensagens enviadas para canais                                                                                                                                                                                                                                                                                                    |
 | date                      | Integer (Número)                 | true (Verdadeiro) | Data em que a mensagem foi enviada em Unix time                                                                                                                                                                                                                                                                                                         |
-| chat                      | Chat                             | true (Verdadeiro) | Conversation the message belongs to                                                                                                                                                                                                                                                                                                                     |
+| chat                      | Chat                             | true (Verdadeiro) | A mensagem pertence ao chat/grupo/canal                                                                                                                                                                                                                                                                                                                 |
 | forward_from              | User                             | false (Falso)     | Para mensagens encaminhadas, remetente da mensagem original                                                                                                                                                                                                                                                                                             |
 | forward_from_chat       | Chat                             | false (Falso)     | Para mensagens encaminhadas de canais, informações sobre o canal original                                                                                                                                                                                                                                                                               |
 | forward_from_message_id | Integer (Número)                 | false (Falso)     | Para mensagens encaminhadas de canais, identificador da mensagem original no canal                                                                                                                                                                                                                                                                      |
@@ -243,7 +243,7 @@ Esse objeto representa uma mensagem de vídeo (disponível em apps Telegram como
 | Campo     | Tipo                             | Requerido         | Descrição                                                     |
 | --------- | -------------------------------- | ----------------- | ------------------------------------------------------------- |
 | file_id   | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo desse arquivo                         |
-| lenght    | Integer (Número)                 | true (Verdadeiro) | Video width and height as defined by sender                   |
+| lenght    | Integer (Número)                 | true (Verdadeiro) | Largura e altura do vídeo definido pelo remetente             |
 | duration  | Integer (Número)                 | true (Verdadeiro) | Duração do vídeo em segundos conforme definido pelo remetente |
 | thumb     | PhotoSize                        | false (Falso)     | Miniatura do vídeo                                            |
 | file_size | Integer (Número)                 | false (Falso)     | Tamanho do arquivo                                            |
@@ -270,27 +270,27 @@ Esse objeto representa um ponto no mapa.
 
 ## Venue
 
-This object represents a venue.
+Esse objeto representa uma venue (local).
 
-| Campo         | Tipo                             | Requerido         | Descrição                          |
-| ------------- | -------------------------------- | ----------------- | ---------------------------------- |
-| location      | Location                         | true (Verdadeiro) | Venue location                     |
-| title         | String (Sequência de caracteres) | true (Verdadeiro) | Name of the venue                  |
-| address       | String (Sequência de caracteres) | true (Verdadeiro) | Address of the venue               |
-| foursquare_id | String (Sequência de caracteres) | false (Falso)     | Foursquare identifier of the venue |
+| Campo         | Tipo                             | Requerido         | Descrição                                    |
+| ------------- | -------------------------------- | ----------------- | -------------------------------------------- |
+| location      | Location                         | true (Verdadeiro) | Local                                        |
+| title         | String (Sequência de caracteres) | true (Verdadeiro) | Título do local                              |
+| address       | String (Sequência de caracteres) | true (Verdadeiro) | Endereço do local                            |
+| foursquare_id | String (Sequência de caracteres) | false (Falso)     | Foursquare identificador de um venue (local) |
 
 ## UserProfilePhotos
 
 Esse objeto representa as fotos de perfil de um usuário.
 
-| Campo       | Tipo                        | Requerido         | Descrição                                            |
-| ----------- | --------------------------- | ----------------- | ---------------------------------------------------- |
-| total_count | Integer (Número)            | true (Verdadeiro) | Total number of profile pictures the target user has |
-| photos      | Array de Array de PhotoSize | true (Verdadeiro) | Requested profile pictures (in up to 4 sizes each)   |
+| Campo       | Tipo                        | Requerido         | Descrição                                         |
+| ----------- | --------------------------- | ----------------- | ------------------------------------------------- |
+| total_count | Integer (Número)            | true (Verdadeiro) | Total de fotos de perfil                          |
+| photos      | Array de Array de PhotoSize | true (Verdadeiro) | Fotos do Perfil em 4 tipos de tamanhos diferentes |
 
 ## File
 
-This object represents a file ready to be downloaded. The file can be downloaded via the link https:&#x2F;&#x2F;api.telegram.org&#x2F;file&#x2F;bot&lt;token&gt;&#x2F;&lt;file_path&gt;. It is guaranteed that the link will be valid for at least 1 hour. When the link expires, a new one can be requested by calling getFile.
+This object represents a file ready to be downloaded. O arquivo pode ser baixado através do link https:&#x2F;&#x2F;api.telegram.org&#x2F;file&#x2F;bot&lt;token&gt;&#x2F;&lt;file_path&gt;. É garantido que o link será válido por pelo menos 1 hora. Quando o link expira, um novo link pode ser solicitada pela chamada getFile.
 
 | Campo     | Tipo                             | Requerido         | Descrição                                                                                           |
 | --------- | -------------------------------- | ----------------- | --------------------------------------------------------------------------------------------------- |
@@ -518,7 +518,7 @@ Represents the content of a venue message to be sent as the result of an inline 
 | latitude      | Float                            | true (Verdadeiro) | Latitude of the venue in degrees             |
 | longitude     | Float                            | true (Verdadeiro) | Longitude of the venue in degrees            |
 | title         | String (Sequência de caracteres) | true (Verdadeiro) | Name of the venue                            |
-| address       | String (Sequência de caracteres) | true (Verdadeiro) | Address of the venue                         |
+| address       | String (Sequência de caracteres) | true (Verdadeiro) | Endereço do local                            |
 | foursquare_id | String (Sequência de caracteres) | false (Falso)     | Foursquare identifier of the venue, if known |
 
 ## InputContactMessageContent
