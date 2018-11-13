@@ -362,20 +362,20 @@ Exemplo:
 
 Representa um "venue". Por padrão, o "venue" será enviado pelo usuário. Como alternativa, você pode usar o input_message_content para enviar uma mensagem com um conteúdo especificado em vez do "venue".
 
-| Campo                   | Tipo                             | Requerido         | Descrição                                             |
-| ----------------------- | -------------------------------- | ----------------- | ----------------------------------------------------- |
-| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "venue"                      |
-| id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes  |
-| latitude                | Float                            | true (Verdadeiro) | Localização, latitude em graus                        |
-| longitude               | Float                            | true (Verdadeiro) | Localização, longitude em graus                       |
-| title                   | String (Sequência de caracteres) | true (Verdadeiro) | Título do local                                       |
-| address                 | String (Sequência de caracteres) | true (Verdadeiro) | Endereço do local                                     |
-| foursquare_id           | String (Sequência de caracteres) | false (Falso)     | Foursquare identifier of the venue if known           |
-| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                  |
-| input_message_content | InputMessageContent              | false (Falso)     | Conteúdo da mensagem a ser enviada, em vez do "venue" |
-| thumb_url               | String (Sequência de caracteres) | false (Falso)     | URL da miniatura do result                            |
-| thumb_width             | Integer (Número)                 | false (Falso)     | Largura da miniatura                                  |
-| thumb_height            | Integer (Número)                 | false (Falso)     | Altura da miniatura                                   |
+| Campo                   | Tipo                             | Requerido         | Descrição                                                          |
+| ----------------------- | -------------------------------- | ----------------- | ------------------------------------------------------------------ |
+| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "venue"                                   |
+| id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes               |
+| latitude                | Float                            | true (Verdadeiro) | Localização, latitude em graus                                     |
+| longitude               | Float                            | true (Verdadeiro) | Localização, longitude em graus                                    |
+| title                   | String (Sequência de caracteres) | true (Verdadeiro) | Título do local                                                    |
+| address                 | String (Sequência de caracteres) | true (Verdadeiro) | Endereço do local                                                  |
+| foursquare_id           | String (Sequência de caracteres) | false (Falso)     | Foursquare identificador de um venue (local), somente se conhecido |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                               |
+| input_message_content | InputMessageContent              | false (Falso)     | Conteúdo da mensagem a ser enviada, em vez do "venue"              |
+| thumb_url               | String (Sequência de caracteres) | false (Falso)     | URL da miniatura do result                                         |
+| thumb_width             | Integer (Número)                 | false (Falso)     | Largura da miniatura                                               |
+| thumb_height            | Integer (Número)                 | false (Falso)     | Altura da miniatura                                                |
 
 Exemplo:
 
@@ -398,7 +398,7 @@ Exemplo:
 
 ## InlineQueryResultContact
 
-Representa o número de telefone do contato. Por padrão, esse contato será enviado pelo usuário. Alternatively, you can use input_message_content to send a message with the specified content instead of the contact.
+Representa o número de telefone do contato. Por padrão, esse contato será enviado pelo usuário. Como alternativa, você pode usar o input_message_content para enviar uma mensagem com um conteúdo especificado em vez de uma contato.
 
 | Campo                   | Tipo                             | Requerido         | Descrição                                            |
 | ----------------------- | -------------------------------- | ----------------- | ---------------------------------------------------- |
@@ -516,7 +516,7 @@ Exemplo:
 
 ## InlineQueryResultCachedMpeg4Gif
 
-Represents a link to a video animation (H.264&#x2F;MPEG-4 AVC video without sound) stored on the Telegram servers. By default, this animated MPEG-4 file will be sent by the user with an optional caption. Como alternativa, você pode usar o input_message_content para enviar uma mensagem com um conteúdo especificado em vez de uma gif.
+Representa um link para um arquivo de vídeo animado (H.264&#x2F;MPEG-4 AVC de vídeo sem audio) armazenados no servidores do Telegram. Por padrão esse MPEG-4 animado será enviado pelo usuário com legenda opcional. Como alternativa, você pode usar o input_message_content para enviar uma mensagem com um conteúdo especificado em vez de uma gif.
 
 | Campo                   | Tipo                             | Requerido         | Descrição                                                                                      |
 | ----------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------- |
@@ -546,15 +546,15 @@ Exemplo:
 
 ## InlineQueryResultCachedSticker
 
-Representa um link para um arquivo de sticker armazenado nos servidores do Telegram. Por padrão, esse sticker será enviado pelo usuário. Alternatively, you can use input_message_content to send a message with the specified content instead of the sticker.
+Representa um link para um arquivo de sticker armazenado nos servidores do Telegram. Por padrão, esse sticker será enviado pelo usuário. Como alternativa, você pode usar o input_message_content para enviar uma mensagem com um conteúdo especificado em vez da sticker.
 
-| Campo                   | Tipo                             | Requerido         | Descrição                                                |
-| ----------------------- | -------------------------------- | ----------------- | -------------------------------------------------------- |
-| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "sticker"                       |
-| id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes     |
-| sticker_file_id       | String (Sequência de caracteres) | true (Verdadeiro) | Um arquivo válido identificador do adesivo               |
-| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                     |
-| input_message_content | InputMessageContent              | false (Falso)     | Content of the message to be sent instead of the sticker |
+| Campo                   | Tipo                             | Requerido         | Descrição                                             |
+| ----------------------- | -------------------------------- | ----------------- | ----------------------------------------------------- |
+| tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "sticker"                    |
+| id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes  |
+| sticker_file_id       | String (Sequência de caracteres) | true (Verdadeiro) | Um arquivo válido identificador do adesivo            |
+| reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                  |
+| input_message_content | InputMessageContent              | false (Falso)     | Conteúdo da mensagem a ser enviada, em vez do sticker |
 
 Exemplo:
 
@@ -637,7 +637,7 @@ Exemplo:
 
 ## InlineQueryResultCachedVoice
 
-Represents a link to a voice message stored on the Telegram servers. By default, this voice message will be sent by the user. Alternatively, you can use input_message_content to send a message with the specified content instead of the voice message.
+Representa um link para um arquivo de mensagem voz armazenado nos servidores do Telegram. Por padrão, esse gravação de voz será enviado pelo usuário. Como alternativa, você pode usar o input_message_content para enviar uma mensagem com um conteúdo especificado em vez da mensagem de voz.
 
 | Campo                   | Tipo                             | Requerido         | Descrição                                                                                      |
 | ----------------------- | -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------- |
@@ -673,7 +673,7 @@ Representa um link para um aúdio mp3 armazenado nos servidores do Telegram. Por
 | ----------------------- | -------------------------------- | ----------------- | --------------------------------------------------------------------------------------------- |
 | tipo                    | String (Sequência de caracteres) | true (Verdadeiro) | Tipo do result, deve ser "audio"                                                              |
 | id                      | String (Sequência de caracteres) | true (Verdadeiro) | Identificador exclusivo para esse result, 1-64 Bytes                                          |
-| audio_file_id         | String (Sequência de caracteres) | true (Verdadeiro) | A valid file identifier for the audio file                                                    |
+| audio_file_id         | String (Sequência de caracteres) | true (Verdadeiro) | Um identificador válido do arquivo de som                                                     |
 | caption                 | String (Sequência de caracteres) | false (Falso)     | Legenda, 0-200 caracteres no máximo                                                           |
 | parse_mode              | String (Sequência de caracteres) | false (Falso)     | "Markdown" ou "HTML", se você quiser que os aplicativos mostrem formatação na legenda do GIF. |
 | reply_markup            | InlineKeyboardMarkup             | false (Falso)     | Inline keyboard referente à mensagem                                                          |
