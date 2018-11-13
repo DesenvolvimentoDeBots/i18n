@@ -358,7 +358,7 @@ sendMediaGroup({
 
 ## sendLocation
 
-Use this method to send point on the map. Em caso de sucesso, a mensagem enviada será retornada.
+Use este método para enviar um ponto de localização no mapa. Em caso de sucesso, a mensagem enviada será retornada.
 
 | Campo                 | Tipo                                                                             | Requerido         | Descrição                                                                                                                                                                      |
 | --------------------- | -------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
