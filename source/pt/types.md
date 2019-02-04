@@ -1,14 +1,14 @@
-# Tipos
+# Tipos de
 
-- [Update](#update)
+- [Atualizações](#update)
 - [WebhookInfo](#webhookinfo)
 - [User](#user)
 - [Chat](#chat)
-- [Message (Mensagem)](#message)
+- [#-#-#-#-# messages. po (udemy-website) #-#-#-#-#\nMensagens\n#-#-#-#-# others. po (udemy-website) #-#-#-#-#\n#-#-#-#-# messages. po (udemy-website) #-#-#-#-#\nMensagens\n#-#-#-#-# others. po (udemy-website) #-#-#-#-#\nMessages](#message)
 - [MessageEntity](#messageentity)
 - [PhotoSize](#photosize)
 - [Audio](#audio)
-- [Document](#document)
+- [Documents](#document)
 - [Video](#video)
 - [Voice](#voice)
 - [VideoNote](#videonote)
