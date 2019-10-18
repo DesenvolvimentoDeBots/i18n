@@ -1,4 +1,4 @@
-# Inline Query
+# Inline Consulta
 
 - [InlineQueryResultArticle](#inlinequeryresultarticle)
 - [InlineQueryResultPhoto](#inlinequeryresultphoto)
