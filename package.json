@@ -25,7 +25,7 @@
   "dependencies": {
     "crowdin-glossary": "1.2.0",
     "env-cmd": "10.1.0",
-    "graceful-fs": "4.2.3",
+    "graceful-fs": "4.2.8",
     "jsonfile": "5.0.0",
     "mustache": "3.2.1"
   }
