@@ -24,7 +24,7 @@
   "homepage": "https://github.com/DesenvolvimentoDeBots/i18n#readme",
   "dependencies": {
     "crowdin-glossary": "1.2.0",
-    "env-cmd": "10.1.0",
+    "env-cmd": "11.0.0",
     "graceful-fs": "4.2.3",
     "jsonfile": "6.1.0",
     "mustache": "3.2.1"
